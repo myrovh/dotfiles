@@ -1,0 +1,7 @@
+[user]
+	name = myrovh
+	email = myrovh@hushmail.com
+[core]
+	editor = vim
+[credential]
+	helper = cache --timeout=3600
