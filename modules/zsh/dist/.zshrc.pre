@@ -3,7 +3,13 @@ BATTERY=1
 # always load the complete setup, even for root
 GRML_ALWAYS_LOAD_ALL=1
 
+#configs for envoy (ssh key manager)
+envoy -t ssh-agent
+source <(envoy -p)
+
+#Set correct term for ssh into other computers (need condition for tty vs xorg)
 export TERM="xterm-256color"
+
 # Base16 Shell
 BASE16_SCHEME="default"
 BASE16_SHELL="$HOME/.config/scripts/base16-shell/base16-$BASE16_SCHEME.dark.sh"
