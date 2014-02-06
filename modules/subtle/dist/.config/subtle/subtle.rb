@@ -4,13 +4,13 @@
 # == Startup {{{
 # Loads subtle launcher
 begin
-  require "#{ENV["HOME"]}/.config/scripts/subtle-contrib/ruby/launcher.rb" 
+  require "#{ENV["HOME"]}/bin/subtle-contrib/ruby/launcher.rb" 
 rescue LoadError => error
   puts error
 end
 # Loads subtle selector
 begin
-  require "#{ENV["HOME"]}/.config/scripts/subtle-contrib/ruby/selector.rb" 
+  require "#{ENV["HOME"]}/bin/subtle-contrib/ruby/selector.rb" 
 rescue LoadError => error
   puts error
 end
@@ -117,7 +117,7 @@ end
 style :clients do
   active    color_grey, 1
   inactive  color_black, 1
-  margin    0
+  margin    2
   width     50
 end
 
