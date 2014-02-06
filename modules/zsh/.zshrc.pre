@@ -3,9 +3,6 @@ BATTERY=1
 # always load the complete setup, even for root
 GRML_ALWAYS_LOAD_ALL=1
 
-#Should get both python install added to the path
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/decorous/.config/scripts/:/home/decorous/.gem/ruby/2.0.0/bin
-
 export TERM="xterm-256color"
 # Base16 Shell
 BASE16_SCHEME="default"
