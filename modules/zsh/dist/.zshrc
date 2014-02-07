@@ -1,7 +1,8 @@
-# show battery status in RPROMPT
-BATTERY=1
-# always load the complete setup, even for root
-GRML_ALWAYS_LOAD_ALL=1
+source ~/.antigen/antigen.zsh
+
+antigen bundle nojhan/liquidprompt
+
+antigen apply
 
 #configs for envoy (ssh key manager)
 envoy -t ssh-agent
