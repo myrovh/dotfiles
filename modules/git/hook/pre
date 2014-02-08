@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if ! pacman -Q git
+if ! pacman -Q git hub
 then
-  sudo pacman -S git --noconfirm
+  sudo pacman -S git hub --noconfirm
 fi
 
 exit $?
