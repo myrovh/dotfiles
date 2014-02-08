@@ -2,6 +2,7 @@
 
 if ! pacman -Q git
 then
-  echo -e "\033[1;31mGit not found installing\033[m"
-  sudo pacman -S git
+  sudo pacman -S git --noconfirm
 fi
+
+exit $?
