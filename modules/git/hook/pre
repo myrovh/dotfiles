@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if ! pacman -Q git
+then
+  echo -e "\033[1;31mGit not found installing\033[m"
+  sudo pacman -S git
+fi
