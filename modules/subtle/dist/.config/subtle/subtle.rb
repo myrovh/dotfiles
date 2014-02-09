@@ -298,7 +298,7 @@ tag "terms",   "xterm|[u]?rxvt|termite"
 tag "browser", "firefox|deluge"
 tag "file", "thunar|calibre"
 tag "minimise", "keepass|downthemall"
-tag "viewing", "eog|vlc|minecraft|zathura"
+tag "viewing", "eog|vlc|minecraft|zathura|xchm"
 
 # Placement
 tag "editor" do
