@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if ! pacman -Q zsh
+then
+  sudo pacman -S zsh --noconfirm
+fi
+
+exit $?
