@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sed -i -e 's/idname/'"$dot_idname"'/' -e 's/idemail/'"$dot_idemail"'/' $dot_root/.gitconfig
+
+exit $?
