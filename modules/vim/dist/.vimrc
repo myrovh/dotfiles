@@ -17,21 +17,27 @@
     \     'unix' : 'make -f make_unix.mak',
     \    },
     \ }
+    NeoBundle 'vim-scripts/utl.vim' " Universal Text Linking - Execute URLs, footnotes, open emails, organize ideas
+    NeoBundle 'mattn/calendar-vim' " Creates a calendar window for entering dates
+    NeoBundle 'tpope/vim-speeddating' " use CTRL-A/CTRL-X to increment dates, times, and more
+    NeoBundle 'Shougo/unite.vim' " Complicated buffer creation from any source
+
     NeoBundle 'chriskempson/base16-vim' " Colour Schemes
     NeoBundle 'bling/vim-airline' " Fancy Statusbar
     NeoBundle 'jeffkreeftmeijer/vim-numbertoggle' " Toggles between relative and absolute line numbers automatically
+
     NeoBundle 'fmoralesc/vim-pad' " Notational Velocity functionality in Vim
     NeoBundle 'jceb/vim-orgmode' " Orgmode implementation in Vim
-    NeoBundle 'vim-scripts/utl.vim' " Universal Text Linking - Execute URLs, footnotes, open emails, organize ideas
-    NeoBundle 'mattn/calendar-vim' " Creates a calendar window for entering dates
+
     NeoBundle 'majutsushi/tagbar' " Displays tags in a window, ordered by class etc.
-    NeoBundle 'tpope/vim-speeddating' " use CTRL-A/CTRL-X to increment dates, times, and more
     NeoBundle 'tpope/vim-fugitive' " Git wrapper for vim
     NeoBundle 'Shougo/vimshell.vim' " Shell inside vim
-    NeoBundle 'Shougo/unite.vim' " Complicated buffer creation from any source
     NeoBundle 'Shougo/neocomplete' " Code completion and auto completion
     NeoBundle 'Shougo/neosnippet' " Plug-in for inserting snippets (integrates with neocomplete)
     NeoBundle 'Shougo/neosnippet-snippets' " Default repository for neosnippet snippets (need to fork own copy one day)
+
+    NeoBundle 'tpope/vim-markdown' " Syntax highlighting for markdown
+    NeoBundle 'jtratner/vim-flavored-markdown' " Addon to vim-markdown that adds support for git flavoured markdown
   " }}}
 
   " {{{ Vim-pad Settings 
@@ -50,12 +56,20 @@
     let g:org_heading_highlight_colors = ['Character', 'Boolean', 'Label', 'String', 'Special', 'Include', 'Structure', 'Delimiter'] " This is configured for base16 might need to be changed for a different colour scheme
     let g:org_heading_highlight_levels = 100
   " }}}
+
   " {{{ Tagbar Settings
     let g:tagbar_show_visibility = 0 " show visibility symbols (public/protected/private)
     let g:tagbar_show_linenumbers = -1 " use globar line numbers settings to display line numbers in tagbar window
     let g:tagbar_iconchars = ['▸', '▾'] " Sets icons to use for folding
     noremap <silent> <F9> :TagbarToggle<CR>
   " }}}
+
+" {{{ Vim-Flavored-Markdown Settings
+  augroup markdown
+      au!
+      au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+  augroup END
+" }}}
 " }}}
 
 " Display Settings {{{
