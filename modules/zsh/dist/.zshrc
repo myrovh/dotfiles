@@ -1,17 +1,15 @@
 source ~/.antigen/antigen.zsh
 
-# Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-
-antigen bundle nojhan/liquidprompt
-
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# bd implementation in zsh
-antigen bundle Tarrasch/zsh-bd
+antigen bundles <<EOBUNDLES
+  git
+  archlinux
+  systemd
+  nojhan/liquidprompt
+  zsh-users/zsh-syntax-highlighting
+  Tarrasch/zsh-bd
+EOBUNDLES
 
 antigen apply
 
