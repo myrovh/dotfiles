@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if ! pacman -Q yaourt
+then
+  sudo pacman -S yaourt --noconfirm
+fi
+
+exit $?
