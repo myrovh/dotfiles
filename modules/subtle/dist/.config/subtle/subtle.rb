@@ -296,8 +296,8 @@ end
 # Simple tags
 tag "terms",   "xterm|[u]?rxvt|termite"
 tag "browser", "firefox|deluge"
-tag "file", "thunar|calibre"
-tag "minimise", "keepass|downthemall"
+tag "file", "thunar|calibre|sunflower"
+tag "minimise", "keepass"
 tag "viewing", "eog|vlc|minecraft|zathura|xchm"
 
 # Placement
