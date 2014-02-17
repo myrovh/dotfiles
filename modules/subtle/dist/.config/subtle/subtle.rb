@@ -51,7 +51,7 @@ set :wmname, "LG3D"
 
 # == Screen {{{
 screen 1 do
-  top    [ :views, :title, :spacer, :keychain, :spacer, :sublets ]
+  top    [ :views, :title, :spacer, :keychain, :spacer, :tray, :separator, :sublets ]
   bottom [ ]
 end
 # }}}
@@ -298,7 +298,7 @@ tag "terms",   "xterm|[u]?rxvt|termite"
 tag "browser", "firefox|deluge"
 tag "file", "thunar|calibre|sunflower"
 tag "minimise", "keepass|pavucontrol|paprefs"
-tag "viewing", "eog|vlc|minecraft|zathura|xchm"
+tag "viewing", "eog|vlc|Minecraft|zathura|xchm"
 
 # Placement
 tag "editor" do
