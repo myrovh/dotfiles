@@ -297,7 +297,7 @@ end
 tag "terms",   "xterm|[u]?rxvt|termite"
 tag "browser", "firefox|deluge"
 tag "file", "thunar|calibre|sunflower"
-tag "minimise", "keepass"
+tag "minimise", "keepass|pavucontrol|paprefs"
 tag "viewing", "eog|vlc|minecraft|zathura|xchm"
 
 # Placement
