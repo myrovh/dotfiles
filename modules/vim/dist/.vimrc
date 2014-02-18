@@ -49,7 +49,8 @@
 
   " {{{ Airline Settings 
     let g:airline#extensions#tabline#enabled = 1 " Automatically displays all buffers when only one tab open.
-    let g:airline_powerline_fonts = 1
+    let g:airline_left_sep='>'
+    let g:airline_right_sep='<'
   " }}}
 
   " {{{ Vim Orgmode Settings 
@@ -77,7 +78,7 @@
   set scrolloff=4 " 4 lines above/below cursor when scrolling
   set showmatch " show matching bracket (briefly jump)
   set laststatus=2 " the statusline is now always shown (for airline)
-  set guifont=Inconsolata-dz\ for\ Powerline\ 10 " Sets font and size
+  set guifont=DejaVu\ Sans\ Mono\ 9 " Sets font and size
   set guicursor+=a:blinkon0 " Cursor doesn't blink
   set guioptions-=T " Removes the toolbar
   set guioptions-=l " Disables Left-hand scrollbar being always present
