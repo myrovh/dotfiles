@@ -1,12 +1,12 @@
-" {{{ Plugin Settings 
-  " {{{ NeoBundle Config 
+" {{{ Plugin Settings
+  " {{{ NeoBundle Config
     if has('vim_starting')
         set nocompatible " Be iMproved
         set runtimepath+=~/.vim/bundle/neobundle.vim/
     endif
 
     call neobundle#rc(expand('~/.vim/bundle/'))
-    
+
     NeoBundleFetch 'Shougo/neobundle.vim' " Let NeoBundle manage NeoBundle
 
     NeoBundle 'Shougo/vimproc', {
@@ -35,25 +35,25 @@
     NeoBundle 'Shougo/neocomplete' " Code completion and auto completion
     NeoBundle 'Shougo/neosnippet' " Plug-in for inserting snippets (integrates with neocomplete)
     NeoBundle 'Shougo/neosnippet-snippets' " Default repository for neosnippet snippets (need to fork own copy one day)
-
+    NeoBundle 'ntpeters/vim-better-whitespace' " Highlights trailing whitespace and adds a :StripWhitespace function to clean it
     NeoBundle 'tpope/vim-markdown' " Syntax highlighting for markdown
     NeoBundle 'jtratner/vim-flavored-markdown' " Addon to vim-markdown that adds support for git flavoured markdown
   " }}}
 
-  " {{{ Vim-pad Settings 
+  " {{{ Vim-pad Settings
     let g:pad_dir = "~/Documents/note_database/vim-pad/" " Sets the path where notes are saved
     " let g:pad_open_in_split = 0 " When notes are opened they will open in the main window
     let g:pad_default_format = "org"
     let g:pad_dindow_height = 25
   " }}}
 
-  " {{{ Airline Settings 
+  " {{{ Airline Settings
     let g:airline#extensions#tabline#enabled = 1 " Automatically displays all buffers when only one tab open.
     let g:airline_left_sep='>'
     let g:airline_right_sep='<'
   " }}}
 
-  " {{{ Vim Orgmode Settings 
+  " {{{ Vim Orgmode Settings
     let g:org_heading_highlight_colors = ['Character', 'Boolean', 'Label', 'String', 'Special', 'Include', 'Structure', 'Delimiter'] " This is configured for base16 might need to be changed for a different colour scheme
     let g:org_heading_highlight_levels = 100
   " }}}
@@ -87,8 +87,8 @@
   set guioptions-=R " Disables Right-Hand scrollbar beign present when there is a vertically split window
   set guioptions-=m " Removes the menubar
   set guioptions-=M " Stops menu.vim being sourced (call before setting syntax and filetype recognition)
- 
-  " {{{ Colour Scheme 
+
+  " {{{ Colour Scheme
     set background=dark
     let base16colorspace=256  " Access colours present in 256 colorspace
     colorscheme base16-default
@@ -96,7 +96,7 @@
 
 " }}}
 
-" {{{ Editor Settings 
+" {{{ Editor Settings
   set ignorecase " case insensitive searching
   set smartcase " but become case sensitive if you type uppercase characters
   set autoread " auto read when a file is changed from the outside
@@ -104,20 +104,20 @@
   set fileencoding=utf8 " Makes sure files are saved as UTF-8
   set spell spelllang=en_au
 
-" {{{ Wrapping 
+" {{{ Wrapping
   set linebreak
-  " set showbreak=¿\ 
+  " set showbreak=¿\
   " toggle wrapping
   nmap <silent> <F12> :let &wrap = !&wrap<CR>
 " }}}
 
-" {{{ Fold Settings 
+" {{{ Fold Settings
   set foldmethod=marker
   set foldcolumn=1 " Width of fold indicator column
   set foldlevel=1 " Every fold below this value will be closed by default
 " }}}
 
-" {{{ Tab Settings 
+" {{{ Tab Settings
   set expandtab " turn a tab into spaces
   set tabstop=2 " number of spaces a tab counts for
 " }}}
