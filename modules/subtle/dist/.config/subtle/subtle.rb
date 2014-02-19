@@ -271,10 +271,10 @@ grab "W-d", [ :right,        :right66,        :right33        ]
 grab "W-z", [ :bottom_left,  :bottom_left66,  :bottom_left33  ]
 grab "W-x", [ :bottom,       :bottom66,       :bottom33       ]
 grab "W-c", [ :bottom_right, :bottom_right66, :bottom_right33 ]
-# 
 
 # Exec programs
 grab "W-Return", "termite"
+grab "W-S-l", "xscreensaver-command --lock"
 grab "W-p" do
   Subtle::Contrib::Launcher.run
 end
