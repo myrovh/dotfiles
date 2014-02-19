@@ -25,6 +25,7 @@
     NeoBundle 'chriskempson/base16-vim' " Colour Schemes
     NeoBundle 'bling/vim-airline' " Fancy Statusbar
     NeoBundle 'jeffkreeftmeijer/vim-numbertoggle' " Toggles between relative and absolute line numbers automatically
+    NeoBundle 'spolu/dwm.vim' " Tiling window management
 
     NeoBundle 'fmoralesc/vim-pad' " Notational Velocity functionality in Vim
     NeoBundle 'jceb/vim-orgmode' " Orgmode implementation in Vim
@@ -42,9 +43,9 @@
 
   " {{{ Vim-pad Settings
     let g:pad_dir = "~/Documents/note_database/vim-pad/" " Sets the path where notes are saved
-    " let g:pad_open_in_split = 0 " When notes are opened they will open in the main window
+    let g:pad_open_in_split = 0 " When notes are opened they will open in the main window
     let g:pad_default_format = "org"
-    let g:pad_dindow_height = 25
+    let g:pad_window_height = 10
   " }}}
 
   " {{{ Airline Settings
