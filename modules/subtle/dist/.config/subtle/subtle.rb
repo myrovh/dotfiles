@@ -74,7 +74,7 @@ style :all do
   icon        color_cyan
   border      color_white, 0
   padding     0, 3
-  font "xft:Ohsnap:pixelsize=12:antialias=false"
+  font "xft:Dejavu\ Sans\ Mono-8"
 end
 
 # Style for the all views
