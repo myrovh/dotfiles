@@ -9,7 +9,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 #Load xresources
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+[[ -f ~/.xresources ]] && xrdb -merge ~/.xresources
 
 # Start xscreensaver daemon
 /usr/bin/xscreensaver -no-splash &
