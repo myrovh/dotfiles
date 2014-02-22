@@ -1,6 +1,6 @@
 [submodule "modules/zsh/dist/.antigen"]
 	path = modules/zsh/dist/.antigen
 	url = https://github.com/zsh-users/antigen
-[submodule "modules/vim/dist/bundle/neobundle.vim"]
-	path = modules/vim/dist/bundle/neobundle.vim
+[submodule "modules/vim/dist/.vim/bundle/neobundle.vim"]
+	path = modules/vim/dist/.vim/bundle/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim.git
