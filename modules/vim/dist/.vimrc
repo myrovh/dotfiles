@@ -29,6 +29,7 @@
 
     NeoBundle 'fmoralesc/vim-pad' " Notational Velocity functionality in Vim
     NeoBundle 'jceb/vim-orgmode' " Orgmode implementation in Vim
+    NeoBundle 'vimwiki/vimwiki' " Wiki implementation in Vim
 
     NeoBundle 'majutsushi/tagbar' " Displays tags in a window, ordered by class etc.
     NeoBundle 'tpope/vim-fugitive' " Git wrapper for vim
@@ -50,8 +51,8 @@
 
   " {{{ Airline Settings
     let g:airline#extensions#tabline#enabled = 1 " Automatically displays all buffers when only one tab open.
-    let g:airline_left_sep='>'
-    let g:airline_right_sep='<'
+    let g:airline_left_sep=''
+    let g:airline_right_sep=''
   " }}}
 
   " {{{ Vim Orgmode Settings
