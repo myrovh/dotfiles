@@ -15,7 +15,14 @@ EOBUNDLES
   antigen apply
 # }}}
 
-# {{{ startup scripts
+# {{{ Startup scripts
+  # Automatic startx
+  if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]
+  then
+       startx > $HOME/.config/xorg/session.log 2>&1 &
+       vlock
+  fi
+
   # Envoy (ssh key manager)
   envoy -t ssh-agent
   source <(envoy -p)
@@ -42,7 +49,7 @@ EOBUNDLES
 help() {
   echo "\033[31myaourt\033[0m"
   echo "    \033[32myaconf\033[1;30m='yaourt -C'       \033[0mFix all configuration files with vimdiff"
-  echo "    \033[32myaupg\033[1;30m ='yaourt -Syua'    \033[0mSynchronize with repositories before upgrading packages (AUR packages too)" 
+  echo "    \033[32myaupg\033[1;30m ='yaourt -Syua'    \033[0mSynchronize with repositories before upgrading packages (AUR packages too)"
   echo "    \033[32myasu\033[1;30m  ='yaourt --sucre'  \033[0mSame as yaupg, but without confirmation"
   echo "    \033[32myain\033[1;30m  ='yaourt -S'       \033[0mInstall specific package(s) from the repositories"
   echo "    \033[32myains\033[1;30m ='yaourt -U'       \033[0mInstall specific package not from the repositories but from a file"

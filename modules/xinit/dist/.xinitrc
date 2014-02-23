@@ -11,11 +11,5 @@ fi
 #Load xresources
 [[ -f ~/.xresources ]] && xrdb -merge ~/.xresources
 
-# Start xscreensaver daemon
-/usr/bin/xscreensaver -no-splash &
-
-# Set background with nitrogen
-nitrogen --restore &
-
 # Start window manager
-exec subtle
+exec ~/bin/startwm
