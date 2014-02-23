@@ -1,5 +1,0 @@
-ruby: warning: already initialized constant TMP_RUBY_PREFIX
-xscreensaver-command: activating and locking.
-
-
-** (termite:4528): WARNING **: Couldn't read BROWSER and there is no browser configured, disabling clickable_url and url hints
