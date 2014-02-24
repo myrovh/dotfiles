@@ -31,8 +31,9 @@ substitution of microsoft fonts with fonts with more permissive licences.
 * Install NeoBundle
 * Install '.vimrc' file
 
-### xinit
-* Install '.xinit' + '.xresources'
+### xorg
+* Install '.xinit' + '.xresources' + '.xscreensaver'
+* Install window manager startup and logging script in '.config/xorg'
 
 ### zsh
 * Install zsh via pacman
