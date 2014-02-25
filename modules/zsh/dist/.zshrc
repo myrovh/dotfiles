@@ -20,7 +20,6 @@ EOBUNDLES
   if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]
   then
        startx > $HOME/.config/xorg/session.log 2>&1 &
-       vlock
   fi
 
   # Envoy (ssh key manager)
