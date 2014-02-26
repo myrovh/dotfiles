@@ -31,6 +31,10 @@
     NeoBundle 'jceb/vim-orgmode' " Orgmode implementation in Vim
     NeoBundle 'vimwiki/vimwiki' " Wiki implementation in Vim
 
+
+    NeoBundle 'Twinside/vim-haskellConceal' " Replaces haskell syntax with unicode markers
+    NeoBundle 'travitch/hasksyn' " Improved syntax highlighting for haskell
+
     NeoBundle 'majutsushi/tagbar' " Displays tags in a window, ordered by class etc.
     NeoBundle 'tpope/vim-fugitive' " Git wrapper for vim
     NeoBundle 'Shougo/vimshell.vim' " Shell inside vim
