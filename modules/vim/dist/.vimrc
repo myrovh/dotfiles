@@ -48,6 +48,10 @@
     NeoBundle 'Twinside/vim-haskellConceal' " Replaces haskell syntax with unicode markers
     NeoBundle 'travitch/hasksyn' " Improved syntax highlighting for haskell
 
+    " Latex
+    NeoBundle 'git://git.code.sf.net/p/atp-vim/code',
+      \ {'name' : 'atp-vim'} " LaTeX plugin suite
+
     " Git
     NeoBundle 'tpope/vim-fugitive' " Git wrapper for vim
 
