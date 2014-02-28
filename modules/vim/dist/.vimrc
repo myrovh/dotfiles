@@ -9,6 +9,7 @@
 
     NeoBundleFetch 'Shougo/neobundle.vim' " Let NeoBundle manage NeoBundle
 
+    " Dependencies
     NeoBundle 'Shougo/vimproc', {
     \ 'build' : {
     \     'windows' : 'make -f make_mingw32.mak',
@@ -22,26 +23,35 @@
     NeoBundle 'tpope/vim-speeddating' " use CTRL-A/CTRL-X to increment dates, times, and more
     NeoBundle 'Shougo/unite.vim' " Complicated buffer creation from any source
 
-    NeoBundle 'chriskempson/base16-vim' " Colour Schemes
+    " Interface
     NeoBundle 'bling/vim-airline' " Fancy Statusbar
+    NeoBundle 'majutsushi/tagbar' " Displays tags in a window, ordered by class etc.
     NeoBundle 'jeffkreeftmeijer/vim-numbertoggle' " Toggles between relative and absolute line numbers automatically
     NeoBundle 'spolu/dwm.vim' " Tiling window management
+    NeoBundle 'chriskempson/base16-vim' " Colour Schemes
+    NeoBundle 'ntpeters/vim-better-whitespace' " Highlights trailing whitespace and adds a :StripWhitespace function to clean it
 
+    " Notetaking
     NeoBundle 'fmoralesc/vim-pad' " Notational Velocity functionality in Vim
     NeoBundle 'jceb/vim-orgmode' " Orgmode implementation in Vim
     NeoBundle 'vimwiki/vimwiki' " Wiki implementation in Vim
 
-
-    NeoBundle 'Twinside/vim-haskellConceal' " Replaces haskell syntax with unicode markers
-    NeoBundle 'travitch/hasksyn' " Improved syntax highlighting for haskell
-
-    NeoBundle 'majutsushi/tagbar' " Displays tags in a window, ordered by class etc.
-    NeoBundle 'tpope/vim-fugitive' " Git wrapper for vim
-    NeoBundle 'Shougo/vimshell.vim' " Shell inside vim
+    " Code Completion
     NeoBundle 'Shougo/neocomplete' " Code completion and auto completion
     NeoBundle 'Shougo/neosnippet' " Plug-in for inserting snippets (integrates with neocomplete)
     NeoBundle 'Shougo/neosnippet-snippets' " Default repository for neosnippet snippets (need to fork own copy one day)
-    NeoBundle 'ntpeters/vim-better-whitespace' " Highlights trailing whitespace and adds a :StripWhitespace function to clean it
+
+    " Shell
+    NeoBundle 'Shougo/vimshell.vim' " Shell inside vim
+
+    " Haskell
+    NeoBundle 'Twinside/vim-haskellConceal' " Replaces haskell syntax with unicode markers
+    NeoBundle 'travitch/hasksyn' " Improved syntax highlighting for haskell
+
+    " Git
+    NeoBundle 'tpope/vim-fugitive' " Git wrapper for vim
+
+    " Markdown
     NeoBundle 'tpope/vim-markdown' " Syntax highlighting for markdown
     NeoBundle 'jtratner/vim-flavored-markdown' " Addon to vim-markdown that adds support for git flavoured markdown
   " }}}
