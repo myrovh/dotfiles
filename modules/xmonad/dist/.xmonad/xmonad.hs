@@ -1,9 +1,13 @@
 -- {{{ Imports
+-- Xmonad
 import XMonad
 import Data.Monoid
 import System.Exit
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
+
+-- Contrib
+import XMonad.Hooks.DynamicLog
 -- }}}
 
 -- {{{ Variables
@@ -72,6 +76,10 @@ myLayout = tiled ||| Mirror tiled ||| Full
      nmaster = 1
      ratio   = 1/2
      delta   = 3/100
+
+myBar = "xmobar"
+myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
+toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 -- }}}
 
 -- {{{ Window rules
@@ -95,8 +103,9 @@ myStartupHook = return ()
 -- }}}
 
 -- {{{ Run Loop
-main = xmonad defaults
-defaults = defaultConfig {
+main = xmonad =<< statusBar myBar myPP toggleStrutsKey myConfig
+
+myConfig = defaultConfig {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
