@@ -1,6 +1,6 @@
 [user]
-	name = myrovh
-	email = myrovh@hushmail.com
+	name = {{git_user}}
+	email = {{git_email}}
 [core]
 	editor = vim
 	filemode = true
