@@ -61,7 +61,7 @@
   " }}}
 
   " {{{ Vim-pad Settings
-    let g:pad_dir = "~/Documents/note_database/vim-pad/" " Sets the path where notes are saved
+    let g:pad_dir = "{{vim_pad_directory}}" " Sets the path where notes are saved
     let g:pad_open_in_split = 0 " When notes are opened they will open in the main window
     let g:pad_default_format = "org"
     let g:pad_window_height = 10
