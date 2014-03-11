@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#Source scripts in xinit.d
+# Source scripts in xinit.d
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
   for f in /etc/X11/xinit/xinitrc.d/*; do
     [ -x "$f" ] && . "$f"
@@ -8,7 +8,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-#Load xresources
+# Change caps lock to an escape key
+setxkbmap -layout "$(setxkbmap -print | awk -F + '/xkb_symbols/ {print $2}')" -option ctrl:nocaps
+
+# Load xresources
 [[ -f ~/.xresources ]] && xrdb -merge ~/.xresources
 
 # Start window manager
