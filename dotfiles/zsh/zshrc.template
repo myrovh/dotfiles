@@ -17,7 +17,8 @@ EOBUNDLES
 
 # {{{ Startup scripts
   # Automatic startx
-  if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]
+  autostart={{autostart_on}}
+  if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] && [[ "$autostart" = true ]]
   then
        startx > $HOME/.config/xorg/session.log 2>&1 &
   fi
