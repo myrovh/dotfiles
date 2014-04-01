@@ -164,4 +164,12 @@ bindsym $mod+r mode "resize"
 bar {
         font pango:DejaVu Sans Mono, Icons 8
         status_command i3status --config ~/.config/i3/i3status.conf
+        colors {
+          background	#{{colour_black}}
+          # class            border 		      background 	      text
+          focused_workspace  #{{colour_blue}} #{{colour_blue}}  #{{colour_white}}
+          active_workspace   #{{colour_grey}} #{{colour_grey}} 	#{{colour_white}}
+          inactive_workspace #{{colour_grey}} #{{colour_grey}}  #{{colour_white}}
+          urgent_workspace   #{{colour_red}} 	#{{colour_red}} 	#{{colour_white}}
+        }
 }
