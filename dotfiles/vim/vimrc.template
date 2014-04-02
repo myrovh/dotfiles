@@ -157,6 +157,10 @@
       au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
   augroup END
 " }}}
+
+  " Automatic Latex Plugin Settings {{{
+    let b:atp_Viewer = "zathura"
+  " }}}
 " }}}
 
 " Display Settings {{{
