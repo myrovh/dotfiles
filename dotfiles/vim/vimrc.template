@@ -45,6 +45,9 @@
     NeoBundle 'jceb/vim-orgmode' " Orgmode implementation in Vim
     NeoBundle 'vimwiki/vimwiki' " Wiki implementation in Vim
 
+    " Debugging
+    NeoBundle 'scrooloose/syntastic' " Syntax checking
+
     " Code Completion
     NeoBundle 'Shougo/neocomplete' " Code completion and auto completion
     NeoBundle 'Shougo/neosnippet' " Plug-in for inserting snippets (integrates with neocomplete)
