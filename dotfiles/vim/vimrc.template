@@ -34,16 +34,17 @@
 
     " Interface
     NeoBundle 'bling/vim-airline' " Fancy Statusbar
-    NeoBundle 'majutsushi/tagbar' " Displays tags in a window, ordered by class etc.
     NeoBundle 'jeffkreeftmeijer/vim-numbertoggle' " Toggles between relative and absolute line numbers automatically
-    NeoBundle 'spolu/dwm.vim' " Tiling window management
     NeoBundle 'chriskempson/base16-vim' " Colour Schemes
     NeoBundle 'ntpeters/vim-better-whitespace' " Highlights trailing whitespace and adds a :StripWhitespace function to clean it
+
+    " Navigation
+    NeoBundle 'majutsushi/tagbar' " Displays tags in a window, ordered by class etc.
+    NeoBundle 'spolu/dwm.vim' " Tiling window management
 
     " Notetaking
     NeoBundle 'fmoralesc/vim-pad' " Notational Velocity functionality in Vim
     NeoBundle 'jceb/vim-orgmode' " Orgmode implementation in Vim
-    NeoBundle 'vimwiki/vimwiki' " Wiki implementation in Vim
 
     " Debugging
     NeoBundle 'scrooloose/syntastic' " Syntax checking
@@ -55,10 +56,6 @@
 
     " Shell
     NeoBundle 'Shougo/vimshell.vim' " Shell inside vim
-
-    " Haskell
-    NeoBundle 'Twinside/vim-haskellConceal' " Replaces haskell syntax with unicode markers
-    NeoBundle 'travitch/hasksyn' " Improved syntax highlighting for haskell
 
     " Latex
     NeoBundle 'git://git.code.sf.net/p/atp-vim/code',
