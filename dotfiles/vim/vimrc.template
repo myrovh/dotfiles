@@ -41,6 +41,7 @@
     " Navigation
     NeoBundle 'majutsushi/tagbar' " Displays tags in a window, ordered by class etc.
     NeoBundle 'spolu/dwm.vim' " Tiling window management
+    NeoBundle 'lokaltog/vim-easymotion' " Improved vim motions
 
     " Notetaking
     NeoBundle 'fmoralesc/vim-pad' " Notational Velocity functionality in Vim
@@ -151,6 +152,10 @@
     if has('conceal')
       set conceallevel=2 concealcursor=i
     endif
+  " }}}
+
+  " EasyMotion Settings {{{
+    map <Space> <Plug>(easymotion-prefix)
   " }}}
 
   " {{{ Airline Settings
