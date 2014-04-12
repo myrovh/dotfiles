@@ -28,8 +28,8 @@ EOBUNDLES
   source <(envoy -p)
 
   # Base16 Shell
-  BASE16_SCHEME="default"
-  BASE16_SHELL="$HOME/bin/base16-$BASE16_SCHEME.dark.sh"
+  BASE16_SCHEME="{{base16_scheme}}"
+  BASE16_SHELL="$HOME/bin/base16-shell/base16-$BASE16_SCHEME.dark.sh"
   [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 # }}}
 
