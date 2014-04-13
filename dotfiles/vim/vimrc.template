@@ -198,7 +198,7 @@
   " {{{ Colour Scheme
     set background=dark
     let base16colorspace=256  " Access colours present in 256 colorspace
-    colorscheme base16-solarized
+    colorscheme {{vim_scheme}}
   " }}}
 
 " }}}

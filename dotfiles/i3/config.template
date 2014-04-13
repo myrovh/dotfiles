@@ -3,8 +3,8 @@ font pango:DejaVu Sans Mono, Icons 8
 new_window 1pixel
 new_float 1pixel
 #class                  border             backgr.           text
-client.focused          #{{base07}} #{{base07}} #{{base02}}
-client.focused_inactive #{{base05}} #{{base05}} #{{base02}}
+client.focused          #{{base03}} #{{base03}} #{{base07}}
+client.focused_inactive #{{base03}} #{{base03}} #{{base07}}
 client.unfocused        #{{base01}} #{{base01}} #{{base07}}
 client.urgent           #{{base08}} #{{base08}} #{{base07}}
 client.background       #{{base00}}
@@ -122,10 +122,10 @@ bar {
         colors {
           background	#{{base00}}
           # class            border 		      background 	      text
-          focused_workspace  #{{base0D}} #{{base0D}}  #{{base05}}
-          active_workspace   #{{base03}} #{{base03}} 	#{{base05}}
-          inactive_workspace #{{base03}} #{{base03}}  #{{base05}}
-          urgent_workspace   #{{base08}} #{{base08}} 	#{{base05}}
+          focused_workspace  #{{base0D}} #{{base0D}}  #{{base02}}
+          active_workspace   #{{base03}} #{{base03}} 	#{{base02}}
+          inactive_workspace #{{base03}} #{{base03}}  #{{base02}}
+          urgent_workspace   #{{base08}} #{{base08}} 	#{{base02}}
         }
 }
 # }}}
