@@ -58,6 +58,9 @@
     " Shell
     NeoBundle 'Shougo/vimshell.vim' " Shell inside vim
 
+    " C/C++
+    NeoBundle "Lee-W/c.vim.git"
+
     " Latex
     NeoBundle 'git://git.code.sf.net/p/atp-vim/code',
       \ {'name' : 'atp-vim'} " LaTeX plugin suite
@@ -192,8 +195,8 @@
   set guioptions-=L " Disables Left-hand scrollbar being present when there is a vertically split window
   set guioptions-=r " Disables Right-hand scrollbar always being present
   set guioptions-=R " Disables Right-Hand scrollbar beign present when there is a vertically split window
-  set guioptions-=m " Removes the menubar
-  set guioptions-=M " Stops menu.vim being sourced (call before setting syntax and filetype recognition)
+  "set guioptions-=m " Removes the menubar
+  "set guioptions-=M " Stops menu.vim being sourced (call before setting syntax and filetype recognition)
 
   " {{{ Colour Scheme
     set background=dark
