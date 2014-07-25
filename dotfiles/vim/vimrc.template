@@ -216,6 +216,7 @@
 
 " {{{ Wrapping
   set linebreak
+  set breakindent
   " set showbreak=¿\
   " toggle wrapping
   nmap <silent> <F12> :let &wrap = !&wrap<CR>
