@@ -1,10 +1,8 @@
 #!/bin/sh
 
-if [ "$SHELL" != '/usr/bin/zsh' ]
+if ! pacman -Q zsh
 then
-  chsh -s $(which zsh)
-else
-  echo "shell already set"
+  sudo pacman -S zsh --noconfirm
 fi
 
 exit $?

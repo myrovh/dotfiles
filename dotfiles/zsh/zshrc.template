@@ -24,8 +24,8 @@ EOBUNDLES
   fi
 
   # Envoy (ssh key manager)
-  envoy -t ssh-agent
-  source <(envoy -p)
+  # envoy -t ssh-agent
+  # source <(envoy -p)
 
   # Base16 Shell
   BASE16_SCHEME="{{base16_scheme}}"
