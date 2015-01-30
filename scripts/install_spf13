@@ -1,5 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
-sh <(curl https://j.mp/spf13-vim3 -L)
+if [[ -e ~/.spf13-vim-3/.vimrc ]]; then
+    echo "already installed"
+else
+    echo "Starting install script"
+    sh <(curl https://j.mp/spf13-vim3 -L)
+fi
 
 exit $?

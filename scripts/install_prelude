@@ -1,5 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
-sh <(curl https://github.com/bbatsov/prelude/raw/master/utils/installer.sh -L)
+if [[ -d ~/.emacs.d ]]; then
+    echo "already installed"
+else
+    echo "Starting install script"
+    sh <(curl https://github.com/bbatsov/prelude/raw/master/utils/installer.sh -L)
+fi
 
 exit $?
