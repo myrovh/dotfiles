@@ -30,13 +30,10 @@ Settings file for termite.
 * base0F: "hex value"
 
 ### vim
-Custom vim config file.
-#### Variables Used
-* vim_scheme: "name of scheme"
-* vim_pad_directory: "directory path"
+Custom settings for [spf13](http://vim.spf13.com/). Uses Inconsolata for Powerline as font.
 
 ### emacs
-Some custom settings for emacs [prelude](https://github.com/bbatsov/prelude)
+Some custom settings for emacs [prelude](https://github.com/bbatsov/prelude).
 
 ### xorg
 Sets up xresources colour scheme, adds xinit configs and defines dark themed xscreensaver colours.
