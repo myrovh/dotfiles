@@ -6,6 +6,8 @@ This is my personal repository of dotfiles configured to use the
 ### git
 ### termite
 ### vim
+### emacs
+Some custom settings for emacs [prelude](https://github.com/bbatsov/prelude)
 
 ### xorg
 * Install '.xinit' + '.xresources' + '.xscreensaver'
