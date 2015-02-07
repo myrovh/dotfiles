@@ -2,6 +2,13 @@
 This is my personal repository of dotfiles configured to use the
 [dotfile](https://github.com/kelseyjudson/dotfile) dynamic dotfile manager.
 
+#Install Steps
+* Download repo into ~/.config/dotfile/
+* Install dotfile with “gem install dotfile”
+* Add dotfile executable to path with “export PATH=$PATH:~/.gem/ruby/2.2.0/bin/”
+* Set up ~/.config/dotfile/.dotfile.conf.local with required settings
+* Run “dotfile -u” to update all the configs for the choses modules
+
 # Modules
 ## git
 Sets a few basic settings in gitconfig.
@@ -62,7 +69,7 @@ Settings for i3 and i3status.
 * base0F: "hex value"
 
 ## zsh
-Installs antigen to automatically add additional functionality to zsh shell. Adds some yaourt aliases (type 'help' to view them). Adds automatic startx.
+Installs antigen to automatically add additional functionality to zsh shell. Adds some yaourt aliases (type 'help' to view them). Adds automatic startx. Requires the bin module to set colour scheme.
 #### Variables Used
 * autostart_on: "true or false"
 * base16_scheme: "name of scheme (exclude file extension)"
