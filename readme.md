@@ -5,7 +5,7 @@ This is my personal repository of dotfiles configured to use the
 #Install Steps
 * Download repo into ~/.config/dotfile/
 * Install dotfile with “gem install dotfile”
-* Add dotfile executable to path with “export PATH=$PATH:/home/usernaem/.gem/ruby/2.2.0/bin/”
+* Add dotfile executable to path with “export PATH=$PATH:/home/username/.gem/ruby/2.2.0/bin/”
 * Set up ~/.config/dotfile/.dotfile.conf.local with required settings
 * Run “dotfile -u” to update all the configs for the choses modules
 
