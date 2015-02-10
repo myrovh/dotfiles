@@ -11,7 +11,7 @@ This is my personal repository of dotfiles configured to use the
 
 # Modules
 ## git
-Sets a few basic settings in gitconfig.
+Sets a few basic settings in gitconfig and installs [gitsubmodule](https://github.com/artmees/gitsubmodule) into bin directory.
 #### Variables Used
 * git_user: "github username"
 * git_email: "github email"
