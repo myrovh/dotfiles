@@ -31,5 +31,13 @@
 		["@clone", "https://github.com/syl20bnr/spacemacs", ".emacs.d"],
 	]
 
+[tasks.zsh]
+	cmds = [
+		["@install-official", "zsh"],
+		["@install-aur", "zplug", "cope-git"],
+		["chsh", "-s", "/usr/bin/zsh"],
+	]
+	links = [[".zshrc"]]
+
 [tasks.default]
-	deps = ["git", "hyper", "emacs"]
+	deps = ["zsh", "git", "hyper", "emacs"]
