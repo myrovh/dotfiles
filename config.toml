@@ -1,8 +1,8 @@
 # Macros
-[macros.install_official]
+[macros.install-official]
 	prefix = ["sudo", "pacman", "-S", "--noconfirm"]
 
-[macros.install_aur]
+[macros.install-aur]
 	#todo write script in auto install pacaur
 	prefix = ["pacaur", "-y", "--noconfirm"]
 
@@ -15,18 +15,21 @@
 
 # Install
 [tasks.git]
-	cmds = [["@install_official", "git"]]
+	cmds = [["@install-official", "git"]]
 	links = [[".gitconfig"]]
 
 [tasks.hyper]
-	cmds = [["@install_aur", "hyper"]
+	cmds = [["@install-aur", "hyper"]]
 	links = [
 		[".hyper.js"],
 		[".hyper_plugins/local"],
 	]
 
-	[tasks.emacs]
-		cmds = [
-			["@install_official", emacs],
-			["@clone", "https://github.com/syl20bnr/spacemacs", ".emacs.d"],
-		]
+[tasks.emacs]
+	cmds = [
+		["@install-official", "emacs"],
+		["@clone", "https://github.com/syl20bnr/spacemacs", ".emacs.d"],
+	]
+
+[tasks.default]
+	deps = ["git", "hyper", "emacs"]
