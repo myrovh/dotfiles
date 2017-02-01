@@ -1,0 +1,25 @@
+{
+  "name": "hyperterm-base2tone-sea-dark",
+  "version": "1.0.0",
+  "description": "HyperTerm theme using the Base2Tone Evening colorscheme",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atelierbram/Base2Tone-hyperterm.git"
+  },
+  "keywords": [
+    "hyperterm",
+    "hyperterm-theme",
+    "colors",
+    "theme",
+    "duotone",
+    "duotones",
+    "base2tone"
+  ],
+  "author": "Bram de Haan (http://atelierbramdehaan.nl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atelierbram/Base2Tone-hyperterm/issues"
+  },
+  "homepage": "https://github.com/atelierbram/Base2Tone-hyperterm#readme"
+}

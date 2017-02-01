@@ -1,2 +1,3 @@
 *.swp
 dotfile.conf.local
+.directory

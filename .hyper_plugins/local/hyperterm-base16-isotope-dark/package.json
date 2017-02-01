@@ -1,0 +1,23 @@
+{
+  "name": "hyperterm-base16-isotope-dark",
+  "version": "1.0.0",
+  "description": "HyperTerm theme using the Isotope-Dark colorscheme",
+  "main": "index.js", 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atelierbram/base16-hyperterm.git"
+  },
+  "keywords": [
+    "hyperterm",
+    "hyperterm-theme",
+    "colors",
+    "theme",
+    "atelier-schemes"
+  ],
+  "author": "Bram de Haan (http://atelierbramdehaan.nl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atelierbram/base16-hyperterm/issues"
+  },
+  "homepage": "https://github.com/atelierbram/base16-hyperterm#readme"
+}

@@ -1,0 +1,12 @@
+
+[user]
+	name = myrovh
+	email = myrovh@yandex.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[push]
+	default = current
+[credential]
+helper = store
