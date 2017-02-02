@@ -15,7 +15,10 @@
 
 # Install
 [tasks.fonts]
-		cmds = [["@install-official", "adobe-source-code-pro-fonts"]]
+		cmds = [
+			["@install-official", "adobe-source-code-pro-fonts"],
+			["@install-aur", "nerd-fonts-git"],
+		]
 
 [tasks.git]
 	cmds = [["@install-official", "git"]]
