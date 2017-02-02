@@ -3,7 +3,7 @@
 	prefix = ["sudo", "pacman", "-S", "--noconfirm"]
 
 [macros.install-aur]
-	#todo write script in auto install pacaur
+	#todo write script to auto install pacaur
 	prefix = ["pacaur", "-y", "--noconfirm"]
 
 [macros.clone]
@@ -31,6 +31,14 @@
 		["@clone", "https://github.com/syl20bnr/spacemacs", ".emacs.d"],
 	]
 
+[tasks.neovim]
+	cmds = [
+		["@install-official", "neovim", "python-neovim"],
+		["@install-aur", "neovim-drop-in"],
+		["$HM_SRC/bin/spacevim_install.sh", "install", "neovim"],
+	]
+	links = [[".SpaceVim.d"]]
+
 [tasks.zsh]
 	cmds = [
 		["@install-official", "zsh"],
@@ -40,4 +48,4 @@
 	links = [[".zshrc"]]
 
 [tasks.default]
-	deps = ["zsh", "git", "hyper", "emacs"]
+	deps = ["zsh", "git", "hyper", "emacs", "neovim"]
