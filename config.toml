@@ -14,6 +14,9 @@
 	prefix = ["sudo", "systemctl", "enable"]
 
 # Install
+[tasks.fonts]
+		cmds = [["@install-official", "adobe-source-code-pro-fonts"]]
+
 [tasks.git]
 	cmds = [["@install-official", "git"]]
 	links = [[".gitconfig"]]
@@ -48,4 +51,4 @@
 	links = [[".zshrc"]]
 
 [tasks.default]
-	deps = ["zsh", "git", "hyper", "emacs", "neovim"]
+	deps = ["zsh", "git", "hyper", "emacs", "neovim", "fonts"]
