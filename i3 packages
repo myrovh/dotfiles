@@ -1,0 +1,2 @@
+polybar-git (wireless_tools, i3ipc-glib-git) --asdeps
+i3-gaps-next-git rofi-git i3lock-color-git i3lock-fancy-git

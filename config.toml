@@ -2,9 +2,15 @@
 [macros.install-official]
 	prefix = ["sudo", "pacman", "-S", "--noconfirm"]
 
+[macros.install-official-deps]
+	prefix = ["sudo", "pacman", "-S", "--asdeps", "--noconfirm"]
+
 [macros.install-aur]
 	#todo write script to auto install pacaur
 	prefix = ["pacaur", "-y", "--noconfirm"]
+
+[macros.install-aur-deps]
+	prefix = ["pacaur", "-y", "--asdeps", "--noconfirm"]
 
 [macros.clone]
 	deps = ["git"]
