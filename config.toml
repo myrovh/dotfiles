@@ -23,7 +23,7 @@
 [tasks.fonts]
 		cmds = [
 			["@install-official", "adobe-source-code-pro-fonts"],
-			["@install-aur", "nerd-fonts-git"],
+			["@install-aur", "nerd-fonts-complete", "ttf-iosevka", "ttf-iosevka-term"],
 		]
 
 [tasks.git]
