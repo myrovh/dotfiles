@@ -14,7 +14,6 @@ markup=pango
 [cpu_usage]
 label=
 interval=5
-color=#ffffff
 background=#0066ff
 border=#0066ff
 markup=pango
