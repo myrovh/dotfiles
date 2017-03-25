@@ -59,5 +59,19 @@
 	]
 	links = [[".zshrc"]]
 
+[tasks.i3]
+    cmds = [
+         ["@install-aur-deps", "i3lock-color-git", "i3ipc-glib-git", "jsoncpp", "wireless_tools", "scrot"],
+         ["@install-aur", "i3-gaps-next-git", "polybar", "i3lock-fancy", "rofi-git"]
+    ]
+    links = [
+          [".config/i3"],
+          [".config/polybar"],
+          [".Xresources"]
+    ]
+
+[tasks.bin]
+    links = [["bin/colortest"]]
+
 [tasks.default]
-	deps = ["zsh", "git", "hyper", "emacs", "neovim", "fonts"]
+	deps = ["zsh", "git", "i3", "bin", "hyper", "emacs", "neovim", "fonts"]
