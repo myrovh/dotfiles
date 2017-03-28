@@ -23,7 +23,7 @@
 [tasks.fonts]
 	cmds = [
 		["@install-official", "adobe-source-code-pro-fonts"],
-		["@install-aur", "ttf-iosevka", "ttf-iosevka-term", "ttf-font-awesome", "siji-git"],
+		["@install-aur", "ttf-iosevka", "ttf-iosevka-term", "ttf-material-design-icons-git"],
 	]
 
 [tasks.git]
@@ -61,6 +61,7 @@
 
 [tasks.i3]
 	cmds = [
+		["@install-official", "nitrogen"],
 		["@install-aur-deps", "i3lock-color-git", "scrot"],
 		["@install-aur", "i3-gaps-next-git", "i3lock-fancy", "rofi-git"]
 	]

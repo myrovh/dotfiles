@@ -23,7 +23,7 @@ to be looked into when a glyph is not found in a specic font
 	<alias>
 		<family>Iosevka</family>
 		<prefer>
-			<family>FontAwesome</family>
+			<family>Material Design Icons</family>
 			<family>Unifont</family>
 		</prefer>
 	</alias>
