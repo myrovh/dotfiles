@@ -68,6 +68,7 @@
 	links = [
 		[".config/i3"],
 		[".config/i3blocks"],
+		[".config/compton.conf"],
 		[".Xresources"]
 	]
 
