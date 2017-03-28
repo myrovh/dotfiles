@@ -11,19 +11,39 @@ border_right=0
 full_text=<span background="#000000" foreground="#0066ff"></span>
 markup=pango
 
-[cpu_usage]
-label=
-interval=5
+[battery]
+command=~/.config/i3blocks/battery
+interval=30
+border_right=3
 background=#0066ff
 border=#0066ff
 markup=pango
 
-[separator_00]
-full_text=<span background="#0066ff" foreground="#000000"></span>
+[separator_0D]
+full_text=<span background="#0066ff" foreground="#cc00ff"></span>
+markup=pango
+
+[cpu_usage]
+label=
+interval=5
+border_right=3
+background=#cc00ff
+border=#cc00ff
+markup=pango
+
+[separator_0D]
+full_text=<span background="#cc00ff" foreground="#3300ff"></span>
 markup=pango
 
 [time]
 label=
 command=date '+%I:%M %p'
 interval=5
+border_right=3
+background=#3300ff
+border=#3300ff
+markup=pango
+
+[separator_0F]
+full_text=<span background="#3300ff" foreground="#000000"></span>
 markup=pango
