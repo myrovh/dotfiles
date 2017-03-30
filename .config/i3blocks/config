@@ -24,7 +24,7 @@ full_text=<span background="#0066ff" foreground="#cc00ff"></span>
 markup=pango
 
 [cpu_usage]
-label=
+label=C:
 interval=5
 border_right=3
 background=#cc00ff
@@ -36,7 +36,7 @@ full_text=<span background="#cc00ff" foreground="#3300ff"></span>
 markup=pango
 
 [time]
-label=
+label=T:
 command=date '+%I:%M %p'
 interval=5
 border_right=3

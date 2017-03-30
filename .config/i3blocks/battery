@@ -1,87 +1,101 @@
 #!/usr/bin/env python3
-#
-# Copyright (C) 2016 James Murphy
+"""A battery indicator blocklet script for i3blocks"""
+# Copyright (C) 2016 James Murphy modified by myrovh
 # Licensed under the GPL version 2 only
-#
-# A battery indicator blocklet script for i3blocks
 
 from subprocess import check_output
 
-status = check_output(['acpi'], universal_newlines=True)
+STATUS = check_output(['acpi'], universal_newlines=True)
+MDI_BATTERY_UNKNOWN = "<span font='Material Design Icons'>\uf091</span>"
+MDI_BATTERY_CRITICAL = "\uf083"
+MDI_BATTERY_10 = "\uf07a"
+MDI_BATTERY_20 = "\uf07b"
+MDI_BATTERY_30 = "\uf07c"
+MDI_BATTERY_40 = "\uf07d"
+MDI_BATTERY_50 = "\uf07e"
+MDI_BATTERY_60 = "\uf07f"
+MDI_BATTERY_70 = "\uf080"
+MDI_BATTERY_80 = "\uf081"
+MDI_BATTERY_90 = "\uf082"
+MDI_BATTERY_100 = "\uf079"
+MDI_CHARGE_20 = "\uf086"
+MDI_CHARGE_30 = "\uf087"
+MDI_CHARGE_40 = "\uf088"
+MDI_CHARGE_60 = "\uf089"
+MDI_CHARGE_80 = "\uf08a"
+MDI_CHARGE_90 = "\uf08b"
+MDI_CHARGE_100 = "\uf085"
 
-if not status:
+if not STATUS:
     # stands for no battery found
-    fulltext = "<span color='red'><span font='Material Design Icons'>\uf00d \uf240</span></span>"
+    fulltext = MDI_BATTERY_UNKNOWN
     percentleft = 100
 else:
-    # if there is more than one battery in one laptop, the percentage left is 
-    # available for each battery separately, although state and remaining 
-    # time for overall block is shown in the status of the first battery 
-    batteries = status.split("\n")
-    state_batteries=[]
-    commasplitstatus_batteries=[]
-    percentleft_batteries=[]
+    # if there is more than one battery in one laptop, the percentage left is
+    # available for each battery separately, although state and remaining
+    # time for overall block is shown in the status of the first battery
+    batteries = STATUS.split("\n")
+    state_batteries = []
+    comma_split_status_batteries = []
+    percentleft_batteries = []
     for battery in batteries:
-        if battery!='':
+        if battery != '':
             state_batteries.append(battery.split(": ")[1].split(", ")[0])
-            commasplitstatus = battery.split(", ")
-            percentleft_batteries.append(int(commasplitstatus[1].rstrip("%\n")))
-            commasplitstatus_batteries.append(commasplitstatus)
+            comma_split_status = battery.split(", ")
+            percentleft_batteries.append(
+                int(comma_split_status[1].rstrip("%\n")))
+            comma_split_status_batteries.append(comma_split_status)
     state = state_batteries[0]
-    commasplitstatus = commasplitstatus_batteries[0]
-    percentleft = int(sum(percentleft_batteries)/len(percentleft_batteries))
+    comma_split_status = comma_split_status_batteries[0]
+    percentleft = int(sum(percentleft_batteries) / len(percentleft_batteries))
 
-    # stands for charging
-    FA_LIGHTNING = "<span color='yellow'><span font='Material Design Icons'>\uf0e7</span></span>"
-
-    # stands for plugged in
-    FA_PLUG = "<span font='Material Design Icons'>\uf6a4</span>"
-
-    # stands for using battery
-    FA_BATTERY = "<span font='Material Design Icons'>\uf240</span>"
-
-    # stands for unknown status of battery
-    FA_QUESTION = "<span font='Material Design Icons'>\uf128</span>"
-
-    timeleft = ""
-
-    if state == "Discharging":
-        time = commasplitstatus[-1].split()[0]
-        time = ":".join(time.split(":")[0:2])
-        timeleft = " ({})".format(time)
-        fulltext = FA_BATTERY + ""
-    elif state == "Full":
-        fulltext = FA_PLUG + ""
-    elif state == "Unknown":
-        fulltext = FA_QUESTION + " " + FA_BATTERY + ""
-    else:
-        fulltext = FA_LIGHTNING + " " + FA_PLUG + ""
-
-    def color(percent):
+    def battery_d(percent):
+        """returns unicode for discharging battery"""
+        bat_code = ""
         if percent < 10:
-            # exit code 33 will turn background red
-            return "#FFFFFF"
-        if percent < 20:
-            return "#FF3300"
+            bat_code = MDI_BATTERY_CRITICAL
+        elif percent < 20:
+            bat_code = MDI_BATTERY_10
+        elif percent < 30:
+            bat_code = MDI_BATTERY_20
+        elif percent < 40:
+            bat_code = MDI_BATTERY_30
+        elif percent < 50:
+            bat_code = MDI_BATTERY_40
+        elif percent < 60:
+            bat_code = MDI_BATTERY_50
+        elif percent < 70:
+            bat_code = MDI_BATTERY_60
+        elif percent < 80:
+            bat_code = MDI_BATTERY_70
+        elif percent < 90:
+            bat_code = MDI_BATTERY_80
+        elif percent <= 100:
+            bat_code = MDI_BATTERY_100
+        return bat_code
+
+    def battery_c(percent):
+        """returns unicode for charging battery"""
+        bat_code = ""
         if percent < 30:
-            return "#FF6600"
-        if percent < 40:
-            return "#FF9900"
-        if percent < 50:
-            return "#FFCC00"
-        if percent < 60:
-            return "#FFFF00"
-        if percent < 70:
-            return "#FFFF33"
-        if percent < 80:
-            return "#FFFF66"
-        return "#FFFFFF"
+            bat_code = MDI_CHARGE_20
+        elif percent < 40:
+            bat_code = MDI_CHARGE_30
+        elif percent < 50:
+            bat_code = MDI_CHARGE_40
+        elif percent < 80:
+            bat_code = MDI_CHARGE_60
+        elif percent < 90:
+            bat_code = MDI_CHARGE_80
+        elif percent <= 100:
+            bat_code = MDI_CHARGE_100
+        return bat_code
 
-    form =  '<span color="{}">{}%</span>'
-    fulltext += form.format(color(percentleft), percentleft)
-    fulltext += timeleft
+    form = '<span font="Material Design Icons">{}</span> {}%'
+    if state == "Discharging":
+        fulltext = form.format(battery_d(percentleft), percentleft)
+    elif state == "Charging":
+        fulltext = form.format(battery_c(percentleft), percentleft)
 
 print(fulltext)
 print(fulltext)
-if percentleft < 10:
-    exit(33)
