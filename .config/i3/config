@@ -11,6 +11,7 @@ exec dropbox
 exec keepass
 exec synergy
 exec --no-startup-id compton --opacity-rule '100:window_type = "dock" && class_g = "i3bar"' --config ~/.config/compton.conf -b
+exec light -Scrs "intel_backlight" 2
 
 # program executions
 bindsym $mod+Return exec hyper
@@ -21,6 +22,10 @@ bindsym $mod+g exec i3lock-fancy -f Iosevka -- scrot
 bindsym XF86AudioRaiseVolume exec pamixer -i 5 && pkill -RTMIN+1 i3blocks 
 bindsym XF86AudioLowerVolume exec pamixer -d 5 && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec pamixer -t && pkill -RTMIN+1 i3blocks
+
+# change backlight level
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
 
 # kill program
 bindsym $mod+Shift+q kill

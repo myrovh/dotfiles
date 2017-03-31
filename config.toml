@@ -63,7 +63,7 @@
 	cmds = [
 		["@install-official", "nitrogen", "pamixer"],
 		["@install-aur-deps", "i3lock-color-git", "scrot"],
-		["@install-aur", "i3-gaps-next-git", "i3lock-fancy", "rofi-git"]
+		["@install-aur", "i3-gaps-next-git", "i3lock-fancy", "rofi-git", "light-git"]
 	]
 	links = [
 		[".config/i3"],
