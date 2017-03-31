@@ -36,8 +36,8 @@ markup=pango
 full_text=<span background="#0066ff" foreground="#cc00ff"></span>
 markup=pango
 
-[cpu_usage]
-label=C:
+[time]
+command=~/.config/i3blocks/time
 interval=5
 border_right=3
 background=#cc00ff
@@ -48,10 +48,9 @@ markup=pango
 full_text=<span background="#cc00ff" foreground="#3300ff"></span>
 markup=pango
 
-[time]
-label=T:
-command=date '+%I:%M %p'
-interval=5
+[date]
+command=~/.config/i3blocks/date
+interval=once
 border_right=3
 background=#3300ff
 border=#3300ff
