@@ -92,7 +92,7 @@ else:
             bat_code = MDI_CHARGE_100
         return bat_code
 
-    form = '<span font="Material Design Icons">{}</span> {}%'
+    form = '<span font="Material Design Icons">{}</span>{}%'
     if state == "Discharging":
         fulltext = form.format(battery_d(percentleft), percentleft)
     elif state == "Charging":
