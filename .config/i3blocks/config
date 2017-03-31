@@ -33,7 +33,19 @@ border=#0066ff
 markup=pango
 
 [separator_0D]
-full_text=<span background="#0066ff" foreground="#cc00ff"></span>
+full_text=<span background="#0066ff" foreground="#ff9900"></span>
+markup=pango
+
+[wlp3s0]
+command=~/.config/i3blocks/ip
+interval=5
+border_right=3
+background=#ff9900
+border=#ff9900
+markup=pango
+
+[separator_0D]
+full_text=<span background="#ff9900" foreground="#cc00ff"></span>
 markup=pango
 
 [time]
