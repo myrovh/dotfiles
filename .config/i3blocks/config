@@ -7,8 +7,21 @@ markup=pango
 border_left=0
 border_right=0
 
-[separator_0D]
-full_text=<span background="#000000" foreground="#0066ff"></span>
+[separator_00]
+full_text=<span background="#000000" foreground="#ff0099"></span>
+markup=pango
+
+[volume-pulseaudio]
+command=~/.config/i3blocks/volume-pulseaudio -F 3 -f 3
+interval=once
+signal=1
+border_right=3
+background=#ff0099
+border=#ff0099
+markup=pango
+
+[separator_0A]
+full_text=<span background="#ff0099" foreground="#0066ff"></span>
 markup=pango
 
 [battery]

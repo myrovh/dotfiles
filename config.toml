@@ -61,7 +61,7 @@
 
 [tasks.i3]
 	cmds = [
-		["@install-official", "nitrogen"],
+		["@install-official", "nitrogen", "pamixer"],
 		["@install-aur-deps", "i3lock-color-git", "scrot"],
 		["@install-aur", "i3-gaps-next-git", "i3lock-fancy", "rofi-git"]
 	]
@@ -69,7 +69,8 @@
 		[".config/i3"],
 		[".config/i3blocks"],
 		[".config/compton.conf"],
-		[".Xresources"]
+		[".Xresources"],
+		[".xinitrc"],
 	]
 
 [tasks.bin]
