@@ -1,15 +1,15 @@
 #!/bin/bash
 # Displays the default device, volume, and mute status for i3blocks
 
-AUDIO_HIGH_SYMBOL='<span font="Material Design Icons"></span> '
+AUDIO_HIGH_SYMBOL='<span font="Material Design Icons"></span>'
 
 AUDIO_MED_THRESH=50
-AUDIO_MED_SYMBOL='<span font="Material Design Icons"></span> '
+AUDIO_MED_SYMBOL='<span font="Material Design Icons"></span>'
 
 AUDIO_LOW_THRESH=0
-AUDIO_LOW_SYMBOL='<span font="Material Design Icons"></span> '
+AUDIO_LOW_SYMBOL='<span font="Material Design Icons"></span>'
 
-AUDIO_MUTED_SYMBOL='<span font="Material Design icons"></span> '
+AUDIO_MUTED_SYMBOL='<span font="Material Design icons"></span>'
 
 DEFAULT_COLOR="#ffffff"
 MUTED_COLOR="#0e0e0e"
@@ -68,11 +68,9 @@ function set_default_playback_device_next {
 }
 
 case "$BLOCK_BUTTON" in
-    1) set_default_playback_device_next ;;
-    2) amixer -q -D pulse sset Master toggle ;;
-    3) set_default_playback_device_next -1 ;;
-    4) amixer -q -D pulse sset Master 5%+ ;;
-    5) amixer -q -D pulse sset Master 5%- ;;
+    1) pamixer -t ;;
+    4) pamixer -i 5 ;;
+    5) pamixer -d 5 ;;
 esac
 
 for name in INDEX NAME VOL MUTED; do
