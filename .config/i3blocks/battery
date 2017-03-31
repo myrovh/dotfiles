@@ -8,6 +8,7 @@ from subprocess import check_output
 STATUS = check_output(['acpi'], universal_newlines=True)
 MDI_BATTERY_UNKNOWN = "<span font='Material Design Icons'>\uf091</span>"
 MDI_BATTERY_CRITICAL = "\uf083"
+MDI_BATTERY_FULL = "\uf08f"
 MDI_BATTERY_10 = "\uf07a"
 MDI_BATTERY_20 = "\uf07b"
 MDI_BATTERY_30 = "\uf07c"
@@ -96,6 +97,8 @@ else:
         fulltext = form.format(battery_d(percentleft), percentleft)
     elif state == "Charging":
         fulltext = form.format(battery_c(percentleft), percentleft)
+    elif state == "Full":
+        fulltext = form.format(MDI_BATTERY_FULL, percentleft)
 
 print(fulltext)
 print(fulltext)
