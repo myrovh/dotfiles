@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+""" Display and adjust backlight level """
+
+from subprocess import check_output
+
+LIGHT_LEVEL = int(float(check_output(
+    ["light", "-G"]).strip()))
+
+LIGHT_ICON_1 = "\uf0da" #
+LIGHT_ICON_2 = "\uf0db" #
+LIGHT_ICON_3 = "\uf0dc" #
+LIGHT_ICON_4 = "\uf0dd" #
+LIGHT_ICON_5 = "\uf0df" #
+LIGHT_ICON_6 = "\uf0df" #
+LIGHT_ICON_7 = "\uf0e0" #
+LIGHT_ICON_AUTO = "\uf0e1" #
+
+FORMAT = '<span font="Material Design Icons">{}</span>{}%'
+FULL_TEXT = FORMAT.format(LIGHT_ICON_7, LIGHT_LEVEL)
+
+print(FULL_TEXT)
+print(FULL_TEXT)

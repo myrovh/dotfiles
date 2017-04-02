@@ -24,8 +24,8 @@ bindsym XF86AudioLowerVolume exec pamixer -d 5 && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec pamixer -t && pkill -RTMIN+1 i3blocks
 
 # change backlight level
-bindsym XF86MonBrightnessUp exec light -A 5
-bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5 && pkill -RTMIN+2 i3blocks
+bindsym XF86MonBrightnessDown exec light -U 5 && pkill -RTMIN+2 i3blocks
 
 # kill program
 bindsym $mod+Shift+q kill
