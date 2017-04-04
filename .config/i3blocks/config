@@ -7,7 +7,7 @@ markup=pango
 border_left=0
 border_right=0
 
-[separator_08]
+[separator_00]
 full_text=<span background="#000000" foreground="#ff0099"></span>
 markup=pango
 
@@ -32,7 +32,7 @@ background=#0066ff
 border=#0066ff
 markup=pango
 
-[separator_00]
+[separator_0D]
 full_text=<span background="#0066ff" foreground="#ff0000"></span>
 markup=pango
 
