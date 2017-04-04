@@ -7,21 +7,8 @@ markup=pango
 border_left=0
 border_right=0
 
-[separator_00]
-full_text=<span background="#000000" foreground="#ff0000"></span>
-markup=pango
-
-[backlight]
-command=~/.config/i3blocks/backlight
-interval=once
-signal=2
-border_right=3
-background=#ff0000
-border=#ff0000
-markup=pango
-
 [separator_08]
-full_text=<span background="#ff0000" foreground="#ff0099"></span>
+full_text=<span background="#000000" foreground="#ff0099"></span>
 markup=pango
 
 [volume-pulseaudio]
@@ -45,8 +32,21 @@ background=#0066ff
 border=#0066ff
 markup=pango
 
+[separator_00]
+full_text=<span background="#0066ff" foreground="#ff0000"></span>
+markup=pango
+
+[backlight]
+command=~/.config/i3blocks/backlight
+interval=once
+signal=2
+border_right=3
+background=#ff0000
+border=#ff0000
+markup=pango
+
 [separator_0D]
-full_text=<span background="#0066ff" foreground="#ff9900"></span>
+full_text=<span background="#ff0000" foreground="#ff9900"></span>
 markup=pango
 
 [wlp3s0]
