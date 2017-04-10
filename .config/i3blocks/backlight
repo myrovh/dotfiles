@@ -3,20 +3,40 @@
 
 from subprocess import check_output
 
-LIGHT_LEVEL = int(float(check_output(
-    ["light", "-G"]).strip()))
+LIGHT_LEVEL = int(float(check_output(["light", "-G"]).strip()))
 
-LIGHT_ICON_1 = "\uf0da" #
-LIGHT_ICON_2 = "\uf0db" #
-LIGHT_ICON_3 = "\uf0dc" #
-LIGHT_ICON_4 = "\uf0dd" #
-LIGHT_ICON_5 = "\uf0df" #
-LIGHT_ICON_6 = "\uf0df" #
-LIGHT_ICON_7 = "\uf0e0" #
-LIGHT_ICON_AUTO = "\uf0e1" #
+LIGHT_ICON_1 = "\uf0da"  # 
+LIGHT_ICON_2 = "\uf0db"  # 
+LIGHT_ICON_3 = "\uf0dc"  # 
+LIGHT_ICON_4 = "\uf0dd"  # 
+LIGHT_ICON_5 = "\uf0df"  # 
+LIGHT_ICON_6 = "\uf0df"  # 
+LIGHT_ICON_7 = "\uf0e0"  # 
+LIGHT_ICON_AUTO = "\uf0e1"  # 
+
+
+def light(level):
+    """Returns unicode for light icon"""
+    light_code = ""
+    if level <= 10:
+        light_code = LIGHT_ICON_1
+    elif level <= 20:
+        light_code = LIGHT_ICON_2
+    elif level <= 40:
+        light_code = LIGHT_ICON_3
+    elif level <= 50:
+        light_code = LIGHT_ICON_4
+    elif level <= 60:
+        light_code = LIGHT_ICON_5
+    elif level <= 80:
+        light_code = LIGHT_ICON_6
+    else:
+        light_code = LIGHT_ICON_7
+    return light_code
+
 
 FORMAT = '<span font="Material Design Icons">{}</span>{}%'
-FULL_TEXT = FORMAT.format(LIGHT_ICON_7, LIGHT_LEVEL)
+FULL_TEXT = FORMAT.format(light(LIGHT_LEVEL), LIGHT_LEVEL)
 
 print(FULL_TEXT)
 print(FULL_TEXT)
