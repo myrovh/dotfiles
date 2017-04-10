@@ -59,7 +59,20 @@
 	]
 	links = [[".zshrc"]]
 
+[tasks.termite]
+	cmds = [
+		["@install-official", "termite"]
+	]
+	links = [[".config/termite/config"]]
+
+[tasks.compton]
+	cmds = [
+		["@install-aur", "compton-garnetius-git"]
+	]
+	links = [[".config/compton.conf"]]
+
 [tasks.i3]
+	deps = ["compton"]
 	cmds = [
 		["@install-official", "nitrogen", "pamixer"],
 		["@install-aur-deps", "i3lock-color-git", "scrot"],
@@ -68,7 +81,6 @@
 	links = [
 		[".config/i3"],
 		[".config/i3blocks"],
-		[".config/compton.conf"],
 		[".Xresources"],
 		[".xinitrc"],
 	]
