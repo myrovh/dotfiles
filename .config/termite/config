@@ -1,5 +1,5 @@
 [options]
-font = Iosevka 10
+font = Iosevka Term 10
 
 [colors]
 # Base16 Isotope
