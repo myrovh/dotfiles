@@ -1,5 +1,7 @@
+#!/bin/zsh
 export GOPATH=~/.go
 export PATH=$(cope_path):/home/myrovh/.go/bin:/home/myrovh/bin:$PATH
+export SSH_AUTH_SOCK=/tmp/keeagent.sock
 
 #START Zplug
 source /usr/share/zsh/scripts/zplug/init.zsh 
