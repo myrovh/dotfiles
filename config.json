@@ -1,0 +1,143 @@
+{
+	"macros": {
+		"clone": {
+			"deps": [
+				"git"
+			],
+			"prefix": [
+				"git",
+				"clone"
+			]
+		},
+		"enable": {
+			"prefix": [
+				"sudo",
+				"systemctl",
+				"enable"
+			]
+		},
+		"install-aur": {
+			"prefix": [
+				"pacaur",
+				"-y",
+				"--noconfirm"
+			]
+		},
+		"install-aur-deps": {
+			"prefix": [
+				"pacaur",
+				"-y",
+				"--asdeps",
+				"--noconfirm"
+			]
+		},
+		"install-official": {
+			"prefix": [
+				"sudo",
+				"pacman",
+				"-S",
+				"--noconfirm"
+			]
+		},
+		"install-official-deps": {
+			"prefix": [
+				"sudo",
+				"pacman",
+				"-S",
+				"--asdeps",
+				"--noconfirm"
+			]
+		}
+	},
+	"tasks": {
+		"bin": {
+			"links": [
+				["bin/colortest"]
+			]
+		},
+		"compton": {
+			"cmds": [
+				["@install-aur", "compton-garnetius-git"]
+			],
+			"links": [
+				[".config/compton.conf"]
+			]
+		},
+		"default": {
+			"deps": ["zsh", "git", "i3", "bin", "hyper", "emacs", "neovim", "fonts"]
+		},
+		"emacs": {
+			"cmds": [
+				["@install-official", "emacs"],
+				["@clone", "https://github.com/syl20bnr/spacemacs", ".emacs.d"]
+			]
+		},
+		"fonts": {
+			"cmds": [
+				["@install-official", "adobe-source-code-pro-fonts"],
+				["@install-aur", "ttf-iosevka", "ttf-iosevka-term", "ttf-material-design-icons-git"]
+			]
+		},
+		"git": {
+			"cmds": [
+				["@install-official", "git"]
+			],
+			"links": [
+				[".gitconfig"]
+			]
+		},
+		"hyper": {
+			"cmds": [
+				["@install-aur", "hyper"]
+			],
+			"links": [
+				[".hyper.js"],
+				[".hyper_plugins/local"]
+			]
+		},
+		"i3": {
+			"cmds": [
+				["@install-official", "nitrogen", "pamixer"],
+				["@install-aur-deps", "i3lock-color-git","scrot"],
+				["@install-aur", "i3-gaps-next-git", "i3lock-fancy", "rofi-git", "light-git", "redshift-minimal"]
+			],
+			"deps": [
+				"compton"
+			],
+			"links": [
+				[".config/i3"],
+				[".config/i3blocks"],
+				[".Xresources"],
+				[".xinitrc"]
+			]
+		},
+		"neovim": {
+			"cmds": [
+				["@install-official", "neovim", "python-neovim"],
+				["@install-aur", "neovim-drop-in"],
+				["$HM_SRC/bin/spacevim_install.sh", "install", "neovim"]
+			],
+			"links": [
+				[".SpaceVim.d"]
+			]
+		},
+		"termite": {
+			"cmds": [
+				["@install-official", "termite"]
+			],
+			"links": [
+				[".config/termite/config"]
+			]
+		},
+		"zsh": {
+			"cmds": [
+				["@install-official", "zsh"],
+				["@install-aur", "zplug", "cope-git"],
+				["chsh", "-s", "/usr/bin/zsh"]
+			],
+			"links": [
+				[".zshrc"]
+			]
+		}
+	}
+}
