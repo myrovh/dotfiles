@@ -1,67 +1,32 @@
 {
 	"macros": {
 		"clone": {
-			"deps": [
-				"git"
-			],
-			"prefix": [
-				"git",
-				"clone"
-			]
+			"deps": ["git"],
+			"prefix": ["git", "clone"]
 		},
 		"enable": {
-			"prefix": [
-				"sudo",
-				"systemctl",
-				"enable"
-			]
+			"prefix": ["sudo", "systemctl", "enable"]
 		},
 		"install-aur": {
-			"prefix": [
-				"pacaur",
-				"-y",
-				"--noconfirm"
-			]
+			"prefix": ["pacaur", "-y", "--noconfirm"]
 		},
 		"install-aur-deps": {
-			"prefix": [
-				"pacaur",
-				"-y",
-				"--asdeps",
-				"--noconfirm"
-			]
+			"prefix": ["pacaur", "-y", "--asdeps", "--noconfirm"]
 		},
 		"install-official": {
-			"prefix": [
-				"sudo",
-				"pacman",
-				"-S",
-				"--noconfirm"
-			]
+			"prefix": ["sudo", "pacman", "-S", "--noconfirm"]
 		},
 		"install-official-deps": {
-			"prefix": [
-				"sudo",
-				"pacman",
-				"-S",
-				"--asdeps",
-				"--noconfirm"
-			]
+			"prefix": ["sudo", "pacman", "-S", "--asdeps", "--noconfirm"]
 		}
 	},
 	"tasks": {
 		"bin": {
-			"links": [
-				["bin/colortest"]
-			]
+			"links": [["bin/colortest"]]
 		},
 		"compton": {
-			"cmds": [
-				["@install-aur", "compton-garnetius-git"]
-			],
-			"links": [
-				[".config/compton.conf"]
-			]
+			"cmds": [["@install-aur", "compton-garnetius-git"]],
+			"links": [[".config/compton.conf"]]
 		},
 		"default": {
 			"deps": ["zsh", "git", "i3", "bin", "hyper", "emacs", "neovim", "fonts"]
@@ -79,20 +44,20 @@
 			]
 		},
 		"git": {
-			"cmds": [
-				["@install-official", "git"]
-			],
-			"links": [
-				[".gitconfig"]
-			]
+			"cmds": [["@install-official", "git"]],
+			"links": [[".gitconfig"]]
 		},
 		"hyper": {
-			"cmds": [
-				["@install-aur", "hyper"]
-			],
+			"cmds": [["@install-aur", "hyper"]],
 			"links": [
 				[".hyper.js"],
 				[".hyper_plugins/local"]
+			]
+		},
+		"x11": {
+			"links": [
+				[".Xresources"],
+				[".xinitrc"]
 			]
 		},
 		"i3": {
@@ -101,14 +66,10 @@
 				["@install-aur-deps", "i3lock-color-git","scrot"],
 				["@install-aur", "i3-gaps-next-git", "i3lock-fancy", "rofi-git", "light-git", "redshift-minimal"]
 			],
-			"deps": [
-				"compton"
-			],
+			"deps": ["compton", "x11"],
 			"links": [
 				[".config/i3"],
-				[".config/i3blocks"],
-				[".Xresources"],
-				[".xinitrc"]
+				[".config/i3blocks"]
 			]
 		},
 		"neovim": {
@@ -117,17 +78,11 @@
 				["@install-aur", "neovim-drop-in"],
 				["$HM_SRC/bin/spacevim_install.sh", "install", "neovim"]
 			],
-			"links": [
-				[".SpaceVim.d"]
-			]
+			"links": [[".SpaceVim.d"]]
 		},
 		"termite": {
-			"cmds": [
-				["@install-official", "termite"]
-			],
-			"links": [
-				[".config/termite/config"]
-			]
+			"cmds": [["@install-official", "termite"]],
+			"links": [[".config/termite/config"]]
 		},
 		"zsh": {
 			"cmds": [
@@ -135,9 +90,7 @@
 				["@install-aur", "zplug", "cope-git"],
 				["chsh", "-s", "/usr/bin/zsh"]
 			],
-			"links": [
-				[".zshrc"]
-			]
+			"links": [[".zshrc"]]
 		}
 	}
 }
