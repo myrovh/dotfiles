@@ -1,4 +1,36 @@
+# font settings
 font pango:Iosevka 8
+
+# base-16 colours
+set $base00 #000000
+set $base01 #404040
+set $base02 #606060
+set $base03 #808080
+set $base04 #c0c0c0
+set $base05 #d0d0d0
+set $base06 #e0e0e0
+set $base07 #ffffff
+set $base08 #ff0000
+set $base09 #ff9900
+set $base0A #ff0099
+set $base0B #33ff00
+set $base0C #00ffff
+set $base0D #0066ff
+set $base0E #cc00ff
+set $base0F #3300ff
+
+# Basic color configuration using the Base16 variables for windows and borders.
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base00
+
+# window borderr settings
+new_window pixel 1
+hide_edge_borders smart
 
 # set modifier
 set $mod Mod4
@@ -14,7 +46,7 @@ exec --no-startup-id compton --opacity-rule '100:window_type = "dock" && class_g
 exec light -Scrs "intel_backlight" 2
 
 # program executions
-bindsym $mod+Return exec hyper
+bindsym $mod+Return exec termite
 bindsym --release $mod+d exec rofi -show drun
 bindsym $mod+g exec i3lock-fancy -f Iosevka -- scrot
 bindsym $mod+Shift+b exec redshift -l -37.814:144.96332 #Melbourne
@@ -114,36 +146,34 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
-
+# gaps settings
 gaps inner 10
 smart_gaps on
 
+# bar settings
 bar {
         status_command i3blocks
         font pango: Iosevka 12
         height 21
+        colors {
+                background $base00
+                separator  $base01
+                statusline $base07
+
+                # State             Border  BG      Text
+                focused_workspace   $base0D $base0D $base07
+                active_workspace    $base03 $base03 $base07
+                inactive_workspace  $base00 $base00 $base07
+                urgent_workspace    $base08 $base08 $base07
+                binding_mode        $base0A $base0A $base07
+        }
 }
