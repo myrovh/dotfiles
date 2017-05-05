@@ -2,22 +2,23 @@
 font pango:Iosevka 8
 
 # base-16 colours
-set $base00 #000000
-set $base01 #404040
-set $base02 #606060
-set $base03 #808080
-set $base04 #c0c0c0
-set $base05 #d0d0d0
-set $base06 #e0e0e0
-set $base07 #ffffff
-set $base08 #ff0000
-set $base09 #ff9900
-set $base0A #ff0099
-set $base0B #33ff00
-set $base0C #00ffff
-set $base0D #0066ff
-set $base0E #cc00ff
-set $base0F #3300ff
+set $base00 #263238
+set $base01 #2C393F
+set $base02 #37474F
+set $base03 #707880
+set $base04 #C9CCD3
+set $base05 #CDD3DE
+set $base06 #D5DBE5
+set $base07 #FFFFFF
+set $base08 #EC5F67
+set $base09 #EA9560
+set $base0A #FFCC00
+set $base0B #8BD649
+set $base0C #80CBC4
+set $base0D #89DDFF
+set $base0E #82AAFF
+set $base0F #EC5F67
+set $cyan500 #00BDC4
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
@@ -170,7 +171,7 @@ bar {
                 statusline $base07
 
                 # State             Border  BG      Text
-                focused_workspace   $base0D $base0D $base07
+                focused_workspace   $cyan500 $cyan500 $base07
                 active_workspace    $base03 $base03 $base07
                 inactive_workspace  $base00 $base00 $base07
                 urgent_workspace    $base08 $base08 $base07

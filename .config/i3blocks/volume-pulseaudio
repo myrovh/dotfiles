@@ -12,7 +12,7 @@ AUDIO_LOW_SYMBOL='<span font="Material Design Icons"></span>'
 AUDIO_MUTED_SYMBOL='<span font="Material Design icons"></span>'
 
 DEFAULT_COLOR="#ffffff"
-MUTED_COLOR="#0e0e0e"
+MUTED_COLOR="#212121"
 
 LONG_FORMAT=0
 SHORT_FORMAT=2
