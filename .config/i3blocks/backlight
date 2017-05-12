@@ -3,7 +3,7 @@
 
 from subprocess import check_output
 
-LIGHT_LEVEL = int(float(check_output(["light", "-G"]).strip()))
+LIGHT_LEVEL = int(float(check_output(["xbacklight", "-get"]).strip()))
 
 LIGHT_ICON_1 = "\uf0da"  # 
 LIGHT_ICON_2 = "\uf0db"  # 
