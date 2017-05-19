@@ -163,7 +163,7 @@ smart_gaps on
 bar {
         status_command i3blocks
         font pango: Iosevka 12
-        height 21
+        height 22
         colors {
                 background $base00
                 separator  $base01
