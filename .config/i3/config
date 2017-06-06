@@ -146,12 +146,12 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	bindsym j resize shrink width 10 px or 10 ppt
+	bindsym k resize grow height 10 px or 10 ppt
+	bindsym l resize shrink height 10 px or 10 ppt
+	bindsym semicolon resize grow width 10 px or 10 ppt
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -161,19 +161,19 @@ smart_gaps on
 
 # bar settings
 bar {
-        status_command i3blocks
-        font pango: Iosevka 12
-        height 22
-        colors {
-                background $base00
-                separator  $base01
-                statusline $base07
+	status_command i3blocks
+	font pango: Iosevka 12
+	height 22
+	colors {
+		background $base00
+		separator  $base01
+		statusline $base07
 
-                # State             Border  BG      Text
-                focused_workspace   $cyan500 $cyan500 $base07
-                active_workspace    $base03 $base03 $base07
-                inactive_workspace  $base00 $base00 $base07
-                urgent_workspace    $base08 $base08 $base07
-                binding_mode        $base0A $base0A $base07
-        }
+		# State             Border  BG      Text
+		focused_workspace   $cyan500 $cyan500 $base07
+		active_workspace    $base03 $base03 $base07
+		inactive_workspace  $base00 $base00 $base07
+		urgent_workspace    $base08 $base08 $base07
+		binding_mode        $base0A $base0A $base07
+	}
 }

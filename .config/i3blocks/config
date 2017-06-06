@@ -46,12 +46,24 @@ border=#673Ab7
 markup=pango
 
 [separator_0D]
-full_text=<span background="#673Ab7" foreground="#2196F3"></span>
+full_text=<span background="#673Ab7" foreground="#0D47A1"></span>
+markup=pango
+
+[wlp3s0]
+command=~/.config/i3blocks/bandwidth -o  -i 
+interval=5
+border_right=3
+background=#0D47A1
+border=#0D47A1
+markup=pango
+
+[separator_0D]
+full_text=<span background="#0D47A1" foreground="#2196F3"></span>
 markup=pango
 
 [wlp3s0]
 command=~/.config/i3blocks/ip
-interval=5
+interval=60
 border_right=3
 background=#2196F3
 border=#2196F3

@@ -64,7 +64,7 @@
 			"cmds": [
 				["@install-official", "nitrogen", "pamixer"],
 				["@install-aur-deps", "i3lock-color-git","scrot"],
-				["@install-aur", "i3-gaps-next-git", "i3lock-fancy", "rofi-git", "acpilight", "lux", "redshift-minimal"]
+				["@install-aur", "i3-gaps-next-git", "i3lock-fancy", "i3blocks-gaps-git", "rofi-git", "acpilight", "lux", "redshift-minimal"]
 			],
 			"deps": ["compton", "x11"],
 			"links": [
