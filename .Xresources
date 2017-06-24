@@ -1,25 +1,29 @@
-! Base16 Isotope
-! Scheme: Jan T. Sott
+! Base16 Materia
+! Scheme: Defman21
 
-#define base00 #000000
-#define base01 #404040
-#define base02 #606060
-#define base03 #808080
-#define base04 #c0c0c0
-#define base05 #d0d0d0
-#define base06 #e0e0e0
-#define base07 #ffffff
-#define base08 #ff0000
-#define base09 #ff9900
-#define base0A #ff0099
-#define base0B #33ff00
-#define base0C #00ffff
-#define base0D #0066ff
-#define base0E #cc00ff
-#define base0F #3300ff
+#define base00 #263238
+#define base01 #2C393F
+#define base02 #37474F
+#define base03 #707880
+#define base04 #C9CCD3
+#define base05 #CDD3DE
+#define base06 #D5DBE5
+#define base07 #FFFFFF
+#define base08 #EC5F67
+#define base09 #EA9560
+#define base0A #FFCC00
+#define base0B #8BD649
+#define base0C #80CBC4
+#define base0D #89DDFF
+#define base0E #82AAFF
+#define base0F #EC5F67
 
 *.foreground:   base05
+#ifdef background_opacity
+*.background:   [background_opacity]base00
+#else
 *.background:   base00
+#endif
 *.cursorColor:  base05
 
 *.color0:       base00
@@ -32,15 +36,15 @@
 *.color7:       base05
 
 *.color8:       base03
-*.color9:       base09
-*.color10:      base01
-*.color11:      base02
-*.color12:      base04
-*.color13:      base06
-*.color14:      base0F
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
 *.color15:      base07
 
-! Note: colours beyond 15 might not be loaded (e.g., xterm, urxvt),
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
 ! use 'shell' template to set these if necessary
 *.color16:      base09
 *.color17:      base0F
@@ -52,8 +56,19 @@
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
+! Base16 Materia
+! Author: Defman21
+
+! Enable the extended coloring options
 rofi.color-enabled: true
-rofi.color-window: #000000, #ffffff, #ffffff
-rofi.color-normal: #ffffff, #0066ff, #e0e0e0, #0066ff, #ffffff
-rofi.color-active: #ffffff, #cc00ff, #e0e0e0, #cc00ff, #ffffff
-rofi.color-urgent: #ffffff, #ff0000, #e0e0e0, #ff0000, #ffffff
+
+! Property Name     BG       Border   Separator
+rofi.color-window:  #2C393F, #2C393F, #263238
+
+! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
+rofi.color-normal:  #2C393F, #CDD3DE, #2C393F, #2C393F, #FFFFFF
+rofi.color-active:  #2C393F, #89DDFF, #2C393F, #2C393F, #89DDFF
+rofi.color-urgent:  #2C393F, #EC5F67, #2C393F, #2C393F, #EC5F67
+
+! Set the desired separator style
+rofi.separator-style: solid

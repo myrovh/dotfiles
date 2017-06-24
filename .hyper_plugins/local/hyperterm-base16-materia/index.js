@@ -1,28 +1,28 @@
-/* Base16 Isotope Dark colorscheme by Jan T. Sott
+/* Base16 Materia Dark colorscheme by Defman21
  * HyperTerm template by Bram de Haan (https://github.com/atelierbram/base16-hyperterm)
  */
-const backgroundColor = '#000000';
-const foregroundColor = '#c0c0c0';
-const borderColor = '#000000'; // same as background-color, might as well say "transparent"
-const cursorColor = '#ff0099'; // yellow, opacity set in .termCSS: see under
+const backgroundColor = '#263238';
+const foregroundColor = '#C9CCD3';
+const borderColor = '#263238'; // same as background-color, might as well say "transparent"
+const cursorColor = '#FFCC00'; // yellow, opacity set in .termCSS: see under
 
 const colors = [
   backgroundColor,
-  '#ff0000', // red
-  '#33ff00', // green
-  '#ff0099', // yellow
-  '#0066ff', // blue
-  '#cc00ff', // violet
-  '#00ffff', // cyan
-  '#e0e0e0', // light gray
-  '#606060', // medium gray
-  '#ff0000', // red
-  '#606060', // green
-  '#808080', // yellow
-  '#c0c0c0', // blue
-  '#cc00ff', // violet
-  '#00ffff', // cyan
-  '#ffffff', // white
+  '#EC5F67', // red
+  '#8BD649', // green
+  '#FFCC00', // yellow
+  '#89DDFF', // blue
+  '#82AAFF', // violet
+  '#80CBC4', // cyan
+  '#D5DBE5', // light gray
+  '#37474F', // medium gray
+  '#EC5F67', // red
+  '#37474F', // green
+  '#707880', // yellow
+  '#C9CCD3', // blue
+  '#82AAFF', // violet
+  '#80CBC4', // cyan
+  '#FFFFFF', // white
   foregroundColor
 ]
 
@@ -46,16 +46,16 @@ exports.decorateConfig = (config) => {
        }
        .tabs_title,
        .tab_tab {
-         color: #c0c0c0 !important;
+         color: #C9CCD3 !important;
          letter-spacing: .025em;
        }
        .tabs_list {
          border: 0;
        }
        .tab_tab {
-         background-color: #000000 !important;
+         background-color: #263238 !important;
          letter-spacing: .025em;
-         border-bottom: 3px solid #606060 !important;
+         border-bottom: 3px solid #37474F !important;
        }
        .tab_tab:hover {
          border-bottom-color: transparent !important;
@@ -65,16 +65,16 @@ exports.decorateConfig = (config) => {
        }
        .tab_tab.tab_active {
          border-color: transparent !important;
-         color: #e0e0e0 !important;
+         color: #D5DBE5 !important;
        }
        .tab_text {
          background-color:rgba(0,0,0,.33);
-         border-left: 3px solid #000000 !important;
+         border-left: 3px solid #263238 !important;
          transition: all .3s;
        }
        .tab_tab:hover .tab_text {
          background-color:rgba(0,0,0,0);
-         border-left: 3px solid #000000 !important;
+         border-left: 3px solid #263238 !important;
        }
        .tab_active .tab_text {
          background-color: transparent;
