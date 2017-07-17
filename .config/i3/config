@@ -164,6 +164,7 @@ bar {
 	status_command i3blocks
 	font pango: Iosevka 12
 	height 22
+	tray_output primary
 	colors {
 		background $base00
 		separator  $base01
