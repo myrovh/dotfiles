@@ -87,7 +87,7 @@
     "zsh": {
       "cmds": [
         ["@install-official", "zsh"],
-        ["@install-aur", "zplug", "cope-git"],
+        ["@install-aur", "zplug", "perl-module-install", "cope-git"],
         ["chsh", "-s", "/usr/bin/zsh"]
       ],
       "links": [[".zshrc"]]
