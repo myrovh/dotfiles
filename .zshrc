@@ -1,6 +1,6 @@
 #!/bin/zsh
 export GOPATH=~/.go
-export PATH=$(cope_path):/home/myrovh/.go/bin:/home/myrovh/bin:$PATH
+export PATH=$(cope_path):/home/myrovh/.go/bin:/home/myrovh/.gem/ruby/2.4.0/bin:/home/myrovh/bin:$PATH
 export SSH_AUTH_SOCK=/tmp/keeagent.sock
 export ANDROID_HOME=~/.android
 
