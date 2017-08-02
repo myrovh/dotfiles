@@ -39,7 +39,7 @@
     },
     "fonts": {
       "cmds": [
-        ["@install-official", "adobe-source-code-pro-fonts"],
+        ["@install-official", "adobe-source-code-pro-fonts", "noto-fonts-cjk"],
         ["@install-aur", "ttf-iosevka", "ttf-iosevka-term", "ttf-material-design-icons-git"]
       ]
     },
