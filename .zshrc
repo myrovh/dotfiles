@@ -3,6 +3,7 @@ export GOPATH=~/.go
 export PATH=$(cope_path):/home/myrovh/.go/bin:$(ruby -e 'print Gem.user_dir')/bin:/home/myrovh/bin:$PATH
 export SSH_AUTH_SOCK=/tmp/keeagent.sock
 export ANDROID_HOME=~/.android
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 
 #START Zplug
 source /usr/share/zsh/scripts/zplug/init.zsh 
