@@ -60,6 +60,10 @@
         [".xinitrc"]
       ]
     },
+    "beets": {
+      "cmds": [["@install-official", "beets", "python-beautifulsoup4", "python-pylast"]],
+      "links": [[".config/beets/config.yaml"]]
+    },
     "i3": {
       "cmds": [
         ["@install-official", "nitrogen", "pamixer"],

@@ -1,0 +1,16 @@
+directory: /home/myrovh/disk/Music/
+library: /home/myrovh/disk/Music/musiclibrary.blb
+art_filename: albumart
+import:
+  move: yes
+ui:
+  color: yes
+paths:
+  default: $albumartist/$album%aunique{}/$track $title
+  singleton: _Singles/$artist/$title
+  comp: _Compilations/$album/$track $title
+  albumtype:soundtrack: _Soundtracks/$album/$track $title
+
+plugins: embedart fetchart ftintitle lastgenre lyrics
+lastgenre:
+  source: artist
