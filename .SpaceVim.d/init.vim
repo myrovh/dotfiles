@@ -1,1 +1,4 @@
-let g:spacevim_colorscheme = 'base16-materia' 
+let g:spacevim_colorscheme = 'molokai'
+let g:spacevim_colorscheme_bg = 'dark'
+let g:spacevim_statusline_separator = 'arrow'
+
