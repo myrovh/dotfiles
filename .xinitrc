@@ -32,5 +32,8 @@ fi
 #disable system bell
 xset -b
 
+#restore wal settings on reboot
+wal -R
+
 #exec i3
 exec i3

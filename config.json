@@ -76,6 +76,12 @@
         [".config/i3blocks"]
       ]
     },
+    "pywal": {
+      "cmds": [
+        ["@install-official", "nitrogen"],
+        ["@install-aur", "python-pywal-git"]
+      ]
+    },
     "neovim": {
       "cmds": [
         ["@install-official", "neovim", "python-neovim"],
