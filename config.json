@@ -96,7 +96,7 @@
     },
     "zsh": {
       "cmds": [
-        ["@install-official", "zsh"],
+        ["@install-official", "zsh", "exa"],
         ["@install-aur", "zplug", "perl-module-install", "cope-git"],
         ["chsh", "-s", "/usr/bin/zsh"]
       ],

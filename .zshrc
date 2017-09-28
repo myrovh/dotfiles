@@ -40,7 +40,8 @@ zplug load --verbose
 #START Alias
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
-alias ls='ls --color=auto'
+alias ls='exa --colour-scale'
+alias lsla='exa --colour-scale -abghHliS'
 #END Alias
 
 # Lines configured by zsh-newuser-install
