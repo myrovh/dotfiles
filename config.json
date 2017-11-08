@@ -35,7 +35,8 @@
       "cmds": [
         ["@install-official", "emacs"],
         ["@clone", "https://github.com/syl20bnr/spacemacs", ".emacs.d"]
-      ]
+      ],
+      "links": [[".spacemacs"]]
     },
     "fonts": {
       "cmds": [
