@@ -95,6 +95,10 @@
       "cmds": [["@install-official", "termite"]],
       "links": [[".config/termite/config"]]
     },
+    "kitty": {
+      "cmds": [["@install-aur", "kitty"]],
+      "links": [[".config/kitty/kitty.conf"]]
+    },
     "zsh": {
       "cmds": [
         ["@install-official", "zsh", "exa"],
