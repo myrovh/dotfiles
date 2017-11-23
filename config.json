@@ -80,7 +80,11 @@
     "pywal": {
       "cmds": [
         ["@install-official", "nitrogen"],
-        ["@install-aur", "python-pywal-git"]
+        ["@install-aur", "python-pywal-git"],
+        ["@clone", "https://github.com/Mr-SD/intellijPywal", "bin/intellijPywal"]
+      ],
+      "links": [
+        ["bin/intellijPywal.sh"]
       ]
     },
     "neovim": {
