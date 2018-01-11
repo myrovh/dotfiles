@@ -21,6 +21,12 @@
     }
   },
   "tasks": {
+    "beets": {
+      "cmds": [
+        ["@install-official", "beets", "python-beautifulsoup4", "python-pylast"]
+      ],
+      "links": [[".config/beets/config.yaml"]]
+    },
     "bin": {
       "links": [["bin/colortest"]]
     },
@@ -41,7 +47,12 @@
     "fonts": {
       "cmds": [
         ["@install-official", "adobe-source-code-pro-fonts", "noto-fonts-cjk"],
-        ["@install-aur", "ttf-iosevka", "ttf-iosevka-term", "ttf-material-design-icons-git"]
+        [
+          "@install-aur",
+          "ttf-iosevka",
+          "ttf-iosevka-term",
+          "ttf-material-design-icons-git"
+        ]
       ]
     },
     "git": {
@@ -50,42 +61,29 @@
     },
     "hyper": {
       "cmds": [["@install-aur", "hyper"]],
-      "links": [
-        [".hyper.js"],
-        [".hyper_plugins/local"]
-      ]
-    },
-    "x11": {
-      "links": [
-        [".Xresources"],
-        [".xinitrc"]
-      ]
-    },
-    "beets": {
-      "cmds": [["@install-official", "beets", "python-beautifulsoup4", "python-pylast"]],
-      "links": [[".config/beets/config.yaml"]]
+      "links": [[".hyper.js"], [".hyper_plugins/local"]]
     },
     "i3": {
       "cmds": [
         ["@install-official", "nitrogen", "pamixer"],
-        ["@install-aur-deps", "i3lock-color-git","scrot"],
-        ["@install-aur", "i3-gaps-next-git", "i3lock-fancy", "i3blocks-gaps-git", "rofi-git", "acpilight", "lux", "redshift-minimal"]
+        ["@install-aur-deps", "i3lock-color-git", "scrot"],
+        [
+          "@install-aur",
+          "i3-gaps-next-git",
+          "i3lock-fancy",
+          "i3blocks-gaps-git",
+          "rofi-git",
+          "acpilight",
+          "lux",
+          "redshift-minimal"
+        ]
       ],
       "deps": ["compton", "x11"],
-      "links": [
-        [".config/i3"],
-        [".config/i3blocks"]
-      ]
+      "links": [[".config/i3"], [".config/i3blocks"]]
     },
-    "pywal": {
-      "cmds": [
-        ["@install-official", "nitrogen"],
-        ["@install-aur", "python-pywal-git"],
-        ["@clone", "https://github.com/Mr-SD/intellijPywal", "bin/intellijPywal"]
-      ],
-      "links": [
-        ["bin/intellijPywal.sh"]
-      ]
+    "kitty": {
+      "cmds": [["@install-aur", "kitty"]],
+      "links": [[".config/kitty/kitty.conf"]]
     },
     "neovim": {
       "cmds": [
@@ -95,13 +93,24 @@
       ],
       "links": [[".SpaceVim.d"]]
     },
+    "pywal": {
+      "cmds": [
+        ["@install-official", "nitrogen"],
+        ["@install-aur", "python-pywal-git"],
+        [
+          "@clone",
+          "https://github.com/Mr-SD/intellijPywal",
+          "bin/intellijPywal"
+        ]
+      ],
+      "links": [["bin/intellijPywal.sh"]]
+    },
     "termite": {
       "cmds": [["@install-official", "termite"]],
       "links": [[".config/termite/config"]]
     },
-    "kitty": {
-      "cmds": [["@install-aur", "kitty"]],
-      "links": [[".config/kitty/kitty.conf"]]
+    "x11": {
+      "links": [[".Xresources"], [".xinitrc"]]
     },
     "zsh": {
       "cmds": [
