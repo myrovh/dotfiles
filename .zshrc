@@ -34,7 +34,7 @@ zplug load --verbose
 #END Zplug
 
 # Import colorscheme from wal
-(wal -r &)
+(cat ~/.cache/wal/sequences &)
 
 #START Alias
 alias diff='diff --color=auto'
