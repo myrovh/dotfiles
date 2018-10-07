@@ -11,24 +11,28 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
+  d_polybar:
+    dst: ~/.config/polybar
+    link: true
+    src: config/polybar
   f_i3_config:
     dst: ~/.config/i3/config
-    src: config/i3/config
     link: true
+    src: config/i3/config
   f_vim_init:
     actions:
-      - spacevim
+    - spacevim
     dst: ~/.SpaceVim.d/init.toml
     link: true
     src: SpaceVim.d/init.toml
   f_xinitrc:
     dst: ~/.xinitrc
-    src: xinitrc
     link: true
+    src: xinitrc
   f_zshrc:
     dst: ~/.zshrc
-    src: zshrc
     link: true
+    src: zshrc
 profiles:
   NYOGTHA:
     dotfiles:
@@ -36,3 +40,4 @@ profiles:
     - f_xinitrc
     - f_i3_config
     - f_vim_init
+    - d_polybar
