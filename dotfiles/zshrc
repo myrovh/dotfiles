@@ -42,6 +42,8 @@ function zsrc() {
 (cat ~/.cache/wal/sequences &)
 
 # aliases
+alias vim='nvim'
+alias vi='nvim'
 alias l='ls'
 alias la='ls -A'
 alias ll='ls -lA'
