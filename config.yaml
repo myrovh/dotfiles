@@ -15,6 +15,10 @@ dotfiles:
     dst: ~/.config/polybar
     link: true
     src: config/polybar
+  f_rofi:
+    dst: ~/.config/rofi/config
+    link: true
+    src: config/rofi/config
   f_i3_config:
     dst: ~/.config/i3/config
     link: true
@@ -41,3 +45,4 @@ profiles:
     - f_i3_config
     - f_vim_init
     - d_polybar
+    - f_rofi
