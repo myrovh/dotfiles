@@ -1,3 +1,5 @@
+actions:
+  spacevim: test -e ~/.SpaceVim || curl -sLf https://spacevim.org/install.sh | bash
 config:
   backup: true
   banner: true
@@ -14,6 +16,8 @@ dotfiles:
     src: config/i3/config
     link: true
   f_vim_init:
+    actions:
+      - spacevim
     dst: ~/.SpaceVim.d/init.toml
     link: true
     src: SpaceVim.d/init.toml
