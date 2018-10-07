@@ -1,0 +1,22 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_by_default: false
+  longkey: false
+  showdiff: false
+  workdir: ~/.config/dotdrop
+dotfiles:
+  f_xinitrc:
+    dst: ~/.xinitrc
+    src: xinitrc
+  f_zshrc:
+    dst: ~/.zshrc
+    src: zshrc
+profiles:
+  NYOGTHA:
+    dotfiles:
+    - f_zshrc
+    - f_xinitrc
