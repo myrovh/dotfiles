@@ -4,19 +4,31 @@ config:
   create: true
   dotpath: dotfiles
   keepdot: false
-  link_by_default: false
+  link_by_default: true
   longkey: false
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
+  f_i3_config:
+    dst: ~/.config/i3/config
+    src: config/i3/config
+    link: true
+  f_vim_init:
+    dst: ~/.SpaceVim.d/init.toml
+    link: true
+    src: SpaceVim.d/init.toml
   f_xinitrc:
     dst: ~/.xinitrc
     src: xinitrc
+    link: true
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
+    link: true
 profiles:
   NYOGTHA:
     dotfiles:
     - f_zshrc
     - f_xinitrc
+    - f_i3_config
+    - f_vim_init
