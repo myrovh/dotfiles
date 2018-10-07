@@ -1,8 +1,0 @@
-#!/bin/bash
-# Displays the time for i3blocks
-
-DATE_SYMBOL='<span font="Material Design icons"></span>'
-DATE=$(date '+%F')
-
-echo "$DATE_SYMBOL$DATE"
-echo "$DATE_SYMBOL$DATE"
