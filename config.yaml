@@ -15,14 +15,18 @@ dotfiles:
     dst: ~/.config/polybar
     link: true
     src: config/polybar
-  f_rofi:
-    dst: ~/.config/rofi/config
+  f_gitconfig:
+    dst: ~/.gitconfig
     link: true
-    src: config/rofi/config
+    src: gitconfig
   f_i3_config:
     dst: ~/.config/i3/config
     link: true
     src: config/i3/config
+  f_rofi:
+    dst: ~/.config/rofi/config
+    link: true
+    src: config/rofi/config
   f_vim_init:
     actions:
     - spacevim
@@ -46,3 +50,8 @@ profiles:
     - f_vim_init
     - d_polybar
     - f_rofi
+    - f_gitconfig
+  CTOGGHA:
+    dotfiles:
+    - f_zshrc
+    - f_gitconfig
