@@ -24,22 +24,9 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 export VISUAL=nvim
 export EDITOR=nvim
 
-# reload ~/.zshrc and compile to .zwc ...  ZDOTDIR see:
-# https://wiki.archlinux.org/index.php/zsh#Making_Zsh_your_default_shell
-function zsrc() {
-    local cache=""
-    [[ -n $ZSH_CACHE_DIR ]] && cache=$ZSH_CACHE_DIR || cache="${ZDOTDIR:-$HOME}/.cache"
-    autoload -U compinit zrecompile
-    compinit -d "$cache/zcomp-$HOST"
-    for f in ${ZDOTDIR:-$HOME}/.zshrc "$cache/zcomp-$HOST"; do
-        zrecompile -p $f && command rm -f $f.zwc.old
-    done
-    source ${ZDOTDIR:-$HOME}/.zshrc
-}
-[[ ! -e ${ZDOTDIR:-$HOME}/.zshrc.zwc ]] && zsrc &>/dev/null
-
 # Get wal colours
 (cat ~/.cache/wal/sequences &)
+nitrogen --restore &
 
 # aliases
 alias vim='nvim'
@@ -53,7 +40,4 @@ alias pac='sudo pacman --color auto'
 alias merge='xrdb -merge ~/.Xresources'
 alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias dotdrop='dotdrop --cfg=~/dotfiles/config.yaml'
-alias mirrors='sudo reflector --score 100 --fastest 25 \
-    --sort rate --save /etc/pacman.d/mirrorlist --verbose'
-
-al-info
+alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
