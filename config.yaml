@@ -15,6 +15,10 @@ dotfiles:
     dst: ~/.config/polybar
     link: true
     src: config/polybar
+  f_clight.conf:
+    dst: ~/.config/clight.conf
+    link: true
+    src: config/clight.conf
   f_gitconfig:
     dst: ~/.gitconfig
     link: true
@@ -42,6 +46,10 @@ dotfiles:
     link: true
     src: zshrc
 profiles:
+  CTOGGHA:
+    dotfiles:
+    - f_zshrc
+    - f_gitconfig
   NYOGTHA:
     dotfiles:
     - f_zshrc
@@ -51,7 +59,4 @@ profiles:
     - d_polybar
     - f_rofi
     - f_gitconfig
-  CTOGGHA:
-    dotfiles:
-    - f_zshrc
-    - f_gitconfig
+    - f_clight.conf
