@@ -3,22 +3,27 @@
 # not running interactively then bail
 [[ $- != *i* ]] && return
 
-# shell opts
-setopt autocd
-setopt completealiases
-setopt histignorealldups
-setopt histfindnodups
-setopt incappendhistory
-setopt sharehistory
+# Check if zplug is installed
+if [[ ! -d ~/.zplug ]]; then
+    git clone https://github.com/zplug/zplug ~/.zplug
+    source ~/.zplug/init.zsh && zplug update
+else
+    source ~/.zplug/init.zsh
+fi
 
-# colors in less (default PAGER in Arch)
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
+# zplug plugins
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
+zplug "yous/vanilli.sh"
+zplug "mafredri/zsh-async"
+zplug "supercrabtree/k"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "sindresorhus/pure", use:pure.zsh, as:theme
+
+# install missing plugins
+zplug check || zplug install
+
+# Then, source plugins and add commands to $PATH
+zplug load
 
 # set nvim
 export VISUAL=nvim
@@ -26,18 +31,10 @@ export EDITOR=nvim
 
 # Get wal colours
 (cat ~/.cache/wal/sequences &)
-nitrogen --restore &
 
 # aliases
 alias vim='nvim'
 alias vi='nvim'
-alias l='ls'
-alias la='ls -A'
-alias ll='ls -lA'
-alias ls='ls --color=auto'
-alias upd='sudo pacman -Syyu'
-alias pac='sudo pacman --color auto'
-alias merge='xrdb -merge ~/.Xresources'
-alias grubup='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias dotdrop='dotdrop --cfg=~/dotfiles/config.yaml'
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
+
