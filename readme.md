@@ -4,3 +4,9 @@ Personal repository of dotfiles managed with
 
 ## todo
 - Configure spacevim to theme status bar with wal
+
+# zsh
+https://github.com/unixorn/awesome-zsh-plugins
+## Alternative Prompts
+- https://github.com/mgee/slimline
+- https://github.com/denysdovhan/spaceship-prompt

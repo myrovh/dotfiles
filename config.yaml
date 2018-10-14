@@ -15,7 +15,11 @@ dotfiles:
     dst: ~/.config/polybar
     link: true
     src: config/polybar
-  f_clight.conf:
+  f_alacritty:
+    dst: ~/.config/alacritty/alacritty.yml
+    link: true
+    src: config/alacritty/alacritty.yml
+  f_clight:
     dst: ~/.config/clight.conf
     link: true
     src: config/clight.conf
@@ -27,6 +31,10 @@ dotfiles:
     dst: ~/.config/i3/config
     link: true
     src: config/i3/config
+  f_kitty:
+    dst: ~/.config/kitty/kitty.conf
+    link: true
+    src: config/kitty/kitty.conf
   f_rofi:
     dst: ~/.config/rofi/config
     link: true
@@ -59,4 +67,6 @@ profiles:
     - d_polybar
     - f_rofi
     - f_gitconfig
-    - f_clight.conf
+    - f_clight
+    - f_kitty
+    - f_alacritty
