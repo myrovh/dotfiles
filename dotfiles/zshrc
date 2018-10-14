@@ -30,7 +30,9 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # Get wal colours
-(cat ~/.cache/wal/sequences &)
+if [[ -d ~/.cache/wal/sequences ]]; then
+  (cat ~/.cache/wal/sequences &)
+fi
 
 # aliases
 alias vim='nvim'
