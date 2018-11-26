@@ -49,6 +49,9 @@ fi
 # Set wal theme
 wal -R
 
+# Start clight
+clight
+
 # display timeout and sleep
 xset s 3600 3600
 xset dpms 3600 3700 4000
