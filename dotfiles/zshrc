@@ -29,8 +29,13 @@ zplug load
 export VISUAL=nvim
 export EDITOR=nvim
 
+# set path
+PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+export GEM_HOME=$HOME/.gem
+
+
 # Get wal colours
-if [[ -d ~/.cache/wal/sequences ]]; then
+if [[ -f ~/.cache/wal/sequences ]]; then
   (cat ~/.cache/wal/sequences &)
 fi
 
