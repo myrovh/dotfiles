@@ -41,7 +41,7 @@ dotfiles:
     src: config/rofi/config
   f_vim_init:
     actions:
-    - spacevim
+      - spacevim
     dst: ~/.SpaceVim.d/init.toml
     link: true
     src: SpaceVim.d/init.toml
@@ -56,17 +56,12 @@ dotfiles:
 profiles:
   CTOGGHA:
     dotfiles:
-    - f_zshrc
-    - f_gitconfig
+      - f_zshrc
+      - f_gitconfig
   NYOGTHA:
     dotfiles:
-    - f_zshrc
-    - f_xinitrc
-    - f_i3_config
-    - f_vim_init
-    - d_polybar
-    - f_rofi
-    - f_gitconfig
-    - f_clight
-    - f_kitty
-    - f_alacritty
+      - f_zshrc
+      - f_xinitrc
+      - f_gitconfig
+      - f_clight
+      - f_alacritty
