@@ -1,4 +1,4 @@
-# ~/.zshrc
+#!/bin/bash
 
 # not running interactively then bail
 [[ $- != *i* ]] && return
