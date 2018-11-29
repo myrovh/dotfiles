@@ -26,13 +26,14 @@ zplug check || zplug install
 zplug load
 
 # set nvim
-export VISUAL=nvim
-export EDITOR=nvim
+export VISUAL=vim
+export EDITOR=vim
 
-# set path
-PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-export GEM_HOME=$HOME/.gem
-
+# set ruby path
+if hash ruby 2>/dev/null; then
+    PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+    export GEM_HOME=$HOME/.gem
+fi
 
 # Get wal colours
 if [[ -f ~/.cache/wal/sequences ]]; then
@@ -40,8 +41,8 @@ if [[ -f ~/.cache/wal/sequences ]]; then
 fi
 
 # aliases
-alias vim='nvim'
-alias vi='nvim'
 alias dotdrop='dotdrop --cfg=~/dotfiles/config.yaml'
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
+alias startg='startx gnome'
+alias startb='startx budgie'
 
