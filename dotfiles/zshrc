@@ -18,6 +18,7 @@ zplug "mafredri/zsh-async"
 zplug "supercrabtree/k"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "sindresorhus/pure", use:pure.zsh, as:theme
+zplug "petervanderdoes/git-flow-completion"
 
 # install missing plugins
 zplug check || zplug install
@@ -35,9 +36,19 @@ if hash ruby 2>/dev/null; then
     export GEM_HOME=$HOME/.gem
 fi
 
+# set go bin path
+if hash go 2>/dev/null; then
+    PATH="$PATH:$HOME/go/bin"
+fi
+
 # Get wal colours
 if [[ -f ~/.cache/wal/sequences ]]; then
   (cat ~/.cache/wal/sequences &)
+fi
+
+# Tilix fix
+if [ "$TILIX_ID" ] || [ "$VTE_VERSION" ]; then
+        source /etc/profile.d/vte.sh
 fi
 
 # aliases
@@ -45,4 +56,5 @@ alias dotdrop='dotdrop --cfg=~/dotfiles/config.yaml'
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
 alias startg='startx gnome'
 alias startb='startx budgie'
+alias startw='XDG_SESSION_TYPE=wayland dbus-run-session gnome-session'
 
