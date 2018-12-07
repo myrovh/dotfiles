@@ -5,10 +5,10 @@
 
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
-    git clone https://github.com/zplug/zplug ~/.zplug
-    source ~/.zplug/init.zsh && zplug update
+	git clone https://github.com/zplug/zplug ~/.zplug
+	source ~/.zplug/init.zsh && zplug update
 else
-    source ~/.zplug/init.zsh
+	source ~/.zplug/init.zsh
 fi
 
 # zplug plugins
@@ -32,23 +32,23 @@ export EDITOR=vim
 
 # set ruby path
 if hash ruby 2>/dev/null; then
-    PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-    export GEM_HOME=$HOME/.gem
+	PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+	export GEM_HOME=$HOME/.gem
 fi
 
 # set go bin path
 if hash go 2>/dev/null; then
-    PATH="$PATH:$HOME/go/bin"
+	PATH="$PATH:$HOME/go/bin"
 fi
 
 # Get wal colours
 if [[ -f ~/.cache/wal/sequences ]]; then
-  (cat ~/.cache/wal/sequences &)
+	(cat ~/.cache/wal/sequences &)
 fi
 
 # Tilix fix
 if [ "$TILIX_ID" ] || [ "$VTE_VERSION" ]; then
-        source /etc/profile.d/vte.sh
+	source /etc/profile.d/vte.sh
 fi
 
 # aliases
@@ -57,4 +57,3 @@ alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/p
 alias xgnome='startx ~/.xinitrc gnome'
 alias xbudgie='startx ~/.xinitrc budgie'
 alias wgnome='XDG_SESSION_TYPE=wayland dbus-run-session gnome-session'
-
