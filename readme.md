@@ -5,8 +5,32 @@ Personal repository of dotfiles managed with
 
 ## todo
 
-- Configure spacevim to theme status bar with wal
-  - Alternatively move to using more minimal nvim config
+- setup minimal nvim config that supports wal colours
+- wpgtk
+- qutebrowser
+- i3-gaps with polybar
+- sway
+- use rclone to avoid the need for dropbox or megasync tray icons (insync and KeePassXC work fine without them)
+
+## Gnome + Budgie
+
+Configuration of the actual desktop will be manual for each wm. Gnome support for status indicators is very poor now but otherwise provides the better desktop experience.
+
+### Packages
+
+```sh
+yay -S gnome gnome-shell-extension-appindicator-git gnome-shell-extension-no-title-bar-git gnome-shell-extension-topicons-plus-git
+```
+
+```sh
+yay -S budgie-desktop budgie-extras budgie-pixel-saver-applet
+```
+
+## i3-gaps
+
+## git
+
+Git config is current user specific. Make sure ssh keys are being loaded via KeePassXC or other ssh agent helper. As all Bitbucket requests are processed as ssh not https.
 
 ## zsh
 
