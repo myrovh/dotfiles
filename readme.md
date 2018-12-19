@@ -16,10 +16,10 @@ Personal repository of dotfiles managed with
 
 Configuration of the actual desktop will be manual for each wm. Gnome support for status indicators is very poor now but otherwise provides the better desktop experience.
 
-### Packages
+### Gnome Packages
 
 ```sh
-yay -S gnome gnome-shell-extension-appindicator-git gnome-shell-extension-no-title-bar-git gnome-shell-extension-topicons-plus-git
+yay -S gnome gnome-shell-extension-appindicator-git gnome-shell-extension-no-title-bar-git gnome-shell-extension-topicons-plus-git papirus-icon-theme arc-gtk-theme
 ```
 
 ```sh
@@ -27,6 +27,13 @@ yay -S budgie-desktop budgie-extras budgie-pixel-saver-applet
 ```
 
 ## i3-gaps
+
+### i3 Packages
+
+```sh
+yay -S i3-gaps polybar rofi
+yay -S --asdeps perl-json-xs perl-anyevent-i3
+```
 
 ## git
 

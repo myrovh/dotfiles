@@ -46,6 +46,9 @@ gnome)
 	export XDG_CURRENT_DESKTOP=Budgie:GNOME
 	exec gnome-session
 	;;
+i3)
+	exec i3
+	;;
 *)
 	exec "$1"
 	;;
