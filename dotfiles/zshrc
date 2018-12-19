@@ -30,6 +30,9 @@ zplug load
 export VISUAL=vim
 export EDITOR=vim
 
+# set generic bin path
+PATH="$PATH:$HOME/bin"
+
 # set ruby path
 if hash ruby 2>/dev/null; then
 	PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
