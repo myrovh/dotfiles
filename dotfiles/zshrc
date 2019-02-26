@@ -40,7 +40,9 @@ PATH="$PATH:$HOME/bin"
 # set ruby path
 if hash ruby 2>/dev/null; then
 	PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-	export GEM_HOME=$HOME/.gem
+	gem_home=$(ruby -e 'print Gem.user_dir')
+	export GEM_HOME=$gem_home
+	eval "$(rbenv init -)"
 fi
 
 # set go bin path
@@ -65,3 +67,7 @@ alias xgnome='startx ~/.xinitrc gnome'
 alias xbudgie='startx ~/.xinitrc budgie'
 alias xi3='startx ~/.xinitrc i3'
 alias wgnome='XDG_SESSION_TYPE=wayland dbus-run-session gnome-session'
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /home/myrovh/Documents/Repositories/timelog-app/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/myrovh/Documents/Repositories/timelog-app/node_modules/tabtab/.completions/electron-forge.zsh
