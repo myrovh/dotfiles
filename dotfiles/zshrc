@@ -42,7 +42,9 @@ if hash ruby 2>/dev/null; then
 	PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 	gem_home=$(ruby -e 'print Gem.user_dir')
 	export GEM_HOME=$gem_home
-	eval "$(rbenv init -)"
+	if hash rbenv 2>/dev/null; then
+		eval "$(rbenv init -)"
+	fi
 fi
 
 # set go bin path
