@@ -53,15 +53,8 @@ if hash go 2>/dev/null; then
 	PATH="$PATH:$HOME/go/bin"
 fi
 
-# Get wal colours
-if [[ -f ~/.cache/wal/sequences ]]; then
-	(cat ~/.cache/wal/sequences &)
-fi
-
-# Tilix fix
-if [ "$TILIX_ID" ] || [ "$VTE_VERSION" ]; then
-	source /etc/profile.d/vte.sh
-fi
+# Set wpg colours
+(cat $HOME/.config/wpg/sequences &)
 
 # aliases
 alias dotdrop='dotdrop --cfg=~/dotfiles/config.yaml'
@@ -70,7 +63,3 @@ alias xgnome='startx ~/.xinitrc gnome'
 alias xbudgie='startx ~/.xinitrc budgie'
 alias xi3='startx ~/.xinitrc i3'
 alias wgnome='XDG_SESSION_TYPE=wayland dbus-run-session gnome-session'
-
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[[ -f /home/myrovh/Documents/Repositories/timelog-app/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/myrovh/Documents/Repositories/timelog-app/node_modules/tabtab/.completions/electron-forge.zsh
