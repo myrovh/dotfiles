@@ -50,10 +50,8 @@ if hash go 2>/dev/null; then
 	PATH="$PATH:$HOME/go/bin"
 fi
 
-# Get wal colours
-if [[ -f ~/.cache/wal/sequences ]]; then
-	(cat ~/.cache/wal/sequences &)
-fi
+# Set wpg colours
+(cat $HOME/.config/wpg/sequences &)
 
 # aliases
 alias dotdrop='dotdrop --cfg=~/dotfiles/config.yaml'
