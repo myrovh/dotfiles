@@ -1,39 +1,35 @@
-actions:
 config:
-  backup: true
-  banner: true
-  create: true
-  dotpath: dotfiles
-  keepdot: false
-  link_by_default: true
-  longkey: false
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
   f_alacritty:
     dst: ~/.config/alacritty/alacritty.yml
-    link: true
+    link: link
     src: config/alacritty/alacritty.yml
   f_clight:
     dst: ~/.config/clight.conf
-    link: true
+    link: link
     src: config/clight.conf
   f_gitconfig:
     dst: ~/.gitconfig
-    link: true
+    link: link
     src: gitconfig
   f_kitty:
     dst: ~/.config/kitty/kitty.conf
-    link: true
+    link: link
     src: config/kitty/kitty.conf
   f_xinitrc:
     dst: ~/.xinitrc
-    link: true
+    link: link
     src: xinitrc
   f_zshrc:
     dst: ~/.zshrc
-    link: true
+    link: link
     src: zshrc
+  f_xresources:
+    src: Xresources
+    dst: ~/.Xresources
+    link: link
 profiles:
   CTOGGHA:
     dotfiles:
@@ -46,3 +42,11 @@ profiles:
       - f_gitconfig
       - f_clight
       - f_alacritty
+      - f_xresources
+  AZATHOTH:
+    dotfiles:
+      - f_zshrc
+      - f_xinitrc
+      - f_gitconfig
+      - f_alacritty
+      - f_xresources
