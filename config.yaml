@@ -1,35 +1,28 @@
 config:
   showdiff: false
-  workdir: ~/.config/dotdrop
+  workdir: ~/.config/dotdrop-links
 dotfiles:
   f_alacritty:
     dst: ~/.config/alacritty/alacritty.yml
-    link: link
     src: config/alacritty/alacritty.yml
   f_clight:
     dst: ~/.config/clight.conf
-    link: link
     src: config/clight.conf
   f_gitconfig:
     dst: ~/.gitconfig
-    link: link
     src: gitconfig
   f_kitty:
     dst: ~/.config/kitty/kitty.conf
-    link: link
     src: config/kitty/kitty.conf
   f_xinitrc:
     dst: ~/.xinitrc
-    link: link
     src: xinitrc
   f_zshrc:
     dst: ~/.zshrc
-    link: link
     src: zshrc
   f_xresources:
     src: Xresources
     dst: ~/.Xresources
-    link: link
 profiles:
   CTOGGHA:
     dotfiles:
