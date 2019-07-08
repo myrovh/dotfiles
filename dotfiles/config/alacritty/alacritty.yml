@@ -58,3 +58,31 @@ font:
 visual_bell:
   animation: EaseOutExpo
   duration: 0
+
+colors:
+  # Default colors
+  primary:
+    background: "0x080808"
+    foreground: "0xf5f5f5"
+
+  # Normal colors
+  normal:
+    black: "0x080808"
+    red: "0xff0000"
+    green: "0x33ff00"
+    yellow: "0xff0099"
+    blue: "0x0066ff"
+    magenta: "0xcc00ff"
+    cyan: "0x00ffff"
+    white: "0xd0d0d0"
+
+  # Bright colors
+  bright:
+    black: "0x808080"
+    red: "0xff0000"
+    green: "0x33ff00"
+    yellow: "0xff0099"
+    blue: "0x0066ff"
+    magenta: "0xcc00ff"
+    cyan: "0x00ffff"
+    white: "0xf5f5f5"
