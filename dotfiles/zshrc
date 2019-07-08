@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # not running interactively then bail
 [[ $- != *i* ]] && return
@@ -50,13 +50,12 @@ if hash go 2>/dev/null; then
 	PATH="$PATH:$HOME/go/bin"
 fi
 
-# Set wpg colours
-(cat $HOME/.config/wpg/sequences &)
-
 # aliases
+alias drm='docker rm $(docker ps -a -q)'
+alias drmi='docker rmi $(docker images -q)'
 alias dotdrop='dotdrop --cfg=~/dotfiles/config.yaml'
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
 alias xgnome='startx ~/.xinitrc gnome'
 alias xbudgie='startx ~/.xinitrc budgie'
 alias xi3='startx ~/.xinitrc i3'
-alias wgnome='XDG_SESSION_TYPE=wayland dbus-run-session gnome-session'
+alias wgnome='QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session'
