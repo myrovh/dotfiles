@@ -43,3 +43,4 @@ profiles:
       - f_gitconfig
       - f_alacritty
       - f_xresources
+      - f_kitty
