@@ -62,27 +62,27 @@ visual_bell:
 colors:
   # Default colors
   primary:
-    background: "0x080808"
-    foreground: "0xf5f5f5"
+    background: "0x{{@@ colr_bg @@}}"
+    foreground: "0x{{@@ color_fg @@}}"
 
   # Normal colors
   normal:
-    black: "0x080808"
-    red: "0xff0000"
-    green: "0x33ff00"
-    yellow: "0xff0099"
-    blue: "0x0066ff"
-    magenta: "0xcc00ff"
-    cyan: "0x00ffff"
-    white: "0xd0d0d0"
+    black: "0x{{@@ color_00 @}}"
+    red: "0x{{@@ color_01 @@}}"
+    green: "0x{{@@ color_02 @@}}"
+    yellow: "0x{{@@ color_03 @@}}"
+    blue: "0x{{@@ color_04 @@}}"
+    magenta: "0x{{@@ color_05 @@}}"
+    cyan: "0x{{@@ color_06 @@}}"
+    white: "0x{{@@ color_07 @@}}"
 
   # Bright colors
   bright:
-    black: "0x808080"
-    red: "0xff0000"
-    green: "0x33ff00"
-    yellow: "0xff0099"
-    blue: "0x0066ff"
-    magenta: "0xcc00ff"
-    cyan: "0x00ffff"
-    white: "0xf5f5f5"
+    black: "0x{{@@ color_08 @@}}"
+    red: "0x{{@@ color_09 @@}}"
+    green: "0x{{@@ color_10 @@}}"
+    yellow: "0x{{@@ color_11 @@}}"
+    blue: "0x{{@@ color_12 @@}}"
+    magenta: "0x{{@@ color_13 @@}}"
+    cyan: "0x{{@@ color_14 @@}}"
+    white: "0x{{@@ color_15 @@}}"
