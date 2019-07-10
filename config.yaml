@@ -2,24 +2,24 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop-links
 variables:
-  color_fg: "f5f5f5"
+  color_fg: f5f5f5
   color_bg: "080808"
   color_00: "080808"
   color_08: "080808"
-  color_01: "ff0000"
-  color_09: "ff0000"
-  color_02: "33ff00"
-  color_10: "33ff00"
-  color_03: "ff0099"
-  color_11: "ff0099"
-  color_04: "0066ff"
-  color_12: "0066ff"
-  color_05: "cc00ff"
-  color_13: "cc00ff"
-  color_06: "00ffff"
-  color_14: "00ffff"
-  color_07: "0d0d0d"
-  color_15: "f5f5f5"
+  color_01: ff0000
+  color_09: ff0000
+  color_02: 33ff00
+  color_10: 33ff00
+  color_03: ff0099
+  color_11: ff0099
+  color_04: 0066ff
+  color_12: 0066ff
+  color_05: cc00ff
+  color_13: cc00ff
+  color_06: 00ffff
+  color_14: 00ffff
+  color_07: 0d0d0d
+  color_15: f5f5f5
   color_black: "{{@@ color_00 @@}}"
   color_red: "{{@@ color_01 @@}}"
   color_green: "{{@@ color_02 @@}}"
@@ -61,6 +61,9 @@ dotfiles:
   f_pulseaudio:
     src: config/pulse/daemon.conf
     dst: ~/.config/pulse/daemon.conf
+  f_zshenv:
+    src: zshenv
+    dst: ~/.zshenv
 profiles:
   CTOGGHA:
     dotfiles:
@@ -74,6 +77,7 @@ profiles:
       - f_clight
       - f_alacritty
       - f_xresources
+      - f_zshenv
   AZATHOTH:
     dotfiles:
       - f_zshrc
@@ -83,3 +87,4 @@ profiles:
       - f_xresources
       - f_kitty
       - f_pulseaudio
+      - f_zshenv

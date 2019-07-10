@@ -3,35 +3,46 @@
 Personal repository of dotfiles managed with
 [dotdrop](https://github.com/deadc0de6/dotdrop) dotfile manager.
 
+Install this repo to `~/.config/dotdrop`
+
 ## todo
 
-- setup minimal nvim config that supports wal colours
-- wpgtk
 - qutebrowser
 - i3-gaps with polybar
 - sway
 - use rclone to avoid the need for dropbox or megasync tray icons (insync and KeePassXC work fine without them)
 
-## Gnome + Budgie
+## GTK
 
-Configuration of the actual desktop will be manual for each wm. Gnome support for status indicators is very poor now but otherwise provides the better desktop experience.
+```sh
+yay -S plata-theme qt5-styleplugins
+```
+
+Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct theme.
+
+## Gnome
+
+Configuration of the actual desktop will be manual
 
 ### Gnome Packages
 
 ```sh
-yay -S gnome gnome-shell-extension-appindicator-git gnome-shell-extension-no-title-bar-git gnome-shell-extension-topicons-plus-git papirus-icon-theme arc-gtk-theme
+yay -S gnome gnome-tweaks xorg-xinit
 ```
 
-```sh
-yay -S budgie-desktop budgie-extras budgie-pixel-saver-applet
-```
+#### Extensions
+
+- Kstatusnotifieritem/appindicator support
+- Unite
+- User themes
+- Cpufreq
 
 ## i3-gaps
 
 ### i3 Packages
 
 ```sh
-yay -S i3-gaps polybar rofi
+yay -S i3-gaps polybar rofi xorg-xinit
 yay -S --asdeps perl-json-xs perl-anyevent-i3
 ```
 

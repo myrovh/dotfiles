@@ -38,12 +38,8 @@ session=${1:-gnome}
 export WM="$session"
 
 case $session in
-budgie)
-	export GDK_backend=x11
-	exec budgie-desktop
-	;;
 gnome)
-	export XDG_CURRENT_DESKTOP=Budgie:GNOME
+	export GDK_BACKEND=x11
 	exec gnome-session
 	;;
 i3)

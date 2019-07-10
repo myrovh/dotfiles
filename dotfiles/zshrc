@@ -53,9 +53,7 @@ fi
 # aliases
 alias drm='docker rm $(docker ps -a -q)'
 alias drmi='docker rmi $(docker images -q)'
-#alias dotdrop='dotdrop --cfg=~/dotfiles/config.yaml'
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
 alias xgnome='startx ~/.xinitrc gnome'
-alias xbudgie='startx ~/.xinitrc budgie'
 alias xi3='startx ~/.xinitrc i3'
-alias wgnome='QT_QPA_PLATFORM=wayland QT_QPA_PLATFORMTHEME=gtk2 XDG_SESSION_TYPE=wayland dbus-run-session gnome-session'
+alias wgnome='QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session'
