@@ -1,3 +1,4 @@
+# {{@@ header() @@}}
 # Font configuration (changes require restart)
 #
 # Important font attributes like antialiasing, subpixel aa, and hinting can be
@@ -62,12 +63,12 @@ visual_bell:
 colors:
   # Default colors
   primary:
-    background: "0x{{@@ colr_bg @@}}"
+    background: "0x{{@@ color_bg @@}}"
     foreground: "0x{{@@ color_fg @@}}"
 
   # Normal colors
   normal:
-    black: "0x{{@@ color_00 @}}"
+    black: "0x{{@@ color_00 @@}}"
     red: "0x{{@@ color_01 @@}}"
     green: "0x{{@@ color_02 @@}}"
     yellow: "0x{{@@ color_03 @@}}"

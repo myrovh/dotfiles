@@ -5,7 +5,7 @@ variables:
   color_fg: f5f5f5
   color_bg: "080808"
   color_00: "080808"
-  color_08: "080808"
+  color_08: "808080"
   color_01: ff0000
   color_09: ff0000
   color_02: 33ff00
@@ -18,7 +18,7 @@ variables:
   color_13: cc00ff
   color_06: 00ffff
   color_14: 00ffff
-  color_07: 0d0d0d
+  color_07: d0d0d0
   color_15: f5f5f5
   color_black: "{{@@ color_00 @@}}"
   color_red: "{{@@ color_01 @@}}"
