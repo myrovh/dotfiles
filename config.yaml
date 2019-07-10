@@ -61,9 +61,9 @@ dotfiles:
   f_pulseaudio:
     src: config/pulse/daemon.conf
     dst: ~/.config/pulse/daemon.conf
-  f_zshenv:
-    src: zshenv
-    dst: ~/.zshenv
+  f_zprofile:
+    src: zprofile
+    dst: ~/.zprofile
 profiles:
   CTOGGHA:
     dotfiles:
@@ -77,7 +77,7 @@ profiles:
       - f_clight
       - f_alacritty
       - f_xresources
-      - f_zshenv
+      - f_zprofile
   AZATHOTH:
     dotfiles:
       - f_zshrc
@@ -87,4 +87,4 @@ profiles:
       - f_xresources
       - f_kitty
       - f_pulseaudio
-      - f_zshenv
+      - f_zprofile

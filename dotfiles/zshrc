@@ -26,30 +26,6 @@ zplug check || zplug install
 # Then, source plugins and add commands to $PATH
 zplug load
 
-# set nvim
-export VISUAL=vim
-export EDITOR=vim
-
-# configure node
-export npm_config_prefix=~/.node_modules
-PATH="$HOME/.node_modules/bin:$PATH"
-PATH="$HOME/.yarn/bin:$PATH"
-
-# set generic bin path
-PATH="$PATH:$HOME/bin"
-
-# set ruby path
-if hash ruby 2>/dev/null; then
-	PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
-	gem_home=$(ruby -e 'print Gem.user_dir')
-	export GEM_HOME=$gem_home
-fi
-
-# set go bin path
-if hash go 2>/dev/null; then
-	PATH="$PATH:$HOME/go/bin"
-fi
-
 # aliases
 alias drm='docker rm $(docker ps -a -q)'
 alias drmi='docker rmi $(docker images -q)'
