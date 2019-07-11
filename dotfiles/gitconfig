@@ -1,3 +1,4 @@
+# {{@@ header() @@}}
 [user]
 name = myrovh
 email = myrovh@yandex.com
@@ -23,4 +24,4 @@ process = git-lfs filter-process
 required = true
 
 [url "git@bitbucket.org:"]
-	insteadOf = https://bitbucket.org/
+insteadOf = https://bitbucket.org/

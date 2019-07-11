@@ -1,4 +1,5 @@
 #!/bin/zsh
+# {{@@ header() @@}}
 
 # not running interactively then bail
 [[ $- != *i* ]] && return
