@@ -64,6 +64,9 @@ dotfiles:
   f_zprofile:
     src: zprofile
     dst: ~/.zprofile
+  d_sway:
+    src: config/sway
+    dst: ~/.config/sway
 profiles:
   CTOGGHA:
     dotfiles:
@@ -78,6 +81,7 @@ profiles:
       - f_alacritty
       - f_xresources
       - f_zprofile
+      - d_sway
   AZATHOTH:
     dotfiles:
       - f_zshrc
@@ -88,3 +92,4 @@ profiles:
       - f_kitty
       - f_pulseaudio
       - f_zprofile
+      - d_sway

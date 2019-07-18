@@ -12,13 +12,19 @@ Install this repo to `~/.config/dotdrop`
 - sway
 - use rclone to avoid the need for dropbox or megasync tray icons (insync and KeePassXC work fine without them)
 
-## GTK
+## GTK + QT
 
 ```sh
 yay -S plata-theme qt5-styleplugins
 ```
 
 Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct theme.
+
+## Sway
+
+```sh
+yay -S sway swaybg swayidle swaylock waybar j4-dmenu-desktop bemenu
+```
 
 ## Gnome
 
