@@ -1,56 +1,51 @@
 #!/bin/sh
+# {{@@ header() @@}}
 
-# xinit defaults {
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
-sysresources=/etc/X11/xinit/.Xresources
-sysmodmap=/etc/X11/xinit/.Xmodmap
+# START defaults
+user_resources=$HOME/.Xresources
+user_modmap=$HOME/.Xmodmap
+sys_resources=/etc/X11/xinit/.Xresources
+sys_modmap=/etc/X11/xinit/.Xmodmap
 
 # merge in defaults and keymaps
-if [ -f $sysresources ]; then
-    xrdb -merge $sysresources
+if [ -f $sys_resources ]; then
+	xrdb -merge $sys_resources
 fi
 
-if [ -f $sysmodmap ]; then
-    xmodmap $sysmodmap
+if [ -f $sys_modmap ]; then
+	xmodmap $sys_modmap
 fi
 
-if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
+if [ -f "$user_resources" ]; then
+	xrdb -merge "$user_resources"
 fi
 
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
+if [ -f "$user_modmap" ]; then
+	xmodmap "$user_modmap"
 fi
 
 # start some nice programs
-
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+	for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
+		[ -x "$f" ] && . "$f"
+	done
+	unset f
 fi
-# }
+# END defaults
 
+session=${1:-gnome}
 
-# session to run if none passed as first arg ($1)
-session=${1:-budgie}
-
-# set environment wm for use in scripts
 export WM="$session"
 
-# Set wal theme
-wal -R
-
-# do NOT put commands below the exec lines
 case $session in
-    budgie)    
-        export XDG_CURRENT_DESKTOP=Budgie:GNOME
-        exec budgie-desktop;;
-    gnome)
-        export GDK_BACKEND=x11
-        exec gnome-session;;
-    *)
-        exec "$session" # Unknown, try running it
+gnome)
+	export GDK_BACKEND=x11
+	exec gnome-session
+	;;
+i3)
+	exec i3
+	;;
+*)
+	exec "$1"
+	;;
 esac

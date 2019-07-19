@@ -1,0 +1,38 @@
+! {{@@ header() @@}}
+! special
+*.foreground:   #{{@@ color_fg @@}}
+*.background:   #{{@@ color_bg @@}}
+*.cursorColor:  #{{@@ color_fg @@}}
+
+! black
+*.color0:       #{{@@ color_00 @@}}
+*.color8:       #{{@@ color_08 @@}}
+
+! red
+*.color1:       #{{@@ color_01 @@}}
+*.color9:       #{{@@ color_09 @@}}
+
+! green
+*.color2:       #{{@@ color_02 @@}}
+*.color10:      #{{@@ color_10 @@}}
+
+! yellow
+*.color3:       #{{@@ color_03 @@}}
+*.color11:      #{{@@ color_11 @@}}
+
+! blue
+*.color4:       #{{@@ color_04 @@}}
+*.color12:      #{{@@ color_12 @@}}
+
+! magenta
+*.color5:       #{{@@ color_05 @@}}
+*.color13:      #{{@@ color_13 @@}}
+
+! cyan
+*.color6:       #{{@@ color_06 @@}}
+*.color14:      #{{@@ color_14 @@}}
+
+! white
+*.color7:       #{{@@ color_07 @@}}
+*.color15:      #{{@@ color_15 @@}}
+

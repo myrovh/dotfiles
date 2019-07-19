@@ -1,67 +1,73 @@
-actions:
-  spacevim: test -e ~/.SpaceVim || curl -sLf https://spacevim.org/install.sh | bash
 config:
-  backup: true
-  banner: true
-  create: true
-  dotpath: dotfiles
-  keepdot: false
-  link_by_default: true
-  longkey: false
-  showdiff: false
-  workdir: ~/.config/dotdrop
+  showdiff: true
+  workdir: ~/.config/dotdrop-links
+  import_variables:
+    - color.yaml
 dotfiles:
-  d_polybar:
-    dst: ~/.config/polybar
-    link: true
-    src: config/polybar
   f_alacritty:
     dst: ~/.config/alacritty/alacritty.yml
-    link: true
     src: config/alacritty/alacritty.yml
   f_clight:
     dst: ~/.config/clight.conf
-    link: true
     src: config/clight.conf
   f_gitconfig:
     dst: ~/.gitconfig
-    link: true
     src: gitconfig
-  f_i3_config:
-    dst: ~/.config/i3/config
-    link: true
-    src: config/i3/config
   f_kitty:
     dst: ~/.config/kitty/kitty.conf
-    link: true
     src: config/kitty/kitty.conf
-  f_rofi:
-    dst: ~/.config/rofi/config
-    link: true
-    src: config/rofi/config
-  f_vim_init:
-    actions:
-      - spacevim
-    dst: ~/.SpaceVim.d/init.toml
-    link: true
-    src: SpaceVim.d/init.toml
   f_xinitrc:
     dst: ~/.xinitrc
-    link: true
     src: xinitrc
   f_zshrc:
     dst: ~/.zshrc
-    link: true
     src: zshrc
+  f_xresources:
+    src: Xresources
+    dst: ~/.Xresources
+  f_pulseaudio:
+    src: config/pulse/daemon.conf
+    dst: ~/.config/pulse/daemon.conf
+  f_zprofile:
+    src: zprofile
+    dst: ~/.zprofile
+  d_sway:
+    src: config/sway
+    dst: ~/.config/sway
+  f_gtk_settings:
+    src: config/gtk-3.0/settings.ini
+    dst: ~/.config/gtk-3.0/settings.ini
+  d_bin:
+    link: link_children
+    src: bin
+    dst: ~/bin
 profiles:
-  CTOGGHA:
+  shell:
     dotfiles:
       - f_zshrc
+      - f_zprofile
       - f_gitconfig
+      - d_bin
+  gui:
+    dotfiles:
+      - f_xinitrc
+      - f_xresources
+      - d_sway
+      - f_gtk_settings
+      - f_alacritty
+      - f_kitty
+  CTOGGHA:
+    include:
+      - shell
   NYOGTHA:
     dotfiles:
-      - f_zshrc
-      - f_xinitrc
-      - f_gitconfig
       - f_clight
-      - f_alacritty
+    include:
+      - shell
+      - gui
+  AZATHOTH:
+    dotfiles:
+      - f_pulseaudio
+    include:
+      - shell
+      - gui

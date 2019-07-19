@@ -1,18 +1,27 @@
+# {{@@ header() @@}}
 [user]
-	name = myrovh
-	email = myrovh@yandex.com
+name = myrovh
+email = myrovh@yandex.com
+
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+diff = auto
+status = auto
+branch = auto
+
 [push]
-	default = current
+default = current
+
 [credential]
 helper = store
+
 [core]
-	autocrlf = input
+autocrlf = input
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
 required = true
+
+[url "git@bitbucket.org:"]
+insteadOf = https://bitbucket.org/

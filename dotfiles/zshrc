@@ -1,14 +1,15 @@
-#!/bin/bash
+#!/bin/zsh
+# {{@@ header() @@}}
 
 # not running interactively then bail
 [[ $- != *i* ]] && return
 
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
-    git clone https://github.com/zplug/zplug ~/.zplug
-    source ~/.zplug/init.zsh && zplug update
+	git clone https://github.com/zplug/zplug ~/.zplug
+	source ~/.zplug/init.zsh && zplug update
 else
-    source ~/.zplug/init.zsh
+	source ~/.zplug/init.zsh
 fi
 
 # zplug plugins
@@ -18,6 +19,7 @@ zplug "mafredri/zsh-async"
 zplug "supercrabtree/k"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "sindresorhus/pure", use:pure.zsh, as:theme
+zplug "petervanderdoes/git-flow-completion"
 
 # install missing plugins
 zplug check || zplug install
@@ -25,16 +27,10 @@ zplug check || zplug install
 # Then, source plugins and add commands to $PATH
 zplug load
 
-# set nvim
-export VISUAL=nvim
-export EDITOR=nvim
-
-# Get wal colours
-(cat ~/.cache/wal/sequences &)
-
 # aliases
-alias vim='nvim'
-alias vi='nvim'
-alias dotdrop='dotdrop --cfg=~/dotfiles/config.yaml'
+alias drm='docker rm $(docker ps -a -q)'
+alias drmi='docker rmi $(docker images -q)'
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
-
+alias xgnome='startx ~/.xinitrc gnome'
+alias xi3='startx ~/.xinitrc i3'
+alias wgnome='QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session'
