@@ -14,6 +14,13 @@ set $term kitty
 # Preferred application launcher
 set $menu j4-dmenu-desktop --dmenu="bemenu -i" --no-generic --term=kitty
 
+### GTK configuration
+#
+exec_always import-gsettings \
+    gtk-theme:gtk-theme-name \
+    icon-theme:gtk-icon-theme-name \
+    cursor-theme:gtk-cursor-theme-name
+
 ### Output configuration
 #
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill

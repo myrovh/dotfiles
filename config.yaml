@@ -34,29 +34,40 @@ dotfiles:
   d_sway:
     src: config/sway
     dst: ~/.config/sway
+  f_gtk_settings:
+    src: config/gtk-3.0/settings.ini
+    dst: ~/.config/gtk-3.0/settings.ini
+  d_bin:
+    link: link_children
+    src: bin
+    dst: ~/bin
 profiles:
-  CTOGGHA:
+  shell:
     dotfiles:
       - f_zshrc
+      - f_zprofile
       - f_gitconfig
+      - d_bin
+  gui:
+    dotfiles:
+      - f_xinitrc
+      - f_xresources
+      - d_sway
+      - f_gtk_settings
+      - f_alacritty
+      - f_kitty
+  CTOGGHA:
+    include:
+      - shell
   NYOGTHA:
     dotfiles:
-      - f_zshrc
-      - f_xinitrc
-      - f_gitconfig
       - f_clight
-      - f_alacritty
-      - f_xresources
-      - f_zprofile
-      - d_sway
+    include:
+      - shell
+      - gui
   AZATHOTH:
     dotfiles:
-      - f_zshrc
-      - f_xinitrc
-      - f_gitconfig
-      - f_alacritty
-      - f_xresources
-      - f_kitty
       - f_pulseaudio
-      - f_zprofile
-      - d_sway
+    include:
+      - shell
+      - gui

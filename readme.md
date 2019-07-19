@@ -15,7 +15,7 @@ Install this repo to `~/.config/dotdrop`
 ## GTK + QT
 
 ```sh
-yay -S plata-theme qt5-styleplugins
+yay -S plata-theme qt5-styleplugins papirus-icon-theme bibata-cursor-theme
 ```
 
 Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct theme.
