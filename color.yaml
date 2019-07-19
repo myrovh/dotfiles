@@ -1,0 +1,35 @@
+variables:
+  color_fg: f5f5f5
+  color_bg: "080808"
+  color_00: "080808"
+  color_08: "808080"
+  color_01: ff0000
+  color_09: ff0000
+  color_02: 33ff00
+  color_10: 33ff00
+  color_03: ff0099
+  color_11: ff0099
+  color_04: 0066ff
+  color_12: 0066ff
+  color_05: cc00ff
+  color_13: cc00ff
+  color_06: 00ffff
+  color_14: 00ffff
+  color_07: d0d0d0
+  color_15: f5f5f5
+  color_black: "{{@@ color_00 @@}}"
+  color_red: "{{@@ color_01 @@}}"
+  color_green: "{{@@ color_02 @@}}"
+  color_yellow: "{{@@ color_03 @@}}"
+  color_blue: "{{@@ color_04 @@}}"
+  color_magenta: "{{@@ color_05 @@}}"
+  color_cyan: "{{@@ color_06 @@}}"
+  color_white: "{{@@ color_07 @@}}"
+  color_black_bright: "{{@@ color_08 @@}}"
+  color_red_bright: "{{@@ color_09 @@}}"
+  color_green_bright: "{{@@ color_10 @@}}"
+  color_yellow_bright: "{{@@ color_11 @@}}"
+  color_blue_bright: "{{@@ color_12 @@}}"
+  color_magenta_bright: "{{@@ color_13 @@}}"
+  color_cyan_bright: "{{@@ color_14 @@}}"
+  color_white_bright: "{{@@ color_15 @@}}"
