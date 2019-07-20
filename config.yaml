@@ -41,6 +41,9 @@ dotfiles:
     link: link_children
     src: bin
     dst: ~/bin
+  d_waybar:
+    src: config/waybar
+    dst: ~/.config/waybar
 profiles:
   shell:
     dotfiles:
@@ -53,9 +56,12 @@ profiles:
       - f_xinitrc
       - f_xresources
       - d_sway
+      - d_waybar
       - f_gtk_settings
       - f_alacritty
       - f_kitty
+    include:
+      - shell
   CTOGGHA:
     include:
       - shell
@@ -63,11 +69,9 @@ profiles:
     dotfiles:
       - f_clight
     include:
-      - shell
       - gui
   AZATHOTH:
     dotfiles:
       - f_pulseaudio
     include:
-      - shell
       - gui
