@@ -1,0 +1,43 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "Gohu GohuFont", monospace;
+  font-size: 11px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(43, 48, 59, 0.5);
+  color: white;
+}
+
+#workspaces button.focused {
+  background: #64727d;
+}
+
+#mode,
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#battery {
+  padding: 0 10px;
+  margin: 0 5px;
+}
+
+#mode {
+  background: #64727d;
+  border-bottom: 3px solid white;
+}
+
+#clock {
+  background-color: #64727d;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
