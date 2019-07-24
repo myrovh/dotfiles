@@ -44,6 +44,10 @@ dotfiles:
   d_waybar:
     src: config/waybar
     dst: ~/.config/waybar
+  d_applications:
+    link: link_children
+    src: local/share/applications
+    dst: ~/.local/share/applications
 profiles:
   shell:
     dotfiles:
@@ -60,6 +64,7 @@ profiles:
       - f_gtk_settings
       - f_alacritty
       - f_kitty
+      - d_applications
     include:
       - shell
   CTOGGHA:
