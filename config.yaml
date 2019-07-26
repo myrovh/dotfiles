@@ -48,6 +48,10 @@ dotfiles:
     link: link_children
     src: local/share/applications
     dst: ~/.local/share/applications
+  d_autostart:
+    link: link_children
+    src: config/autostart
+    dst: ~/.config/autostart
 profiles:
   shell:
     dotfiles:
@@ -65,6 +69,7 @@ profiles:
       - f_alacritty
       - f_kitty
       - d_applications
+      - d_autostart
     include:
       - shell
   CTOGGHA:
