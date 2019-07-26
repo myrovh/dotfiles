@@ -13,7 +13,7 @@ set $right l
 # Preferred terminal emulator
 set $term kitty
 # Preferred application launcher
-set $menu j4-dmenu-desktop --dmenu="bemenu -i" --no-generic --term=kitty
+set $menu rofi -show drun
 # colour Variables
 set $black #{{@@ color_black @@}}
 set $red #{{@@ color_red @@}}

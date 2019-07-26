@@ -1,43 +1,73 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "Gohu GohuFont", monospace;
+  font-family: "misc gohup", monospace;
   font-size: 11px;
   min-height: 0;
 }
 
 window#waybar {
-  background: rgba(43, 48, 59, 0.5);
-  color: white;
+  background: #292b2e;
+  color: #fdf6e3;
 }
 
-#workspaces button.focused {
-  background: #64727d;
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+  color: #1a1a1a;
 }
 
-#mode,
-#clock,
-#cpu,
-#memory,
-#network,
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+  color: #292b2e;
+  background: #1a1a1a;
+}
+
+#workspaces,
+#clock.day,
+#clock.time,
+#clock.date,
 #pulseaudio,
+#backlight,
+#memory,
+#cpu,
+#temperature,
+#battery,
+#tray {
+  background: #1a1a1a;
+}
+
+#workspaces button {
+  padding: 0 2px;
+  color: #fdf6e3;
+}
+#workspaces button.focused {
+  color: #268bd2;
+}
+#workspaces button:hover {
+  color: #2aa198;
+  background: #1a1a1a;
+  border: #1a1a1a;
+}
+
+#pulseaudio {
+  color: #268bd2;
+}
+#memory {
+  color: #2aa198;
+}
+#cpu {
+  color: #6c71c4;
+}
+#battery {
+  color: #859900;
+}
+
+#clock,
+#pulseaudio,
+#backlight,
+#memory,
+#cpu,
+#temperature,
 #battery {
   padding: 0 10px;
-  margin: 0 5px;
-}
-
-#mode {
-  background: #64727d;
-  border-bottom: 3px solid white;
-}
-
-#clock {
-  background-color: #64727d;
-}
-
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: black;
-  }
 }

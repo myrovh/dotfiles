@@ -1,33 +1,76 @@
 {
   "layer": "top",
-  "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["sway/window"],
-  "modules-right": [
-    "idle_inhibitor",
-    "pulseaudio",
-    "network",
-    "cpu",
-    "memory",
-    "clock",
-    "tray"
+  "modules-left": ["sway/workspaces", "custom/right-arrow-dark"],
+  "modules-center": [
+    "custom/left-arrow-dark",
+    "clock#day",
+    "custom/left-arrow-light",
+    "custom/left-arrow-dark",
+    "clock#time",
+    "custom/right-arrow-dark",
+    "custom/right-arrow-light",
+    "clock#date",
+    "custom/right-arrow-dark"
   ],
+  "modules-right": [
+    "custom/left-arrow-dark",
+    "pulseaudio",
+    "custom/left-arrow-light",
+    "custom/left-arrow-dark",
+    "memory",
+    "custom/left-arrow-light",
+    "custom/left-arrow-dark",
+    "cpu", //{%@@ if profile == 'NYOGTHA' @@%}
+    "custom/left-arrow-light",
+    "custom/left-arrow-dark",
+    "battery", //{%@@ endif @@%}//
+    "custom/blank"
+  ],
+
+  "custom/blank": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-dark": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/left-arrow-light": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-dark": {
+    "format": "",
+    "tooltip": false
+  },
+  "custom/right-arrow-light": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "format": "{name}"
+  },
+
+  "clock#day": {
+    "format": "{:%a}",
+    "tooltip": false
+  },
+  "clock#time": {
+    "format": "{:%H:%M}",
+    "tooltip": false
+  },
+  "clock#date": {
+    "format": "{:%m-%d}",
+    "tooltip": false
+  },
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>"
   },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
-  },
   "tray": {
-    "icon-size": 11,
-    "spacing": 10
-  },
-  "clock": {
-    "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-    "format-alt": "{:%Y-%m-%d}"
+    "icon-size": 5,
+    "spacing": 5
   },
   "cpu": {
     "format": "cpu: {usage}%",
@@ -38,7 +81,7 @@
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "wifi: {essid} ({signalStrength}%)",
+    "format-wifi": ": {essid} ({signalStrength}%)",
     "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
     "format-linked": "{ifname} (No IP)",
     "format-disconnected": "Disconnected",
@@ -46,14 +89,22 @@
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "format-bluetooth": "{icon}  {volume}%",
+    "format-bluetooth": "{icon}  {volume}%�",
     "format-muted": "MUTE",
     "format-icons": {
-      "headphones": "",
-      "default": ["", ""]
+      "default": ["", ""]
     },
     "scroll-step": 5,
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", "", "", "", ""]
   }
 }

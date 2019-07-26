@@ -23,7 +23,7 @@ Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct 
 ## Sway
 
 ```sh
-yay -S sway swaybg swayidle swaylock waybar j4-dmenu-desktop bemenu pavucontrol gohufont
+yay -S sway swaybg swayidle swaylock waybar j4-dmenu-desktop bemenu pavucontrol gohufont-powerline
 ```
 
 ## Gnome
