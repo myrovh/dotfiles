@@ -7,19 +7,19 @@
 }
 
 window#waybar {
-  background: #292b2e;
-  color: #fdf6e3;
+  background: #{{@@ plata_dark @@}};
+  color: #{{@@ color_white @@}};
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-  color: #1a1a1a;
+  color: #{{@@ color_black @@}};
 }
 
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-  color: #292b2e;
-  background: #1a1a1a;
+  color: #{{@@ plata_dark @@}};
+  background: #{{@@ color_black @@}};
 }
 
 #workspaces,
@@ -33,33 +33,33 @@ window#waybar {
 #temperature,
 #battery,
 #tray {
-  background: #1a1a1a;
+  background: #{{@@ color_black @@}};
 }
 
 #workspaces button {
   padding: 0 2px;
-  color: #fdf6e3;
+  color: #{{@@ color_white @@}};
 }
 #workspaces button.focused {
-  color: #268bd2;
+  color: #{{@@ color_blue @@}};
 }
 #workspaces button:hover {
-  color: #2aa198;
-  background: #1a1a1a;
-  border: #1a1a1a;
+  color: #{{@@ color_green @@}};
+  background: #{{@@ color_black @@}};
+  border: #{{@@ color_black @@}};
 }
 
 #pulseaudio {
-  color: #268bd2;
+  color: #{{@@ color_cyan @@}};
 }
 #memory {
-  color: #2aa198;
+  color: #{{@@ color_magenta @@}};
 }
 #cpu {
-  color: #6c71c4;
+  color: #{{@@ color_green @@}};
 }
 #battery {
-  color: #859900;
+  color: #{{@@ color_yellow @@}};
 }
 
 #clock,

@@ -17,6 +17,7 @@ variables:
   color_14: 00ffff
   color_07: d0d0d0
   color_15: f5f5f5
+  plata_dark: 1D1D1D
   color_black: "{{@@ color_00 @@}}"
   color_red: "{{@@ color_01 @@}}"
   color_green: "{{@@ color_02 @@}}"
