@@ -17,14 +17,21 @@
     "pulseaudio",
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
+    "network",
+    "custom/left-arrow-light",
+    "custom/left-arrow-dark",
     "memory",
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
-    "cpu", //{%@@ if profile == 'NYOGTHA' @@%}
+    "cpu", 
+    {%@@ if profile == 'NYOGTHA' @@%}
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
-    "battery", //{%@@ endif @@%}//
-    "custom/blank"
+    "battery",
+    {%@@ endif @@%}
+    "custom/left-arrow-light",
+    "custom/left-arrow-dark",
+    "tray"
   ],
 
   "custom/blank": {
@@ -69,8 +76,7 @@
     "format": "<span style=\"italic\">{}</span>"
   },
   "tray": {
-    "icon-size": 5,
-    "spacing": 5
+    "spacing": 10 
   },
   "cpu": {
     "format": "cpu: {usage}%",

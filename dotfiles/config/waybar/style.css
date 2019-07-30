@@ -1,8 +1,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "misc gohup", monospace;
-  font-size: 11px;
+  font-family: "Iosevka Nerd Font", sans-serif;
+  font-size: 9.5pt;
   min-height: 0;
 }
 
@@ -23,16 +23,16 @@ window#waybar {
 }
 
 #workspaces,
-#clock.day,
-#clock.time,
-#clock.date,
+#clock,
 #pulseaudio,
 #backlight,
 #memory,
 #cpu,
 #temperature,
 #battery,
-#tray {
+#tray,
+#network {
+  padding: 0 10px;
   background: #{{@@ color_black @@}};
 }
 
@@ -60,14 +60,4 @@ window#waybar {
 }
 #battery {
   color: #{{@@ color_yellow @@}};
-}
-
-#clock,
-#pulseaudio,
-#backlight,
-#memory,
-#cpu,
-#temperature,
-#battery {
-  padding: 0 10px;
 }
