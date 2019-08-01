@@ -61,11 +61,10 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 #
 ### Visuals
 #
-smart_borders on
+smart_borders no_gaps
 smart_gaps on
 gaps inner 10
-default_border normal 0
-default_floating_border normal 0
+default_border pixel 1
 client.focused $blue $black $white $green $blue
 client.focused_inactive $white $black $white $green $white
 client.unfocused $black $black $white $green $black
