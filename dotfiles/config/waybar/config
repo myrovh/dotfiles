@@ -79,26 +79,26 @@
     "spacing": 10 
   },
   "cpu": {
-    "format": "cpu: {usage}%",
+    "format": "﬙ {usage}%",
     "tooltip": false
   },
   "memory": {
-    "format": "mem: {}%"
+    "format": " {}%"
   },
   "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": ": {essid} ({signalStrength}%)",
-    "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
-    "format-linked": "{ifname} (No IP)",
+    "format-wifi": "直 {essid} ({signalStrength}%)",
+    "format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "format-linked": " {ifname} (No IP)",
     "format-disconnected": "Disconnected",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{icon}  {volume}%�",
-    "format-muted": "MUTE",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "ﱝ",
     "format-icons": {
-      "default": ["", ""]
+      "headphones": "",
+      "default": ["", "奔", "墳"]
     },
     "scroll-step": 5,
     "on-click": "pamixer -t",
@@ -111,6 +111,6 @@
       "critical": 15
     },
     "format": "{icon} {capacity}%",
-    "format-icons": ["", "", "", "", "", "", "", ""]
+    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
   }
 }
