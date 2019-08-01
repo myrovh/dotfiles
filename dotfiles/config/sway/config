@@ -48,6 +48,17 @@ exec swayidle -w \
          before-sleep 'swaylock -f -c 000000'
 
 #
+### Input configuration
+#
+{%@@ if profile == 'NYOGTHA' @@%}
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+    tap enabled
+    natural_scroll enabled
+}
+{%@@ endif @@%}
+
+
+#
 ### Visuals
 #
 smart_borders on
