@@ -24,9 +24,12 @@ PATH="$PATH:$HOME/go/bin"
 # {%@@ endif @@%}
 
 # set ruby path if exists
-# {%@@ if exists_in_path('go') @@%}
+# {%@@ if exists_in_path('ruby') @@%}
 
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 gem_home=$(ruby -e 'print Gem.user_dir')
 export GEM_HOME=$gem_home
-#{%@@ endif @@%}
+# {%@@ endif @@%}
+
+eval "$(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
+export SSH_AUTH_SOCK
