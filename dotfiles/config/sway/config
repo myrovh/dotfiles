@@ -13,7 +13,7 @@ set $right l
 # Preferred terminal emulator
 set $term kitty
 # Preferred application launcher
-set $menu rofi -show drun
+set $menu rofi -show drun -modi ssh,run,drun
 # colour Variables
 set $black #{{@@ color_black @@}}
 set $red #{{@@ color_red @@}}

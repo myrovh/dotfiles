@@ -52,6 +52,9 @@ dotfiles:
     link: link_children
     src: config/autostart
     dst: ~/.config/autostart
+  d_rofi:
+    src: config/rofi
+    dst: ~/.config/rofi
 profiles:
   shell:
     dotfiles:
@@ -70,6 +73,7 @@ profiles:
       - f_kitty
       - d_applications
       - d_autostart
+      - d_rofi
     include:
       - shell
   CTOGGHA:
