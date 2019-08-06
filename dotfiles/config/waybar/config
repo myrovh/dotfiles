@@ -79,11 +79,11 @@
     "spacing": 10 
   },
   "cpu": {
-    "format": "﬙ {usage}%",
+    "format": "﬙ {usage:2}%",
     "tooltip": false
   },
   "memory": {
-    "format": " {}%"
+    "format": " {percentage:2}%"
   },
   "network": {
     "format-wifi": "直 {essid} ({signalStrength}%)",
@@ -105,11 +105,6 @@
     "on-click-right": "pavucontrol"
   },
   "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
     "format": "{icon} {capacity}%",
     "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
   }

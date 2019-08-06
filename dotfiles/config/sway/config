@@ -65,10 +65,10 @@ smart_borders no_gaps
 smart_gaps on
 gaps inner 10
 default_border pixel 1
-client.focused $blue $black $white $green $blue
+client.focused          $blue $black $white $green $blue
 client.focused_inactive $white $black $white $green $white
-client.unfocused $black $black $white $green $black
-client.urgent $red $red $black $green $red
+client.unfocused        $black $black $white $green $black
+client.urgent           $red $red $black $green $red
 
 #
 ### Key bindings
