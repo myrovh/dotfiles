@@ -39,6 +39,8 @@ man() {
 }
 alias drm='docker rm $(docker ps -a -q)'
 alias drmi='docker rmi $(docker images -q)'
+alias drmi_force='docker rmi $(docker images -q) --force'
+alias docker_purge='drm && drmi'
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
 alias xgnome='startx ~/.xinitrc gnome'
 alias xi3='startx ~/.xinitrc i3'
