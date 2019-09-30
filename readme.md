@@ -8,9 +8,11 @@ Install this repo to `~/.config/dotdrop`
 ## todo
 
 - qutebrowser
+- create template files for configs that i3 and sway can share
 - i3-gaps with polybar
 - sway
-- use rclone to avoid the need for dropbox or megasync tray icons (insync and KeePassXC work fine without them)
+- use rclone to avoid the need for megasync tray icons (insync and KeePassXC work fine without them)
+- look into switching to bash
 
 ## GTK + QT
 
@@ -23,7 +25,7 @@ Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct 
 ## Sway
 
 ```sh
-yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono
+yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono rofi
 ```
 
 ## Gnome
