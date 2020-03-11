@@ -1,0 +1,10 @@
+config:
+  showdiff: true
+dotfiles:
+  f_touchpad:
+    dst: /etc/X11/xorg.conf.d/30-touchpad.conf
+    src: system/xorg/touchpad.conf
+profiles:
+  NYOGTHA:
+    dotfiles:
+      - f_touchpad
