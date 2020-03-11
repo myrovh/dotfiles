@@ -4,6 +4,18 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 #
 
+# TODO
+#
+# configure i3 styles
+# configure polybar
+# setup screen timeout and auto lock (with physlock)
+
+#
+# Startup
+#
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+#
 # Variables
 #
 # use these keys for focus, movement, and resize directions when reaching for
@@ -29,7 +41,7 @@ set $ws10 "10"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:iosevka 8
+font pango:iosevka 10
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -157,9 +169,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}

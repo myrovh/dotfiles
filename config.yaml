@@ -47,6 +47,9 @@ dotfiles:
   d_waybar:
     src: config/waybar
     dst: ~/.config/waybar
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
   d_applications:
     link: link_children
     src: local/share/applications
@@ -78,6 +81,7 @@ profiles:
       - d_autostart
       - d_rofi
       - d_i3
+      - d_polybar
     include:
       - shell
   CTOGGHA:

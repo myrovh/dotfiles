@@ -50,7 +50,7 @@ yay -S gnome gnome-tweaks xorg-xinit
 ### i3 Packages
 
 ```sh
-yay -S i3-gaps polybar rofi xorg-xinit kitty kitty-terminfo
+yay -S i3-gaps polybar rofi xorg-xinit kitty kitty-terminfo nerd-fonts-roboto-mono
 yay -S --asdeps perl-json-xs perl-anyevent-i3
 ```
 
