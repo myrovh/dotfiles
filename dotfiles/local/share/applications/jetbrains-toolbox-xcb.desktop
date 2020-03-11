@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Jetbrains-Toolbox (xcb)
+Icon=/opt/jetbrains-toolbox/jetbrains-toolbox
+Exec=env QT_QPA_PLATFORMTHEME=gtk2 QT_QPA_PLATFORM=xcb "/opt/jetbrains-toolbox/jetbrains-toolbox"
+Comment=Manage all your JetBrains Projects and Tools
+Categories=Development;Tools;
+Terminal=false
+StartupWMClass=jetbrains-toolbox
