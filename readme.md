@@ -12,7 +12,7 @@ Install this repo to `~/.config/dotdrop`
 - i3-gaps with polybar
 - sway
 - use rclone to avoid the need for megasync tray icons (insync and KeePassXC work fine without them)
-- look into switching to bash
+- redshift and backlight control with keyboard shortcuts
 
 ## GTK + QT
 
