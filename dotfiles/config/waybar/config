@@ -14,17 +14,14 @@
   ],
   "modules-right": [
     "custom/left-arrow-dark",
-    "pulseaudio",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
     "network",
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
-    "memory",
+    "pulseaudio",
+    {%@@ if profile == 'NYOGTHA' @@%}
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
-    "cpu", 
-    {%@@ if profile == 'NYOGTHA' @@%}
+    "backlight",
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
     "battery",
@@ -59,7 +56,6 @@
     "disable-scroll": true,
     "format": "{name}"
   },
-
   "clock#day": {
     "format": "{:%a}",
     "tooltip": false
@@ -76,7 +72,7 @@
     "format": "<span style=\"italic\">{}</span>"
   },
   "tray": {
-    "spacing": 10 
+    "spacing": 10
   },
   "cpu": {
     "format": "﬙ {usage:2}%",
@@ -86,19 +82,20 @@
     "format": " {percentage:2}%"
   },
   "network": {
-    "format-wifi": "直 {essid} ({signalStrength}%)",
+    "format-wifi": "直 {essid}",
     "format-ethernet": " {ifname} {ipaddr}/{cidr}",
     "format-linked": " {ifname} (No IP)",
     "format-disconnected": "Disconnected",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format-wifi": "Signal {signalStrength}%"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
     "format-muted": "ﱝ",
     "format-icons": {
       "headphones": "",
-      "default": ["", "奔", "墳"]
+      "default": ["奄", "奔", "墳"]
     },
     "scroll-step": 5,
     "on-click": "pamixer -t",
@@ -107,5 +104,12 @@
   "battery": {
     "format": "{icon} {capacity}%",
     "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+  },
+  "backlight": {
+    "device": "amdgpu_bl0",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", ""],
+    "on-scroll-up": "light -A 5",
+    "on-scroll-down": "light -U 5"
   }
 }

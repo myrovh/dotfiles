@@ -52,11 +52,8 @@ window#waybar {
 #pulseaudio {
   color: #{{@@ color_cyan @@}};
 }
-#memory {
+#backlight {
   color: #{{@@ color_magenta @@}};
-}
-#cpu {
-  color: #{{@@ color_green @@}};
 }
 #battery {
   color: #{{@@ color_yellow @@}};

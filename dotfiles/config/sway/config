@@ -35,7 +35,6 @@ exec_always import-gsettings \
 #
 ### Output configuration
 #
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 {%@@ if profile == 'AZATHOTH' @@%}
 output DP-2 position 0,0
 output DP-3 position 2560,-400 transform 270
@@ -56,6 +55,11 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     natural_scroll enabled
 }
 {%@@ endif @@%}
+
+#
+### Startup Apps
+#
+exec ~/.azotebg # sets wallpaper (azote needs to be run manually once to generate this script)
 
 
 #
