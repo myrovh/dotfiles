@@ -31,6 +31,7 @@ window#waybar {
 #temperature,
 #battery,
 #tray,
+#custom-redshift,
 #network {
   padding: 0 10px;
   background: #{{@@ color_black @@}};
@@ -51,6 +52,9 @@ window#waybar {
 
 #pulseaudio {
   color: #{{@@ color_cyan @@}};
+}
+#custom-redshift {
+  color: #{{@@ color_blue @@}};
 }
 #backlight {
   color: #{{@@ color_magenta @@}};

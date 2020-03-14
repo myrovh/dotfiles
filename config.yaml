@@ -1,5 +1,4 @@
 config:
-  showdiff: true
   workdir: ~/.config/dotdrop-links
   import_variables:
     - color.yaml
@@ -31,6 +30,9 @@ dotfiles:
   f_zprofile:
     src: zshenv
     dst: ~/.zshenv
+  d_redshift:
+    dst: ~/.config/redshift
+    src: config/redshift
   d_sway:
     src: config/sway
     dst: ~/.config/sway
@@ -68,32 +70,39 @@ profiles:
       - f_zprofile
       - f_gitconfig
       - d_bin
-  gui:
+  applications:
     dotfiles:
-      - f_xinitrc
-      - f_xresources
+      - f_kitty
+      - f_alacritty
+  gui_wayland:
+    dotfiles:
+      - f_gtk_settings
       - d_sway
       - d_waybar
-      - f_gtk_settings
-      - f_alacritty
-      - f_kitty
-      - d_applications
-      - d_autostart
       - d_rofi
-      - d_i3
-      - d_polybar
+      - d_redshift
     include:
       - shell
+      - applications
+  gui_x11:
+    dotfiles:
+      - d_i3
+      - f_xinitrc
+      - f_xresources
+      - f_gtk_settings
+      - d_autostart
+      - d_rofi
+    include:
+      - shell
+      - applications
   CTOGGHA:
     include:
       - shell
   NYOGTHA:
-    dotfiles:
-      - f_clight
     include:
-      - gui
+      - gui_wayland
   AZATHOTH:
     dotfiles:
       - f_pulseaudio
     include:
-      - gui
+      - gui_wayland

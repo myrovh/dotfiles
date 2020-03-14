@@ -18,6 +18,9 @@
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
     "pulseaudio",
+    "custom/left-arrow-light",
+    "custom/left-arrow-dark",
+    "custom/redshift",
     {%@@ if profile == 'NYOGTHA' @@%}
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
@@ -107,9 +110,17 @@
   },
   "backlight": {
     "device": "amdgpu_bl0",
-    "format": "{percent}% {icon}",
+    "format": "{icon} {percent}%",
     "format-icons": ["", "", "", ""],
     "on-scroll-up": "light -A 5",
     "on-scroll-down": "light -U 5"
+  },
+  "custom/redshift": {
+    "exec": "~/.config/waybar/redshift.sh | jq --unbuffered --compact-output",
+    "on-click": "~/.config/redshift/toggle.sh",
+    "return-type": "json",
+    "interval": 60,
+    "format": "{icon}",
+    "format-icons": ["", "ﯦ"]
   }
 }
