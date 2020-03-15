@@ -9,6 +9,9 @@ dotfiles:
   f_clight:
     dst: ~/.config/clight.conf
     src: config/clight.conf
+  f_swaynag:
+    dst: ~/.config/swaynag/config
+    src: config/swaynag.conf
   f_gitconfig:
     dst: ~/.gitconfig
     src: gitconfig
@@ -80,6 +83,8 @@ profiles:
   gui_wayland:
     dotfiles:
       - f_gtk_settings
+      - f_xresources
+      - f_swaynag
       - d_sway
       - d_waybar
       - d_wofi

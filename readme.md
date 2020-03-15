@@ -5,11 +5,6 @@ Personal repository of dotfiles managed with
 
 Install this repo to `~/.config/dotdrop`
 
-## todo
-
-- sway (physlock lock with auto lock and keyboard activation)
-- poweroff, suspend and reboot shortcuts
-
 ## GTK + QT
 
 ```sh
@@ -22,6 +17,14 @@ Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct 
 
 ```sh
 yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono wofi pamixer azote redshift-wlr-gamma-control-git fg
+```
+
+### Optional
+
+wdisplays is useful for laptops where you might want to plug in a one time external display. It works like arandr.
+
+```sh
+yay -S wdisplays-git
 ```
 
 ## Gnome
@@ -62,3 +65,4 @@ Git config is current user specific. Make sure ssh keys are being loaded via Kee
 
 - [slimline](https://github.com/mgee/slimline)
 - [spaceship](https://github.com/denysdovhan/spaceship-prompt)
+- [Powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k/)
