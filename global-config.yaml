@@ -3,8 +3,18 @@ config:
 dotfiles:
   f_touchpad:
     dst: /etc/X11/xorg.conf.d/30-touchpad.conf
-    src: system/xorg/touchpad.conf
+    src: etc/X11/touchpad.conf
+  f_issue:
+    src: etc/issue
+    dst: /etc/issue
 profiles:
+  CTOGGHA:
+    dotfiles:
+      - f_issue
   NYOGTHA:
     dotfiles:
       - f_touchpad
+      - f_issue
+  AZATHOTH:
+    dotfiles:
+      - f_issue
