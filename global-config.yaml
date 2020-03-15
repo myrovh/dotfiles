@@ -7,14 +7,18 @@ dotfiles:
   f_issue:
     src: etc/issue
     dst: /etc/issue
+  f_logind:
+    src: etc/systemd/logind.conf
+    dst: /etc/systemd/logind.conf
 profiles:
   CTOGGHA:
     dotfiles:
       - f_issue
   NYOGTHA:
     dotfiles:
-      - f_touchpad
       - f_issue
+      - f_logind
   AZATHOTH:
     dotfiles:
       - f_issue
+      - f_logind
