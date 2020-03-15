@@ -36,6 +36,9 @@ dotfiles:
   d_sway:
     src: config/sway
     dst: ~/.config/sway
+  d_wofi:
+    src: config/wofi
+    dst: ~/.config/wofi
   d_i3:
     src: config/i3
     dst: ~/.config/i3
@@ -79,7 +82,7 @@ profiles:
       - f_gtk_settings
       - d_sway
       - d_waybar
-      - d_rofi
+      - d_wofi
       - d_redshift
     include:
       - shell

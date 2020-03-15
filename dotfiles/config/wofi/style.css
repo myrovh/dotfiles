@@ -1,0 +1,38 @@
+window {
+  font-family: "RobotoMono Nerd Font";
+  font-size: 18px;
+  margin: 5px;
+  background-color: #{{@@ color_bg @@}};
+  color: #{{@@ color_fg @@}};
+}
+
+#input {
+  font-size: 18px;
+  border-radius: 0;
+  border-width: 2px;
+  border-color: #{{@@ plata_dark @@}};
+  background: #{{@@ color_bg @@}};
+  color: #{{@@ color_fg @@}};
+  margin: 5px;
+}
+
+#entry:selected {
+  border: none;
+}
+
+#inner-box {
+  margin: 5px;
+}
+
+#outer-box {
+  border: 2px solid #{{@@ plata_dark @@}};
+}
+
+#scroll {
+  margin: 5px;
+}
+
+#text {
+  margin: 5px;
+  color: #{{@@ color_fg @@}};
+}

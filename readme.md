@@ -12,7 +12,6 @@ Install this repo to `~/.config/dotdrop`
 - sway
 - use rclone to avoid the need for megasync tray icons (insync and KeePassXC work fine without them)
 - redshift and backlight control with keyboard shortcuts
-- configure wofi to replace rofi
 
 ## GTK + QT
 
@@ -25,7 +24,7 @@ Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct 
 ## Sway
 
 ```sh
-yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono rofi pamixer azote redshift-wlr-gamma-control-git
+yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono wofi pamixer azote redshift-wlr-gamma-control-git fg
 ```
 
 ## Gnome
