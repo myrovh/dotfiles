@@ -14,6 +14,7 @@ set $right l
 set $term kitty
 # Preferred application launcher
 set $menu wofi --allow-images --show drun
+set $cmenu wofi --show run
 # colour Variables
 set $black #{{@@ color_black @@}}
 set $red #{{@@ color_red @@}}
@@ -87,6 +88,14 @@ client.urgent           $red $red $black $green $red
 
     # start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+Shift+d exec $cmenu
+
+    # function keys
+    bindsym XF86MonBrightnessUp exec light -A 5
+    bindsym XF86MonBrightnessDown exec light -U 5
+    bindsym XF86AudioMute exec pamixer -t
+    bindsym XF86AudioLowerVolume exec pamixer -d 5
+    bindsym XF86AudioRaiseVolume exec pamixer -i 5
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

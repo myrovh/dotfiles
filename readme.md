@@ -7,11 +7,8 @@ Install this repo to `~/.config/dotdrop`
 
 ## todo
 
-- qutebrowser
-- create template files for configs that i3 and sway can share
-- sway
-- use rclone to avoid the need for megasync tray icons (insync and KeePassXC work fine without them)
-- redshift and backlight control with keyboard shortcuts
+- sway (physlock lock with auto lock and keyboard activation)
+- poweroff, suspend and reboot shortcuts
 
 ## GTK + QT
 
