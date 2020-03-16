@@ -1,37 +1,37 @@
 #!/bin/sh
 # {{@@ header() @@}}
 
+# set qt theme
 export QT_QPA_PLATFORMTHEME=gtk2
+
+# add local bin files to path
 PATH="$PATH:$HOME/bin"
 
-# configure node and npm if node exists
 # {%@@ if exists_in_path('node') @@%}
-
+# add bin files installed by npm to path
 export npm_config_prefix=~/.node_modules
 PATH="$HOME/.node_modules/bin:$PATH"
 # {%@@ endif @@%}
 
-# set yarn bin if exists
 # {%@@ if exists_in_path('yarn') @@%}
-
+# add bin files installed by yarn to path
 PATH="$HOME/.yarn/bin:$PATH"
 # {%@@ endif @@%}
 
-# set go path if exists
 # {%@@ if exists_in_path('go') @@%}
-
+# set add bin files installed by go to path
 PATH="$PATH:$HOME/go/bin"
 # {%@@ endif @@%}
 
-# set ruby path if exists
 # {%@@ if exists_in_path('ruby') @@%}
-
+# set add bin files installed by gem to path
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 gem_home=$(ruby -e 'print Gem.user_dir')
 export GEM_HOME=$gem_home
 # {%@@ endif @@%}
 
 # {%@@ if exists_in_path('gnome-keyring-daemon') @@%}
+# run gnome-keyring-daemon used by keepassXC to add ssh keys
 eval "$(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
 export SSH_AUTH_SOCK
 # {%@@ endif @@%}
