@@ -5,6 +5,10 @@ Personal repository of dotfiles managed with
 
 Install this repo to `~/.config/dotdrop`
 
+## todo
+
+run physlock with a systemd rule to ensure computer is always locked on suspend
+
 ## GTK + QT
 
 ```sh
