@@ -3,7 +3,28 @@
 Personal repository of dotfiles managed with
 [dotdrop](https://github.com/deadc0de6/dotdrop) dotfile manager.
 
-Install this repo to `~/.config/dotdrop`
+## Initial Setup
+
+### Install an aur manager
+
+Make sure `base-devel` and `git` are installed.
+
+If you are going to install the shell profile also install `zsh` and change your users shell with `chsh -s /bin/zsh`
+
+```sh
+git clone https://aur.archlinux.org/yay-bin.git ~/build/yay-bin
+cd ~/build/yay-bin && makepkg -si
+```
+
+### Clone and install repo
+
+```sh
+yay -S dotdrop
+git clone https://github.com/myrovh/dotfiles.git ~/.config/dotdrop
+dotdrop install -p ${PROFILE}
+```
+
+Once the initial setup is done and you at lease installed the `shell` profile you can relog into zsh and run `dropglobal` to setup system configs (`sudo` needs to be installed and configured).
 
 ## todo
 
