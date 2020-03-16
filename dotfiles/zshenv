@@ -31,5 +31,7 @@ gem_home=$(ruby -e 'print Gem.user_dir')
 export GEM_HOME=$gem_home
 # {%@@ endif @@%}
 
+# {%@@ if exists_in_path('gnome-keyring-daemon') @@%}
 eval "$(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
 export SSH_AUTH_SOCK
+# {%@@ endif @@%}
