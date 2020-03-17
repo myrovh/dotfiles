@@ -91,3 +91,15 @@ Git config is current user specific. Make sure ssh keys are being loaded via Kee
 - [slimline](https://github.com/mgee/slimline)
 - [spaceship](https://github.com/denysdovhan/spaceship-prompt)
 - [Powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k/)
+
+## CTOGGHA Setup
+
+1. Setup systemd-resolved
+   - `ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf`
+   - `systemctl enable systemd-resolved`
+2. Copy `/etc/systemctl/network` files from dotfiles repo
+3. Enable networkd, ssh and iwd
+   - `systemctl enable systemd-networkd`
+   - `systemctl enable iwd`
+   - `systemctl enable sshd`
+4. Use `iwctl` to connect to a wifi endpoint
