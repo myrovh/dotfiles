@@ -62,3 +62,6 @@ window#waybar {
 #battery {
   color: #{{@@ color_yellow @@}};
 }
+#cpu {
+  color: #{{@@ color_green @@}};
+}

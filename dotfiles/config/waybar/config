@@ -31,6 +31,9 @@
     {%@@ endif @@%}
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
+    "cpu",
+    "custom/left-arrow-light",
+    "custom/left-arrow-dark",
     "tray"
   ],
 
