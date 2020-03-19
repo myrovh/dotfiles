@@ -3,6 +3,16 @@
 Personal repository of dotfiles managed with
 [dotdrop](https://github.com/deadc0de6/dotdrop) dotfile manager.
 
+## todo
+
+- add docker compose and image config files to repo
+- put all docker images behind the letsencrypt proxy using nginx virtual host configs
+- fix up rutorrent configs
+- enable files access via network (samba or nfs)
+- enable remote access to files
+- allow file back up via rsync
+- setup media program (jellyfish?)
+
 ## Initial Setup
 
 ### Install an aur manager
