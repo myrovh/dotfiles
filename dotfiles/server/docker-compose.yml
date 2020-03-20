@@ -6,10 +6,10 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Australia/Melbourne
+      - TZ={{@@ timezone @@}}
     volumes:
-      - /mnt/zstorage/dconfig/smokeping:/config
-      - /mnt/zstorage/ddata/smokeping:/data
+      - {{@@ config_dir @@}}/smokeping:/config
+      - {{@@ data_dir @@}}/smokeping:/data
     ports:
       - 9090:80
     restart: unless-stopped
@@ -19,9 +19,9 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Australia/Melbourne
+      - TZ={{@@ timezone @@}}
     volumes:
-      - /mnt/zstorage/dconfig/heimdall:/config
+      - {{@@ config_dir @@}}/heimdall:/config
     ports:
       - 9980:80
       - 9443:443
@@ -32,14 +32,14 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Australia/Melbourne
-      - URL={{@@ DOMAIN @@}}
+      - TZ={{@@ timezone @@}}
+      - URL={{@@ env['DOMAIN'] @@}}
       - VALIDATION=dns
       - DNSPLUGIN=dnsimple
-      - SUBDOMAINS={{@@ SUBDOMAINS @@}}
-      - EMAIL={{@@ EMAIL @@}}
+      - SUBDOMAINS={{@@ env['SUBDOMAINS'] @@}}
+      - EMAIL={{@@ env['EMAIL'] @@}}
     volumes:
-      - /mnt/zstorage/dconfig/letsencrypt:/config
+      - {{@@ config_dir @@}}/letsencrypt:/config
     ports:
       - 443:443
     restart: unless-stopped
@@ -49,9 +49,9 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Australia/Melbourne
+      - TZ={{@@ timezone @@}}
     volumes:
-      - /mnt/zstorage/dconfig/freshrss:/config
+      - {{@@ config_dir @@}}/freshrss:/config
     ports:
       - 4545:80
     restart: unless-stopped
@@ -61,9 +61,9 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Australia/Melbourne
+      - TZ={{@@ timezone @@}}
     volumes:
-      - /mnt/zstorage/dconfig/grocy:/config
+      - {{@@ config_dir @@}}/grocy:/config
     ports:
       - 9283:80
     restart: unless-stopped
@@ -85,12 +85,12 @@ services:
       - 6881:6881/udp
     environment:
       - VPNSP=pia
-      - USER={{@@ PIA_USER @@}}
-      - TZ=Australia/Melbourne
+      - USER={{@@ env['PIA_USER'] @@}}
+      - TZ={{@@ timezone @@}}
       - EXTRA_SUBNETS=10.10.10.0/24
       # PIA only
       - REGION=Singapore
-      - PASSWORD={{@@ PIA_PASS @@}}
+      - PASSWORD={{@@ env['PIA_PASS'] @@}}
       - ENCRYPTION=strong
     restart: always
   rutorrent:
@@ -101,6 +101,6 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /mnt/zstorage/dconfig/rutorrent:/config
-      - /mnt/zstorage/ddata/rutorrent:/downloads
+      - {{@@ config_dir @@}}/rutorrent:/config
+      - {{@@ data_dir @@}}/rutorrent:/downloads
     restart: unless-stopped

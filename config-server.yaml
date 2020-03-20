@@ -2,6 +2,12 @@ config:
 variables:
   config_dir: /mnt/zstorage/dconfig
   data_dir: /mnt/zstorage/ddata
+  timezone: Australia/Melbourne
 dotfiles:
+  f_docker:
+    dst: "{{@@ config_dir @@}}/docker-compose.yml"
+    src: server/docker-compose.yml
 profiles:
   CTOGGHA:
+    dotfiles:
+      - f_docker
