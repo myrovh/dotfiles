@@ -1,0 +1,106 @@
+version: "3.7"
+services:
+  smokeping:
+    image: linuxserver/smokeping
+    container_name: smokeping
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Melbourne
+    volumes:
+      - /mnt/zstorage/dconfig/smokeping:/config
+      - /mnt/zstorage/ddata/smokeping:/data
+    ports:
+      - 9090:80
+    restart: unless-stopped
+  heimdall:
+    image: linuxserver/heimdall
+    container_name: heimdall
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Melbourne
+    volumes:
+      - /mnt/zstorage/dconfig/heimdall:/config
+    ports:
+      - 9980:80
+      - 9443:443
+    restart: unless-stopped
+  letsencrypt:
+    image: linuxserver/letsencrypt
+    container_name: letsencrypt
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Melbourne
+      - URL={{@@ DOMAIN @@}}
+      - VALIDATION=dns
+      - DNSPLUGIN=dnsimple
+      - SUBDOMAINS={{@@ SUBDOMAINS @@}}
+      - EMAIL={{@@ EMAIL @@}}
+    volumes:
+      - /mnt/zstorage/dconfig/letsencrypt:/config
+    ports:
+      - 443:443
+    restart: unless-stopped
+  freshrss:
+    image: linuxserver/freshrss
+    container_name: freshrss
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Melbourne
+    volumes:
+      - /mnt/zstorage/dconfig/freshrss:/config
+    ports:
+      - 4545:80
+    restart: unless-stopped
+  grocy:
+    image: linuxserver/grocy
+    container_name: grocy
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Australia/Melbourne
+    volumes:
+      - /mnt/zstorage/dconfig/grocy:/config
+    ports:
+      - 9283:80
+    restart: unless-stopped
+  pia:
+    image: qmcgaw/private-internet-access
+    container_name: pia
+    cap_add:
+      - NET_ADMIN
+    network_mode: bridge
+    init: true
+    ports:
+      - 8888:8888/tcp
+      - 8388:8388/tcp
+      - 8388:8388/udp
+      # rutorrent ports
+      - 9999:80
+      - 5000:5000
+      - 51413:51413
+      - 6881:6881/udp
+    environment:
+      - VPNSP=pia
+      - USER={{@@ PIA_USER @@}}
+      - TZ=Australia/Melbourne
+      - EXTRA_SUBNETS=10.10.10.0/24
+      # PIA only
+      - REGION=Singapore
+      - PASSWORD={{@@ PIA_PASS @@}}
+      - ENCRYPTION=strong
+    restart: always
+  rutorrent:
+    image: linuxserver/rutorrent
+    container_name: rutorrent
+    network_mode: "service:pia"
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /mnt/zstorage/dconfig/rutorrent:/config
+      - /mnt/zstorage/ddata/rutorrent:/downloads
+    restart: unless-stopped
