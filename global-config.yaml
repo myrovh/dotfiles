@@ -1,0 +1,32 @@
+config:
+  showdiff: true
+dotfiles:
+  f_touchpad:
+    dst: /etc/X11/xorg.conf.d/30-touchpad.conf
+    src: etc/X11/touchpad.conf
+  f_issue:
+    src: etc/issue
+    dst: /etc/issue
+  f_logind:
+    src: etc/systemd/logind.conf
+    dst: /etc/systemd/logind.conf
+  d_network:
+    src: etc/systemd/network
+    dst: /etc/systemd/network
+  f_sshd_config:
+    src: etc/sshd_config
+    dst: /etc/ssh/sshd_config
+profiles:
+  CTOGGHA:
+    dotfiles:
+      - f_issue
+      - d_network
+      - f_sshd_config
+  NYOGTHA:
+    dotfiles:
+      - f_issue
+      - f_logind
+  AZATHOTH:
+    dotfiles:
+      - f_issue
+      - f_logind
