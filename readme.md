@@ -5,13 +5,12 @@ Personal repository of dotfiles managed with
 
 ## todo
 
-- add docker compose and image config files to repo
 - put all docker images behind the letsencrypt proxy using nginx virtual host configs
 - fix up rutorrent configs
-- enable files access via network (samba or nfs)
-- enable remote access to files
 - allow file back up via rsync
 - setup media program (jellyfish?)
+- setup projectsend
+- fix network so packets can get through both routers
 
 ## Initial Setup
 
@@ -35,10 +34,6 @@ dotdrop install -p ${PROFILE}
 ```
 
 Once the initial setup is done and you at lease installed the `shell` profile you can relog into zsh and run `dropglobal` to setup system configs (`sudo` needs to be installed and configured).
-
-## todo
-
-run physlock with a systemd rule to ensure computer is always locked on suspend
 
 ## GTK + QT
 
