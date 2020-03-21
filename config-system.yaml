@@ -2,8 +2,8 @@ config:
   showdiff: true
 dotfiles:
   f_touchpad:
-    dst: /etc/X11/xorg.conf.d/30-touchpad.conf
     src: etc/X11/touchpad.conf
+    dst: /etc/X11/xorg.conf.d/30-touchpad.conf
   f_issue:
     src: etc/issue
     dst: /etc/issue
@@ -16,12 +16,16 @@ dotfiles:
   f_sshd_config:
     src: etc/sshd_config
     dst: /etc/ssh/sshd_config
+  f_samba_config:
+    src: etc/samba/smb.conf
+    dst: /etc/samba/smb.conf
 profiles:
   CTOGGHA:
     dotfiles:
       - f_issue
       - d_network
       - f_sshd_config
+      - f_samba_config
   NYOGTHA:
     dotfiles:
       - f_issue
