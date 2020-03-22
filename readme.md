@@ -5,7 +5,10 @@ Personal repository of dotfiles managed with
 
 ## todo
 
-- allow file back up via rsync
+- change zstorage setup. move data and config to their own subvolumes underneath an enc dataset so that both data and config are encrypted while still allowing unencrytped datasets to be created later. Also move the mount point for the new datasets to /srv/data|config
+- zfs encryption password prompt on boot
+- weekly zfs scrub systemd script
+- setup home as a zfs dataset
 - fix network so packets can get through both routers
 - try traefik instead of nginx + ldap [example](https://jellyfin.org/docs/general/networking/traefik.html)
 - put all docker images behind the letsencrypt proxy using nginx virtual host configs
@@ -29,6 +32,7 @@ Personal repository of dotfiles managed with
   - pyload
   - syncthing
   - booksonic
+- fix screen off and suspend timer on sway (probably need to swtich back to swaylock)
 
 ## Initial Setup
 
@@ -126,3 +130,9 @@ Git config is current user specific. Make sure ssh keys are being loaded via Kee
    - `systemctl enable iwd`
    - `systemctl enable sshd`
 4. Use `iwctl` to connect to a wifi endpoint
+
+### Rsync
+
+`server_destination` is the root folder where you want the local_folder to be copied.
+
+`rsync -r ${local_folder} -e 'ssh -p ${server_ssh_port}' --progress 10.10.10.60:${server_destination}`
