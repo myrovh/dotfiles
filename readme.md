@@ -5,12 +5,30 @@ Personal repository of dotfiles managed with
 
 ## todo
 
-- put all docker images behind the letsencrypt proxy using nginx virtual host configs
-- fix up rutorrent configs
 - allow file back up via rsync
-- setup media program (jellyfish?)
-- setup projectsend
 - fix network so packets can get through both routers
+- try traefik instead of nginx + ldap [example](https://jellyfin.org/docs/general/networking/traefik.html)
+- put all docker images behind the letsencrypt proxy using nginx virtual host configs
+- [dynamic dns script](https://developer.dnsimple.com/ddns/)
+- fix up rutorrent configs
+- additional containers
+  - jellyfish
+  - projectsend
+  - [wiki.js](https://wiki.js.org/)
+  - [SeaTable](https://seatable.io/)
+  - Bookstack
+  - airsonic
+  - calibre-web
+  - lazylibrarian
+  - lychee
+  - minetest
+  - muximux
+  - photoshow
+  - piwigo
+  - pydio
+  - pyload
+  - syncthing
+  - booksonic
 
 ## Initial Setup
 
