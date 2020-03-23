@@ -5,10 +5,8 @@ Personal repository of dotfiles managed with
 
 ## todo
 
-- change zstorage setup. move data and config to their own subvolumes underneath an enc dataset so that both data and config are encrypted while still allowing unencrytped datasets to be created later. Also move the mount point for the new datasets to /srv/data|config
 - zfs encryption password prompt on boot
 - weekly zfs scrub systemd script
-- setup home as a zfs dataset
 - fix network so packets can get through both routers
 - try traefik instead of nginx + ldap [example](https://jellyfin.org/docs/general/networking/traefik.html)
 - put all docker images behind the letsencrypt proxy using nginx virtual host configs
