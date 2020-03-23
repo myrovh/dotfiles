@@ -1,5 +1,7 @@
 config:
   showdiff: true
+  import_variables:
+    - config-server.yaml
 dotfiles:
   f_touchpad:
     src: etc/X11/touchpad.conf
