@@ -1,7 +1,7 @@
 config:
 variables:
-  config_dir: /mnt/zstorage/dconfig
-  data_dir: /mnt/zstorage/ddata
+  config_dir: /srv/config
+  data_dir: /srv/data
   timezone: Australia/Melbourne
 dotfiles:
   f_docker:
