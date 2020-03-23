@@ -33,6 +33,8 @@ Personal repository of dotfiles managed with
   - syncthing
   - booksonic
 - fix screen off and suspend timer on sway (probably need to swtich back to swaylock)
+- use variables to set screen and lock timeouts so that desktop and laptop can have different times
+- setup keybinds for screenshots and video recording wayland tools
 
 ## Initial Setup
 
@@ -73,10 +75,10 @@ yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono w
 
 ### Optional
 
-wdisplays is useful for laptops where you might want to plug in a one time external display. It works like arandr.
+wdisplays is useful for laptops where you might want to plug in a one time external display. It works like arandr. wf-recorder and grim can be used for video and screenshots respectively. Slup allow you to define an area to shoot with the mouse.
 
 ```sh
-yay -S wdisplays-git
+yay -S wdisplays-git wf-recorder grim slurp
 ```
 
 ## Gnome
