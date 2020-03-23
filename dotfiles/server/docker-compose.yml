@@ -26,23 +26,6 @@ services:
       - 9980:80
       - 9443:443
     restart: unless-stopped
-  letsencrypt:
-    image: linuxserver/letsencrypt
-    container_name: letsencrypt
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ={{@@ timezone @@}}
-      - URL={{@@ env['DOMAIN'] @@}}
-      - VALIDATION=dns
-      - DNSPLUGIN=dnsimple
-      - SUBDOMAINS={{@@ env['SUBDOMAINS'] @@}}
-      - EMAIL={{@@ env['EMAIL'] @@}}
-    volumes:
-      - {{@@ config_dir @@}}/letsencrypt:/config
-    ports:
-      - 443:443
-    restart: unless-stopped
   freshrss:
     image: linuxserver/freshrss
     container_name: freshrss
