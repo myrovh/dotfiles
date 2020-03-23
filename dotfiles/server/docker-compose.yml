@@ -9,7 +9,7 @@ services:
       - TZ={{@@ timezone @@}}
     volumes:
       - {{@@ config_dir @@}}/smokeping:/config
-      - {{@@ data_dir @@}}/smokeping:/data
+      - {{@@ data_dir @@}}/containers/smokeping:/data
     ports:
       - 9090:80
     restart: unless-stopped
@@ -85,5 +85,5 @@ services:
       - PGID=1000
     volumes:
       - {{@@ config_dir @@}}/rutorrent:/config
-      - {{@@ data_dir @@}}/rutorrent:/downloads
+      - {{@@ data_dir @@}}/containers/rutorrent:/downloads
     restart: unless-stopped

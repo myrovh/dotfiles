@@ -137,4 +137,4 @@ Git config is current user specific. Make sure ssh keys are being loaded via Kee
 
 `server_destination` is the root folder where you want the local_folder to be copied.
 
-`rsync -r ${local_folder} -e 'ssh -p ${server_ssh_port}' --progress 10.10.10.60:${server_destination}`
+`rsync -av ${local_folder} -e 'ssh -p ${server_ssh_port}' --progress 10.10.10.60:${server_destination}`
