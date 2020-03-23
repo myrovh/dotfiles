@@ -1,7 +1,7 @@
 config:
   showdiff: true
   import_variables:
-    - config-server.yaml
+  - config-server.yaml
 dotfiles:
   f_touchpad:
     src: etc/X11/touchpad.conf
@@ -21,18 +21,22 @@ dotfiles:
   f_samba_config:
     src: etc/samba/smb.conf
     dst: /etc/samba/smb.conf
+  f_monitorix.conf:
+    src: etc/monitorix/monitorix.conf
+    dst: /etc/monitorix/monitorix.conf
 profiles:
   CTOGGHA:
     dotfiles:
-      - f_issue
-      - d_network
-      - f_sshd_config
-      - f_samba_config
+    - f_issue
+    - d_network
+    - f_sshd_config
+    - f_samba_config
+    - f_monitorix.conf
   NYOGTHA:
     dotfiles:
-      - f_issue
-      - f_logind
+    - f_issue
+    - f_logind
   AZATHOTH:
     dotfiles:
-      - f_issue
-      - f_logind
+    - f_issue
+    - f_logind
