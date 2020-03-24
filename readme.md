@@ -7,7 +7,6 @@ Personal repository of dotfiles managed with
 
 - zfs encryption password prompt on boot
 - weekly zfs scrub systemd script
-- fix network so packets can get through both routers
 - try traefik instead of nginx + ldap [example](https://jellyfin.org/docs/general/networking/traefik.html)
 - put all docker images behind the letsencrypt proxy using nginx virtual host configs
 - [dynamic dns script](https://developer.dnsimple.com/ddns/)
@@ -33,6 +32,8 @@ Personal repository of dotfiles managed with
 - fix screen off and suspend timer on sway (probably need to swtich back to swaylock)
 - use variables to set screen and lock timeouts so that desktop and laptop can have different times
 - setup keybinds for screenshots and video recording wayland tools
+- megasync needs sway rules set so its always in floating mode
+- set startup applications: keepassxc, insync, mega, spideroak
 
 ## Initial Setup
 
