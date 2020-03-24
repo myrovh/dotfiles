@@ -7,6 +7,7 @@ Personal repository of dotfiles managed with
 
 - zfs encryption password prompt on boot
 - weekly zfs scrub systemd script
+- dnsimple update ip address systemd script
 - try traefik instead of nginx + ldap [example](https://jellyfin.org/docs/general/networking/traefik.html)
 - put all docker images behind the letsencrypt proxy using nginx virtual host configs
 - [dynamic dns script](https://developer.dnsimple.com/ddns/)
