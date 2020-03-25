@@ -1,7 +1,7 @@
 config:
   showdiff: true
   import_variables:
-  - config-server.yaml
+    - config-server.yaml
 dotfiles:
   f_touchpad:
     src: etc/X11/touchpad.conf
@@ -12,31 +12,35 @@ dotfiles:
   f_logind:
     src: etc/systemd/logind.conf
     dst: /etc/systemd/logind.conf
-  d_network:
-    src: etc/systemd/network
-    dst: /etc/systemd/network
+  f_systemd_network:
+    src: etc/systemd/network/25-wireless.network
+    dst: /etc/systemd/network/25-wireless.network
   f_sshd_config:
     src: etc/sshd_config
     dst: /etc/ssh/sshd_config
   f_samba_config:
     src: etc/samba/smb.conf
     dst: /etc/samba/smb.conf
-  f_monitorix.conf:
+  f_monitorix_config:
     src: etc/monitorix/monitorix.conf
     dst: /etc/monitorix/monitorix.conf
+  f_zfs_load_keys:
+    src: etc/systemd/system/zfs-load-key.service
+    dst: /etc/systemd/system/zfs-load-key.service
 profiles:
   CTOGGHA:
     dotfiles:
-    - f_issue
-    - d_network
-    - f_sshd_config
-    - f_samba_config
-    - f_monitorix.conf
+      - f_issue
+      - f_systemd_network
+      - f_zfs_load_keys
+      - f_sshd_config
+      - f_samba_config
+      - f_monitorix_config
   NYOGTHA:
     dotfiles:
-    - f_issue
-    - f_logind
+      - f_issue
+      - f_logind
   AZATHOTH:
     dotfiles:
-    - f_issue
-    - f_logind
+      - f_issue
+      - f_logind
