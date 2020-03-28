@@ -68,7 +68,7 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.smokeping.rule=Host(`freshrss.{{@@ env['DOMAIN'] @@}}`)"
+      - "traefik.http.routers.freshrss.rule=Host(`freshrss.{{@@ env['DOMAIN'] @@}}`)"
       - "traefik.http.routers.freshrss.entrypoints=websecure"
       - "traefik.http.routers.freshrss.tls.certresolver=letsencryptcert"
   grocy:
