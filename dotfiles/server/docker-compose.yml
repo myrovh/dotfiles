@@ -1,5 +1,33 @@
 version: "3.7"
 services:
+  traefik:
+    image: "traefik:v2.2"
+    container_name: "traefik"
+    command:
+      #- "--log.level=DEBUG"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  heimdall:
+    image: linuxserver/heimdall
+    container_name: heimdall
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{@@ timezone @@}}
+    volumes:
+      - {{@@ config_dir @@}}/heimdall:/config
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.heimdall.rule=Host(`heimdall.127.0.0.1`)"
+      - "traefik.http.routers.heimdall.entrypoints=web"
   smokeping:
     image: linuxserver/smokeping
     container_name: smokeping
@@ -10,22 +38,11 @@ services:
     volumes:
       - {{@@ config_dir @@}}/smokeping:/config
       - {{@@ data_dir @@}}/containers/smokeping:/data
-    ports:
-      - 9090:80
     restart: unless-stopped
-  heimdall:
-    image: linuxserver/heimdall
-    container_name: heimdall
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ={{@@ timezone @@}}
-    volumes:
-      - {{@@ config_dir @@}}/heimdall:/config
-    ports:
-      - 9980:80
-      - 9443:443
-    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.smokeping.rule=Host(`smokeping.127.0.0.1`)"
+      - "traefik.http.routers.smokeping.entrypoints=web"
   freshrss:
     image: linuxserver/freshrss
     container_name: freshrss
