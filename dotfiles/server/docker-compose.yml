@@ -9,11 +9,21 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.letsencryptcert.acme.dnschallenge=true"
+      - "--certificatesresolvers.letsencryptcert.acme.dnschallenge.provider=dnsimple"
+      - "--certificatesresolvers.letsencryptcert.acme.email={{@@ env['EMAIL'] @@}}"
+      - "--certificatesresolvers.letsencryptcert.acme.storage=/letsencrypt/acme.json"
     ports:
       - "80:80"
-      - "8080:8080"
+      - "443:443"
+      - "9090:8080"
+    environment:
+      - "DNSIMPLE_OAUTH_TOKEN={{@@ env['DNSIMPLE_TOKEN'] @@}}"
+      - "DNSIMPLE_BASE_URL={{@@ env['DNSIMPLE_BASE_URL'] @@}}"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "{{@@ config_dir @@}}/letsencrypt:/letsencrypt"
   heimdall:
     image: linuxserver/heimdall
     container_name: heimdall
@@ -26,8 +36,9 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.heimdall.rule=Host(`heimdall.127.0.0.1`)"
-      - "traefik.http.routers.heimdall.entrypoints=web"
+      - "traefik.http.routers.heimdall.rule=Host(`heimdall.{{@@ env['DOMAIN'] @@}}`)"
+      - "traefik.http.routers.heimdall.entrypoints=websecure"
+      - "traefik.http.routers.heimdall.tls.certresolver=letsencryptcert"
   smokeping:
     image: linuxserver/smokeping
     container_name: smokeping
@@ -41,8 +52,9 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.smokeping.rule=Host(`smokeping.127.0.0.1`)"
-      - "traefik.http.routers.smokeping.entrypoints=web"
+      - "traefik.http.routers.smokeping.rule=Host(`smokeping.{{@@ env['DOMAIN'] @@}}`)"
+      - "traefik.http.routers.smokeping.entrypoints=websecure"
+      - "traefik.http.routers.smokeping.tls.certresolver=letsencryptcert"
   freshrss:
     image: linuxserver/freshrss
     container_name: freshrss
@@ -52,9 +64,12 @@ services:
       - TZ={{@@ timezone @@}}
     volumes:
       - {{@@ config_dir @@}}/freshrss:/config
-    ports:
-      - 4545:80
     restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.smokeping.rule=Host(`freshrss.{{@@ env['DOMAIN'] @@}}`)"
+      - "traefik.http.routers.freshrss.entrypoints=websecure"
+      - "traefik.http.routers.freshrss.tls.certresolver=letsencryptcert"
   grocy:
     image: linuxserver/grocy
     container_name: grocy
@@ -64,9 +79,12 @@ services:
       - TZ={{@@ timezone @@}}
     volumes:
       - {{@@ config_dir @@}}/grocy:/config
-    ports:
-      - 9283:80
     restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.grocy.rule=Host(`grocy.{{@@ env['DOMAIN'] @@}}`)"
+      - "traefik.http.routers.grocy.entrypoints=websecure"
+      - "traefik.http.routers.grocy.tls.certresolver=letsencryptcert"
   pia:
     image: qmcgaw/private-internet-access
     container_name: pia
