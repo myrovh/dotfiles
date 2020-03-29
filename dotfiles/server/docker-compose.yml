@@ -32,7 +32,7 @@ services:
       - PGID=1000
       - TZ={{@@ timezone @@}}
     volumes:
-      - {{@@ config_dir @@}}/heimdall:/config
+      - "{{@@ config_dir @@}}/heimdall:/config"
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
@@ -47,8 +47,8 @@ services:
       - PGID=1000
       - TZ={{@@ timezone @@}}
     volumes:
-      - {{@@ config_dir @@}}/smokeping:/config
-      - {{@@ data_dir @@}}/containers/smokeping:/data
+      - "{{@@ config_dir @@}}/smokeping:/config"
+      - "{{@@ data_dir @@}}/containers/smokeping:/data"
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
@@ -62,7 +62,7 @@ services:
       - PGID=1000
       - TZ={{@@ timezone @@}}
     volumes:
-      - {{@@ config_dir @@}}/freshrss:/config
+      - "{{@@ config_dir @@}}/freshrss:/config"
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
@@ -77,7 +77,7 @@ services:
       - PGID=1000
       - TZ={{@@ timezone @@}}
     volumes:
-      - {{@@ config_dir @@}}/grocy:/config
+      - "{{@@ config_dir @@}}/grocy:/config"
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
@@ -93,14 +93,15 @@ services:
       - TZ={{@@ timezone @@}}
       - DOCKER_MODS=linuxserver/calibre-web:calibre
     volumes:
-      - {{@@ data_dir @@}}/books:/books
-      - {{@@ config_dir @@}}:/config
+      - "{{@@ data_dir @@}}/books:/books"
+      - "{{@@ config_dir @@}}:/config"
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.calibre.rule=Host(`calibre-web.{{@@ env['DOMAIN'] @@}}`)"
       - "traefik.http.routers.calibre.entrypoints=websecure"
       - "traefik.http.routers.calibre.tls.certresolver=letsencryptcert"
+      - "traefik.http.middlewares.calibremiddleware.headers.sslproxyheaders.X-Scheme=https"
   pia:
     image: qmcgaw/private-internet-access
     container_name: pia
@@ -135,6 +136,6 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - {{@@ config_dir @@}}/rutorrent:/config
-      - {{@@ data_dir @@}}/containers/rutorrent:/downloads
+      - "{{@@ config_dir @@}}/rutorrent:/config"
+      - "{{@@ data_dir @@}}/containers/rutorrent:/downloads"
     restart: unless-stopped
