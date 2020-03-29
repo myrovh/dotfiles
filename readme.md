@@ -5,10 +5,12 @@ Personal repository of dotfiles managed with
 
 ## todo
 
+- setup prometheus export system and traefik data to it
 - weekly zfs scrub systemd script
 - dnsimple update ip address systemd script
 - [dynamic dns script](https://developer.dnsimple.com/ddns/)
 - fix up rutorrent configs
+- figure out how to get smokeping and web-calibre working with ssl. they don't work by default its not clear what is different with those servers as opposed to the other servers that just work out of the box
 - additional containers
   - jellyfish
   - projectsend
@@ -16,7 +18,6 @@ Personal repository of dotfiles managed with
   - [SeaTable](https://seatable.io/)
   - Bookstack
   - airsonic
-  - calibre-web
   - lazylibrarian
   - lychee
   - minetest
