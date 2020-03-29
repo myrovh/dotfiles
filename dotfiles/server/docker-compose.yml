@@ -53,8 +53,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.smokeping.rule=Host(`smokeping.{{@@ env['DOMAIN'] @@}}`)"
-      - "traefik.http.routers.smokeping.entrypoints=websecure"
-      - "traefik.http.routers.smokeping.tls.certresolver=letsencryptcert"
+      - "traefik.http.routers.smokeping.entrypoints=web"
   freshrss:
     image: linuxserver/freshrss
     container_name: freshrss
