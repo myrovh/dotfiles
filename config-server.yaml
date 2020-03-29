@@ -1,4 +1,5 @@
 config:
+  showdiff: true
 variables:
   config_dir: /srv/config
   data_dir: /srv/data
