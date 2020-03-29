@@ -84,6 +84,23 @@ services:
       - "traefik.http.routers.grocy.rule=Host(`grocy.{{@@ env['DOMAIN'] @@}}`)"
       - "traefik.http.routers.grocy.entrypoints=websecure"
       - "traefik.http.routers.grocy.tls.certresolver=letsencryptcert"
+  calibre-web:
+    image: linuxserver/calibre-web
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{@@ timezone @@}}
+      - DOCKER_MODS=linuxserver/calibre-web:calibre
+    volumes:
+      - {{@@ data_dir @@}}/books:/books
+      - {{@@ config_dir @@}}:/config
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.calibre.rule=Host(`calibre-web.{{@@ env['DOMAIN'] @@}}`)"
+      - "traefik.http.routers.calibre.entrypoints=websecure"
+      - "traefik.http.routers.calibre.tls.certresolver=letsencryptcert"
   pia:
     image: qmcgaw/private-internet-access
     container_name: pia
