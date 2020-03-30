@@ -94,7 +94,7 @@ services:
       - DOCKER_MODS=linuxserver/calibre-web:calibre
     volumes:
       - "{{@@ data_dir @@}}/books:/books"
-      - "{{@@ config_dir @@}}:/config"
+      - "{{@@ config_dir @@}}/calibre-web:/config"
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
