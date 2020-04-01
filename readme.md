@@ -6,11 +6,10 @@ Personal repository of dotfiles managed with
 ## todo
 
 - setup prometheus export system and traefik data to it
-- weekly zfs scrub systemd script
-- dnsimple update ip address systemd script
+- setup granfa to view prometheus metrics
+- every 6 months zfs scrub systemd script
 - [dynamic dns script](https://developer.dnsimple.com/ddns/)
 - fix up rutorrent configs
-- figure out how to get smokeping and web-calibre working with ssl. they don't work by default its not clear what is different with those servers as opposed to the other servers that just work out of the box
 - additional containers
   - jellyfish
   - projectsend
@@ -26,13 +25,11 @@ Personal repository of dotfiles managed with
   - piwigo
   - pydio
   - pyload
-  - syncthing
-  - booksonic
 - fix screen off and suspend timer on sway (probably need to swtich back to swaylock)
 - use variables to set screen and lock timeouts so that desktop and laptop can have different times
 - setup keybinds for screenshots and video recording wayland tools
 - megasync needs sway rules set so its always in floating mode
-- set startup applications: keepassxc, insync, mega, spideroak
+- set startup applications: keepassxc, insync, mega
 
 ## Initial Setup
 
