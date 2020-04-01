@@ -9,6 +9,7 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
       - "--entrypoints.websecure.address=:443"
       - "--certificatesresolvers.letsencryptcert.acme.dnschallenge=true"
       - "--certificatesresolvers.letsencryptcert.acme.dnschallenge.provider=dnsimple"
@@ -53,7 +54,8 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.smokeping.rule=Host(`smokeping.{{@@ env['DOMAIN'] @@}}`)"
-      - "traefik.http.routers.smokeping.entrypoints=web"
+      - "traefik.http.routers.smokeping.entrypoints=websecure"
+      - "traefik.http.routers.smokeping.tls.certresolver=letsencryptcert"
   freshrss:
     image: linuxserver/freshrss
     container_name: freshrss
@@ -91,7 +93,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ={{@@ timezone @@}}
-      - DOCKER_MODS=linuxserver/calibre-web:calibre
     volumes:
       - "{{@@ data_dir @@}}/books:/books"
       - "{{@@ config_dir @@}}/calibre-web:/config"
@@ -101,7 +102,6 @@ services:
       - "traefik.http.routers.calibre.rule=Host(`calibre-web.{{@@ env['DOMAIN'] @@}}`)"
       - "traefik.http.routers.calibre.entrypoints=websecure"
       - "traefik.http.routers.calibre.tls.certresolver=letsencryptcert"
-      - "traefik.http.middlewares.calibremiddleware.headers.sslproxyheaders.X-Scheme=https"
   pia:
     image: qmcgaw/private-internet-access
     container_name: pia
