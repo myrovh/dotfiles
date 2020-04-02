@@ -5,8 +5,11 @@ Personal repository of dotfiles managed with
 
 ## todo
 
+- switch to use zfs-mount-generator (should automatically ask for encryption key _and_ mount)
+- use network-manager with iwd instead of networkctl
 - setup prometheus export system and traefik data to it
 - setup granfa to view prometheus metrics
+- automatic snapshots of zfs datasets
 - every 6 months zfs scrub systemd script
 - [dynamic dns script](https://developer.dnsimple.com/ddns/)
 - fix up rutorrent configs
