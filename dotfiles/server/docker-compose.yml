@@ -18,7 +18,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "9090:8080"
+      - "8990:8080"
     environment:
       - "DNSIMPLE_OAUTH_TOKEN={{@@ env['DNSIMPLE_TOKEN'] @@}}"
       - "DNSIMPLE_BASE_URL={{@@ env['DNSIMPLE_BASE_URL'] @@}}"
