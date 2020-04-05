@@ -56,6 +56,25 @@ services:
       - "traefik.http.routers.smokeping.rule=Host(`smokeping.{{@@ env['DOMAIN'] @@}}`)"
       - "traefik.http.routers.smokeping.entrypoints=websecure"
       - "traefik.http.routers.smokeping.tls.certresolver=letsencryptcert"
+  airsonic:
+    image: linuxserver/airsonic
+    container_name: airsonic
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ={{@@ timezone @@}}
+      - CONTEXT_PATH="airsonic.{{@@ env['DOMAIN'] @@}}"
+    volumes:
+      - "{{@@ config_dir @@}}/airsonic:/config"
+      - "{{@@ data_dir @@}}/music:/music"
+      - "{{@@ data_dir @@}}/containers/airsonic/playlists:/playlists"
+      - "{{@@ data_dir @@}}/podcasts:/podcasts"
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.airsonic.rule=Host(`airsonic.{{@@ env['DOMAIN'] @@}}`)"
+      - "traefik.http.routers.airsonic.entrypoints=websecure"
+      - "traefik.http.routers.airsonic.tls.certresolver=letsencryptcert"
   freshrss:
     image: linuxserver/freshrss
     container_name: freshrss
