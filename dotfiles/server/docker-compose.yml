@@ -121,14 +121,6 @@ services:
       - "traefik.http.routers.calibre.rule=Host(`calibre-web.{{@@ env['DOMAIN'] @@}}`)"
       - "traefik.http.routers.calibre.entrypoints=websecure"
       - "traefik.http.routers.calibre.tls.certresolver=letsencryptcert"
-  prometheus:
-    image: prom/prometheus
-    container_name: prometheus
-    ports:
-      - 9099:9090
-    volumes:
-      - "{{@@ config_dir @@}}/prometheus:/etc/prometheus"
-    restart: unless-stopped
   pia:
     image: qmcgaw/private-internet-access
     container_name: pia
