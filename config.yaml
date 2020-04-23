@@ -69,6 +69,10 @@ dotfiles:
   d_rofi:
     src: config/rofi
     dst: ~/.config/rofi
+  d_spacevim.d:
+    link: link
+    src: SpaceVim.d
+    dst: ~/.SpaceVim.d
 profiles:
   shell:
     dotfiles:
@@ -112,5 +116,6 @@ profiles:
   AZATHOTH:
     dotfiles:
       - f_pulseaudio
+      - d_spacevim.d
     include:
       - gui_wayland
