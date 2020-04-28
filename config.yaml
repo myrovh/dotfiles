@@ -73,6 +73,10 @@ dotfiles:
     link: link
     src: SpaceVim.d
     dst: ~/.SpaceVim.d
+  f_spacemacs:
+    link: link
+    src: spacemacs
+    dst: ~/.spacemacs
 profiles:
   shell:
     dotfiles:
@@ -84,6 +88,8 @@ profiles:
     dotfiles:
       - f_kitty
       - f_alacritty
+      - f_spacemacs
+      - d_spacevim.d
   gui_wayland:
     dotfiles:
       - f_gtk_settings
@@ -116,6 +122,5 @@ profiles:
   AZATHOTH:
     dotfiles:
       - f_pulseaudio
-      - d_spacevim.d
     include:
       - gui_wayland
