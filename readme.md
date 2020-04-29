@@ -5,29 +5,9 @@ Personal repository of dotfiles managed with
 
 ## todo
 
-- switch to use zfs-mount-generator (should automatically ask for encryption key _and_ mount)
-- use network-manager with iwd instead of networkctl
-- setup prometheus export system and traefik data to it
-- setup granfa to view prometheus metrics
 - automatic snapshots of zfs datasets
 - every 6 months zfs scrub systemd script
 - [dynamic dns script](https://developer.dnsimple.com/ddns/)
-- fix up rutorrent configs
-- additional containers
-  - jellyfish
-  - projectsend
-  - [wiki.js](https://wiki.js.org/)
-  - [SeaTable](https://seatable.io/)
-  - Bookstack
-  - airsonic
-  - lazylibrarian
-  - lychee
-  - minetest
-  - muximux
-  - photoshow
-  - piwigo
-  - pydio
-  - pyload
 - fix screen off and suspend timer on sway (probably need to swtich back to swaylock)
 - use variables to set screen and lock timeouts so that desktop and laptop can have different times
 - setup keybinds for screenshots and video recording wayland tools
@@ -79,23 +59,6 @@ wdisplays is useful for laptops where you might want to plug in a one time exter
 yay -S wdisplays-git wf-recorder grim slurp
 ```
 
-## Gnome
-
-Configuration of the actual desktop will be manual
-
-### Gnome Packages
-
-```sh
-yay -S gnome gnome-tweaks xorg-xinit
-```
-
-#### Extensions
-
-- Kstatusnotifieritem/appindicator support
-- Unite
-- User themes
-- Cpufreq
-
 ## i3-gaps
 
 ### i3 Packages
@@ -107,7 +70,7 @@ yay -S --asdeps perl-json-xs perl-anyevent-i3
 
 ## git
 
-Git config is current user specific. Make sure ssh keys are being loaded via KeePassXC or other ssh agent helper. As all Bitbucket requests are processed as ssh not https.
+Git config is current user specific. Make sure ssh keys are being loaded via KeePassXC or other ssh agent helper because all Bitbucket requests are processed as ssh not https.
 
 ## zsh
 
@@ -118,21 +81,3 @@ Git config is current user specific. Make sure ssh keys are being loaded via Kee
 - [slimline](https://github.com/mgee/slimline)
 - [spaceship](https://github.com/denysdovhan/spaceship-prompt)
 - [Powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k/)
-
-## CTOGGHA Setup
-
-1. Setup systemd-resolved
-   - `ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf`
-   - `systemctl enable systemd-resolved`
-2. Copy `/etc/systemctl/network` files from dotfiles repo
-3. Enable networkd, ssh and iwd
-   - `systemctl enable systemd-networkd`
-   - `systemctl enable iwd`
-   - `systemctl enable sshd`
-4. Use `iwctl` to connect to a wifi endpoint
-
-### Rsync
-
-`server_destination` is the root folder where you want the local_folder to be copied.
-
-`rsync -av ${local_folder} -e 'ssh -p ${server_ssh_port}' --progress 10.10.10.60:${server_destination}`

@@ -12,26 +12,10 @@ dotfiles:
   f_logind:
     src: etc/systemd/logind.conf
     dst: /etc/systemd/logind.conf
-  f_sshd_config:
-    src: etc/sshd_config
-    dst: /etc/ssh/sshd_config
-  f_samba_config:
-    src: etc/samba/smb.conf
-    dst: /etc/samba/smb.conf
-  f_monitorix_config:
-    src: etc/monitorix/monitorix.conf
-    dst: /etc/monitorix/monitorix.conf
-  f_prometheus:
-    src: etc/prometheus/prometheus.yml
-    dst: /etc/prometheus/prometheus.yml
 profiles:
   CTOGGHA:
     dotfiles:
       - f_issue
-      - f_sshd_config
-      - f_samba_config
-      - f_monitorix_config
-      - f_prometheus
   NYOGTHA:
     dotfiles:
       - f_issue
