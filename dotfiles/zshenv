@@ -1,6 +1,9 @@
 #!/bin/sh
 # {{@@ header() @@}}
 
+export VISUAL=nvim
+export EDITOR=nvim
+
 # set qt theme
 export QT_QPA_PLATFORMTHEME=gtk2
 

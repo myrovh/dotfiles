@@ -16,7 +16,6 @@ fi
 zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "yous/vanilli.sh"
 zplug "mafredri/zsh-async"
-zplug "supercrabtree/k"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "sindresorhus/pure", use:pure.zsh, as:theme
 zplug "petervanderdoes/git-flow-completion"
@@ -37,15 +36,19 @@ man() {
 		LESS_TERMCAP_us=$'\e[01;32m' \
 		command man "$@"
 }
-alias drm='docker rm $(docker ps -a -q)'
-alias drmi='docker rmi $(docker images -q)'
-alias drmi_force='docker rmi $(docker images -q) --force'
-alias docker_purge='drm && drmi'
+alias vim='nvim'
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
+
 alias xgnome='startx ~/.xinitrc gnome'
 alias xi3='startx ~/.xinitrc i3'
 alias wsway='_JAVA_AWT_WM_NONREPARENTING=1 MOZ_ENABLE_WAYLAND=1 XDG_SESSION_TYPE=wayland XDG_CURRENT_DESKTOP=Unity sway'
 alias wgnome='MOZ_ENABLE_WAYLAND=1 QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session gnome-session'
+
 alias drop='dotdrop install'
 alias dropsystem='sudo dotdrop --cfg=/home/myrovh/.config/dotdrop/config-system.yaml install'
 alias dropserver='eval $(grep -v "^#" ~/.config/dotdrop/.env) dotdrop --cfg=~/.config/dotdrop/config-server.yaml install'

@@ -1,3 +1,8 @@
+actions:
+  pre:
+    spacemacs: test -e ~/.emacs.d || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+  post:
+    emacsserver: systemctl --user enable --now emacs
 config:
   workdir: ~/.config/dotdrop-links
   import_variables:
@@ -77,6 +82,9 @@ dotfiles:
     link: link
     src: spacemacs
     dst: ~/.spacemacs
+    actions:
+      - spacemacs
+      - emacsserver
 profiles:
   shell:
     dotfiles:

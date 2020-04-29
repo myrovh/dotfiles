@@ -37,6 +37,10 @@ dotdrop install -p ${PROFILE}
 
 Once the initial setup is done and you at lease installed the `shell` profile you can relog into zsh and run `dropglobal` to setup system configs (`sudo` needs to be installed and configured).
 
+## Vim
+
+`curl -sLf https://spacevim.org/install.sh | bash`
+
 ## GTK + QT
 
 ```sh
@@ -73,6 +77,12 @@ yay -S --asdeps perl-json-xs perl-anyevent-i3
 Git config is current user specific. Make sure ssh keys are being loaded via KeePassXC or other ssh agent helper because all Bitbucket requests are processed as ssh not https.
 
 ## zsh
+
+Nerd fonts needs to be installed and working with the terminal for lsd to work properly.
+
+```sh
+yay -S lsd
+```
 
 [Awesome zsh](https://github.com/unixorn/awesome-zsh-plugins)
 
