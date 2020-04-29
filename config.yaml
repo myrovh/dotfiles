@@ -1,6 +1,8 @@
 actions:
   pre:
-    spacemacs: test -e ~/.emacs.d || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    spacemacs:
+      test -e ~/.emacs.d || git clone https://github.com/syl20bnr/spacemacs
+      ~/.emacs.d
   post:
     emacsserver: systemctl --user enable --now emacs
 config:
@@ -85,9 +87,13 @@ dotfiles:
     actions:
       - spacemacs
       - emacsserver
+  f_p10k:
+    src: p10k.zsh
+    dst: ~/.p10k.zsh
 profiles:
   shell:
     dotfiles:
+      - f_p10k
       - f_zshrc
       - f_zprofile
       - f_gitconfig
