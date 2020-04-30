@@ -88,6 +88,7 @@ dotfiles:
       - spacemacs
       - emacsserver
   f_p10k:
+    link: link
     src: p10k.zsh
     dst: ~/.p10k.zsh
 profiles:

@@ -41,6 +41,8 @@ zinit light romkatv/powerlevel10k
 
 # end Zinit commands
 
+ZLE_RPROMPT_INDENT=0
+
 # aliases
 man() {
 	LESS_TERMCAP_md=$'\e[01;31m' \
