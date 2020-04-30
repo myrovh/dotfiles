@@ -28,6 +28,8 @@ zinit light-mode for \
 
 # Zinit commands
 
+zinit light yous/vanilli.sh
+
 zinit wait lucid for \
   atinit"zicompinit; zicdreplay" \
       zdharma/fast-syntax-highlighting \
