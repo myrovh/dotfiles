@@ -29,6 +29,7 @@ dotfiles:
     dst: ~/.xinitrc
     src: xinitrc
   f_zshrc:
+    link: link
     dst: ~/.zshrc
     src: zshrc
   f_xresources:
