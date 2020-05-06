@@ -4,7 +4,7 @@
 export VISUAL=nvim
 export EDITOR=nvim
 
-# set qt theme
+# set qt to use gtk theme
 export QT_QPA_PLATFORMTHEME=gtk2
 
 # add local bin files to path

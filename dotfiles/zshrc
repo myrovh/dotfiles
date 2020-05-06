@@ -42,24 +42,26 @@ zinit wait lucid for \
   atload"_zsh_autosuggest_start" \
       zsh-users/zsh-autosuggestions
 
+zinit ice wait"0c" lucid reset \
+    atclone"local P=${${(M)OSTYPE:#*darwin*}:+g}
+            \${P}sed -i \
+            '/DIR/c\DIR 38;5;63;1' LS_COLORS; \
+            \${P}dircolors -b LS_COLORS > c.zsh" \
+    atpull'%atclone' pick"c.zsh" nocompile'!' \
+    atload'zstyle ":completion:*" list-colors “${(s.:.)LS_COLORS}”'
+zinit light trapd00r/LS_COLORS
+
 # prompt
 zinit ice wait'!' lucid atload'source ~/.p10k.zsh; _p9k_precmd' nocd
 zinit light romkatv/powerlevel10k
 
 # end Zinit commands
 
+# variables
 ZLE_RPROMPT_INDENT=0
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # aliases
-man() {
-	LESS_TERMCAP_md=$'\e[01;31m' \
-		LESS_TERMCAP_me=$'\e[0m' \
-		LESS_TERMCAP_se=$'\e[0m' \
-		LESS_TERMCAP_so=$'\e[01;44;33m' \
-		LESS_TERMCAP_ue=$'\e[0m' \
-		LESS_TERMCAP_us=$'\e[01;32m' \
-		command man "$@"
-}
 alias vim='nvim'
 alias ls='exa'
 alias l='exa'
