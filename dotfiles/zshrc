@@ -1,5 +1,4 @@
 #!/bin/zsh
-# {{@@ header() @@}}
 
 # not running interactively then bail
 [[ $- != *i* ]] && return
@@ -28,14 +27,22 @@ zinit light-mode for \
 
 # Zinit commands
 
-zinit light yous/vanilli.sh
+# shell bin files
+zinit wait"1" lucid from"gh-r" as"null" for \
+     sbin"fzf"          junegunn/fzf-bin \
+     sbin"**/fd"        @sharkdp/fd \
+     sbin"**/bat"       @sharkdp/bat \
+     sbin"exa* -> exa"  ogham/exa
 
+# zsh scripts
 zinit wait lucid for \
+  yous/vanilli.sh \
   atinit"zicompinit; zicdreplay" \
       zdharma/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start" \
       zsh-users/zsh-autosuggestions
 
+# prompt
 zinit ice wait'!' lucid atload'source ~/.p10k.zsh; _p9k_precmd' nocd
 zinit light romkatv/powerlevel10k
 
@@ -54,11 +61,11 @@ man() {
 		command man "$@"
 }
 alias vim='nvim'
-alias ls='lsd'
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='ls --tree'
+alias ls='exa'
+alias l='exa'
+alias la='exa -a'
+alias ll='exa -l'
+alias lla='exa -la'
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
 
 alias xgnome='startx ~/.xinitrc gnome'

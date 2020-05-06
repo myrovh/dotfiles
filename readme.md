@@ -52,7 +52,7 @@ Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct 
 ## Sway
 
 ```sh
-yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono wofi pamixer azote redshift-wlr-gamma-control-git jq mako polkit-gnome alacritty
+yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono nerd-fonts-iosevka wofi pamixer azote redshift-wlr-gamma-control-git jq mako polkit-gnome alacritty
 ```
 
 ### Optional
@@ -76,13 +76,9 @@ yay -S --asdeps perl-json-xs perl-anyevent-i3
 
 Git config is current user specific. Make sure ssh keys are being loaded via KeePassXC or other ssh agent helper because all Bitbucket requests are processed as ssh not https.
 
-## zsh
+## Alacritty
 
-Nerd fonts needs to be installed and working with the terminal for lsd to work properly.
-
-```sh
-yay -S lsd
-```
+Alacritty uses Iosevka Nerd Font
 
 [Awesome zsh](https://github.com/unixorn/awesome-zsh-plugins)
 
