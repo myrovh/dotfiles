@@ -66,10 +66,6 @@ dotfiles:
   d_polybar:
     src: config/polybar
     dst: ~/.config/polybar
-  d_applications:
-    link: link_children
-    src: local/share/applications
-    dst: ~/.local/share/applications
   d_autostart:
     link: link_children
     src: config/autostart
@@ -88,6 +84,9 @@ dotfiles:
     actions:
       - spacemacs
       - emacsserver
+  f_emacs.desktop:
+    src: local/share/applications/emacs.desktop
+    dst: ~/.local/share/applications/emacs.desktop
   f_p10k:
     link: link
     src: p10k.zsh
@@ -95,48 +94,47 @@ dotfiles:
 profiles:
   shell:
     dotfiles:
-      - f_p10k
-      - f_zshrc
-      - f_zprofile
-      - f_gitconfig
       - d_bin
+      - f_gitconfig
+      - f_p10k
+      - f_zprofile
+      - f_zshrc
   applications:
     dotfiles:
-      - f_kitty
-      - f_alacritty
-      - f_spacemacs
       - d_spacevim.d
+      - f_alacritty
+      - f_emacs.desktop
+      - f_kitty
+      - f_spacemacs
   gui_wayland:
     dotfiles:
-      - f_gtk_settings
-      - f_xresources
-      - f_swaynag
+      - d_redshift
       - d_sway
       - d_waybar
       - d_wofi
-      - d_redshift
-    include:
-      - shell
-      - applications
+      - f_gtk_settings
+      - f_swaynag
+      - f_xresources
   gui_x11:
     dotfiles:
+      - d_autostart
       - d_i3
+      - d_rofi
+      - f_gtk_settings
       - f_xinitrc
       - f_xresources
-      - f_gtk_settings
-      - d_autostart
-      - d_rofi
-    include:
-      - shell
-      - applications
   CTOGGHA:
     include:
       - shell
   NYOGTHA:
     include:
+      - applications
       - gui_wayland
+      - shell
   AZATHOTH:
     dotfiles:
       - f_pulseaudio
     include:
+      - applications
       - gui_wayland
+      - shell
