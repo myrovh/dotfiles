@@ -3,7 +3,7 @@ actions:
     spacemacs:
       test -e ~/.config/spacemacs || git clone https://github.com/syl20bnr/spacemacs
       ~/.config/spacemacs
-    doom: test -e ~/.config/doom || git clone https://github.com/hlissner/doom-emacs ~/.config/doom
+    doom: test -e ~/.doom || git clone https://github.com/hlissner/doom-emacs ~/.doom
     chemacs: test -e ~/.config/chemacs || git clone https://github.com/plexus/chemacs.git ~/.config/chemacs
   post:
     emacsserver: systemctl --user enable --now emacs
