@@ -1,10 +1,13 @@
 actions:
   pre:
     spacemacs:
-      test -e ~/.emacs.d || git clone https://github.com/syl20bnr/spacemacs
-      ~/.emacs.d
+      test -e ~/.config/spacemacs || git clone https://github.com/syl20bnr/spacemacs
+      ~/.config/spacemacs
+    doom: test -e ~/.config/doom || git clone https://github.com/hlissner/doom-emacs ~/.config/doom
+    chemacs: test -e ~/.config/chemacs || git clone https://github.com/plexus/chemacs.git ~/.config/chemacs
   post:
     emacsserver: systemctl --user enable --now emacs
+    chemacs_install: test -e ~/.emacs || ~/.config/chemacs/install.sh
 config:
   workdir: ~/.config/dotdrop-links
   import_variables:
@@ -77,21 +80,36 @@ dotfiles:
     link: link
     src: SpaceVim.d
     dst: ~/.SpaceVim.d
-  f_spacemacs:
-    link: link
-    src: spacemacs
-    dst: ~/.spacemacs
-    actions:
-      - spacemacs
-      - emacsserver
-  f_emacs.desktop:
-    src: local/share/applications/emacs.desktop
-    dst: ~/.local/share/applications/emacs.desktop
   f_p10k:
     link: link
     src: p10k.zsh
     dst: ~/.p10k.zsh
+  d_spacemacs.d:
+    link: link
+    src: spacemacs.d
+    dst: ~/.spacemacs.d
+    actions:
+      - spacemacs
+      - emacsserver
+  d_doom.d:
+    link: link
+    src: doom.d
+    dst: ~/.doom.d
+    actions:
+      - doom
+  f_emacs-profiles.el:
+    link: link
+    src: emacs-profiles.el
+    dst: ~/.emacs-profiles.el
+    actions:
+      - chemacs
+      - chemacs_install
 profiles:
+  emacs:
+    dotfiles:
+      - d_spacemacs.d
+      - d_doom.d
+      - f_emacs-profiles.el
   shell:
     dotfiles:
       - d_bin
@@ -103,9 +121,9 @@ profiles:
     dotfiles:
       - d_spacevim.d
       - f_alacritty
-      - f_emacs.desktop
       - f_kitty
-      - f_spacemacs
+    include:
+      - emacs
   gui_wayland:
     dotfiles:
       - d_redshift
