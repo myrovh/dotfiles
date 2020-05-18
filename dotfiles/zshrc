@@ -3,6 +3,23 @@
 # not running interactively then bail
 [[ $- != *i* ]] && return
 
+# ZSH config
+
+# history config see https://github.com/yous/vanilli.sh/blob/master/vanilli.zsh
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+setopt hist_ignore_dups
+setopt hist_verify
+setopt inc_append_history
+[ -z "$HISTFILE" ] && HISTFILE=$HOME/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+
+# prompt config
+ZLE_RPROMPT_INDENT=0
+
+# end ZSH config
+
 # Zinit installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -36,7 +53,7 @@ zinit wait"1" lucid from"gh-r" as"null" for \
 
 # zsh scripts
 zinit wait lucid for \
-    yous/vanilli.sh \
+    zdharma/history-search-multi-word \
     atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
         zdharma/fast-syntax-highlighting \
     blockf \
@@ -60,7 +77,6 @@ zinit light romkatv/powerlevel10k
 # end Zinit commands
 
 # variables
-ZLE_RPROMPT_INDENT=0
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # aliases
