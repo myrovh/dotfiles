@@ -41,6 +41,14 @@ Once the initial setup is done and you at lease installed the `shell` profile yo
 
 `curl -sLf https://spacevim.org/install.sh | bash`
 
+## Emacs
+
+`emacs-git` package could also be installed to get a more up to date version of emacs.
+
+```sh
+yay -S emacs ripgrep clang tar fd languagetool
+```
+
 ## GTK + QT
 
 ```sh
