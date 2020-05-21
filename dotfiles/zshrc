@@ -49,6 +49,7 @@ zinit wait"1" lucid from"gh-r" as"null" for \
      sbin"fzf"          junegunn/fzf-bin \
      sbin"**/fd"        @sharkdp/fd \
      sbin"**/bat"       @sharkdp/bat \
+     sbin"**/pastel"    @sharkdp/pastel \
      sbin"exa* -> exa"  ogham/exa
 
 # zsh scripts
