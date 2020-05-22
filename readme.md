@@ -46,7 +46,13 @@ Once the initial setup is done and you at lease installed the `shell` profile yo
 `emacs-git` package could also be installed to get a more up to date version of emacs.
 
 ```sh
-yay -S emacs ripgrep clang tar fd languagetool
+yay -S emacs ripgrep clang tar fd languagetool hunspell hunspell-en_US hunspell-en_AU
+```
+
+Doom packages need to be setup manually.
+
+```sh
+~/.doom/bin/doom sync
 ```
 
 ## GTK + QT
