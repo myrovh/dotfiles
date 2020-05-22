@@ -43,6 +43,10 @@ gnome)
 	export GDK_BACKEND=x11
 	exec gnome-session
 	;;
+budgie)
+	export XDG_CURRENT_DESKTOP=Budgie:GNOME
+	exec budgie-desktop
+	;;
 i3)
 	exec i3
 	;;
