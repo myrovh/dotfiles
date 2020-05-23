@@ -4,7 +4,9 @@ actions:
       test -e ~/.config/spacemacs || git clone https://github.com/syl20bnr/spacemacs
       ~/.config/spacemacs
     doom: test -e ~/.doom || git clone https://github.com/hlissner/doom-emacs ~/.doom
-    chemacs: test -e ~/.config/chemacs || git clone https://github.com/plexus/chemacs.git ~/.config/chemacs
+    chemacs:
+      test -e ~/.config/chemacs || git clone https://github.com/plexus/chemacs.git
+      ~/.config/chemacs
   post:
     emacsserver: systemctl --user enable --now emacs
     chemacs_install: test -e ~/.emacs || ~/.config/chemacs/install.sh
@@ -56,7 +58,7 @@ dotfiles:
   d_i3:
     src: config/i3
     dst: ~/.config/i3
-  f_gtk_settings:
+  f_gtk_3:
     src: config/gtk-3.0/settings.ini
     dst: ~/.config/gtk-3.0/settings.ini
   d_bin:
@@ -104,6 +106,9 @@ dotfiles:
     actions:
       - chemacs
       - chemacs_install
+  f_gtk_2:
+    src: gtkrc-2.0
+    dst: ~/.gtkrc-2.0
 profiles:
   emacs:
     dotfiles:
@@ -130,7 +135,8 @@ profiles:
       - d_sway
       - d_waybar
       - d_wofi
-      - f_gtk_settings
+      - f_gtk_3
+      - f_gtk_2
       - f_swaynag
       - f_xresources
   gui_x11:
@@ -138,7 +144,8 @@ profiles:
       - d_autostart
       - d_i3
       - d_rofi
-      - f_gtk_settings
+      - f_gtk_3
+      - f_gtk_2
       - f_xinitrc
       - f_xresources
   CTOGGHA:

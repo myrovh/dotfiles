@@ -58,15 +58,15 @@ Doom packages need to be setup manually.
 ## GTK + QT
 
 ```sh
-yay -S plata-theme qt5-styleplugins papirus-icon-theme bibata-cursor-theme
+yay -S plata-theme qt5-styleplugins papirus-icon-theme bibata-cursor-theme gtk-engine-murrine
 ```
 
-Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct theme.
+Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct theme. (should be automatically set by zshenv)
 
 ## Sway
 
 ```sh
-yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono nerd-fonts-iosevka wofi pamixer azote redshift-wlr-gamma-control-git jq mako polkit-gnome alacritty
+yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono nerd-fonts-iosevka wofi pamixer azote redshift-wlr-gamma-control-git jq mako polkit-gnome alacritty qt5-wayland
 ```
 
 ### Optional
