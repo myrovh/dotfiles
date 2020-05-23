@@ -58,10 +58,25 @@ Doom packages need to be setup manually.
 ## GTK + QT
 
 ```sh
-yay -S plata-theme qt5-styleplugins papirus-icon-theme bibata-cursor-theme gtk-engine-murrine
+yay -S plata-theme qt5-styleplugins papirus-icon-theme bibata-cursor-theme gtk-engine-murrine roboto
 ```
 
 Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct theme. (should be automatically set by zshenv)
+
+### Fonts
+
+```sh
+yay -S ttf-twemoji
+sudo ln -sf /etc/fonts/conf.avail/75-twemoji.conf /etc/fonts/conf.d/75-twemoji.conf`
+```
+
+## KeepassXC
+
+zshenv is setup to run gnome-keyring on system login. gnome-keyring is used by as the ssh agent so it needs to be installed and running to get ssh key insertion.
+
+```sh
+yay -S keepassxc gnome-keyring libsecret
+```
 
 ## Sway
 
