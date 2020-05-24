@@ -125,6 +125,7 @@ profiles:
   applications:
     dotfiles:
       - d_spacevim.d
+      - d_autostart
       - f_alacritty
       - f_kitty
     include:

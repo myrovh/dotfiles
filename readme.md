@@ -81,7 +81,7 @@ yay -S keepassxc gnome-keyring libsecret
 ## Sway
 
 ```sh
-yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono nerd-fonts-iosevka wofi pamixer azote redshift-wlr-gamma-control-git jq mako polkit-gnome alacritty qt5-wayland
+yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono nerd-fonts-iosevka wofi pamixer azote redshift-wlr-gamma-control-git jq mako polkit-gnome alacritty qt5-wayland light gnome-keyring
 ```
 
 ### Optional
