@@ -66,7 +66,7 @@ Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct 
 ### Fonts
 
 ```sh
-yay -S ttf-twemoji
+yay -S ttf-twemoji noto-fonts-cjk
 sudo ln -sf /etc/fonts/conf.avail/75-twemoji.conf /etc/fonts/conf.d/75-twemoji.conf`
 ```
 
