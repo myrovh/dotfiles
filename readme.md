@@ -29,9 +29,8 @@ yay -S dotdrop
 ### Install on non Arch Linux
 
 ```sh
-sudo apt update && sudo apt install snapd
-# logout or restart
-sudo snap install dotdrop
+sudo apt update && sudo apt install python3-pip
+pip3 install --user dotdrop
 ```
 
 ### Clone and install repo
@@ -42,6 +41,14 @@ dotdrop install -p ${PROFILE}
 ```
 
 Once the initial setup is done and you at lease installed the `shell` profile you can relog into zsh and run `dropglobal` to setup system configs (`sudo` needs to be installed and configured).
+
+## Shell
+
+Install `zsh` and `unzip` zinit needs unzip to install some binaries.
+
+```sh
+chsh -s /usr/bin/zsh
+```
 
 ## Vim
 
