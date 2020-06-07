@@ -11,6 +11,7 @@ actions:
     emacsserver: systemctl --user enable --now emacs
     chemacs_install: test -e ~/.emacs || ~/.config/chemacs/install.sh
 config:
+  showdiff: true
   workdir: ~/.config/dotdrop-links
   import_variables:
     - color.yaml
@@ -34,7 +35,6 @@ dotfiles:
     dst: ~/.xinitrc
     src: xinitrc
   f_zshrc:
-    link: link
     dst: ~/.zshrc
     src: zshrc
   f_xresources:
