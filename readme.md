@@ -5,18 +5,16 @@ Personal repository of dotfiles managed with
 
 ## todo
 
-- automatic snapshots of zfs datasets
-- every 6 months zfs scrub systemd script
-- [dynamic dns script](https://developer.dnsimple.com/ddns/)
 - fix screen off and suspend timer on sway (probably need to swtich back to swaylock)
 - use variables to set screen and lock timeouts so that desktop and laptop can have different times
 - setup keybinds for screenshots and video recording wayland tools
 - megasync needs sway rules set so its always in floating mode
 - set startup applications: keepassxc, insync, mega
+- migrate dnsimple to difference service that is supported by dyndns tools
 
 ## Initial Setup
 
-### Install an aur manager
+### Install on Arch Linux
 
 Make sure `base-devel` and `git` are installed.
 
@@ -25,12 +23,20 @@ If you are going to install the shell profile also install `zsh` and change your
 ```sh
 git clone https://aur.archlinux.org/yay-bin.git ~/build/yay-bin
 cd ~/build/yay-bin && makepkg -si
+yay -S dotdrop
+```
+
+### Install on non Arch Linux
+
+```sh
+sudo apt update && sudo apt install snapd
+# logout or restart
+sudo snap install dotdrop
 ```
 
 ### Clone and install repo
 
 ```sh
-yay -S dotdrop
 git clone https://github.com/myrovh/dotfiles.git ~/.config/dotdrop
 dotdrop install -p ${PROFILE}
 ```

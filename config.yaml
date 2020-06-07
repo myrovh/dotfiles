@@ -152,6 +152,15 @@ profiles:
   CTOGGHA:
     include:
       - shell
+  HASTUR:
+    include:
+      - shell
+  MINECRAFT:
+    include:
+      - shell
+  EPISUB:
+    include:
+      - shell
   NYOGTHA:
     include:
       - applications
