@@ -4,57 +4,6 @@
 # not running interactively then bail
 [[ $- != *i* ]] && return
 
-# ZSH config
-
-# =============================================================================
-# History
-# =============================================================================
-
-# See
-# https://github.com/yous/vanilli.sh/blob/master/vanilli.zsh
-
-setopt hist_expire_dups_first
-setopt hist_find_no_dups
-setopt hist_ignore_dups
-setopt hist_verify
-setopt inc_append_history
-[ -z "$HISTFILE" ] && HISTFILE=$HOME/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
-
-# prompt config
-ZLE_RPROMPT_INDENT=0
-
-
-# =============================================================================
-# Key Bindings
-# =============================================================================
-
-# See
-# http://pubs.opengroup.org/onlinepubs/7908799/xcurses/terminfo.html#tag_002_001_003_003
-# for the table of terminfo, and see
-# http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
-# for standard widgets of zsh.
-
-# Home
-[ -n "${terminfo[khome]}" ] && bindkey "${terminfo[khome]}" beginning-of-line
-# End
-[ -n "${terminfo[kend]}" ] && bindkey "${terminfo[kend]}" end-of-line
-# Backspace
-[ -n "${terminfo[kbs]}" ] && bindkey "${terminfo[kbs]}" backward-delete-char
-# Delete
-[ -n "${terminfo[kdch1]}" ] && bindkey "${terminfo[kdch1]}" delete-char
-# Up-arrow
-[ -n "${terminfo[kcuu1]}" ] && bindkey "${terminfo[kcuu1]}" up-line-or-history
-# Down-arrow
-[ -n "${terminfo[kcud1]}" ] && bindkey "${terminfo[kcud1]}" down-line-or-history
-# Left-arrow
-[ -n "${terminfo[kcub1]}" ] && bindkey "${terminfo[kcub1]}" backward-char
-# Right-arrow
-[ -n "${terminfo[kcuf1]}" ] && bindkey "${terminfo[kcuf1]}" forward-char
-
-# end ZSH config
-
 # Zinit installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -111,6 +60,50 @@ zinit ice wait'!' lucid atload'source ~/.p10k.zsh; _p9k_precmd' nocd
 zinit light romkatv/powerlevel10k
 
 # end Zinit commands
+
+# ZSH config
+
+# =============================================================================
+# History
+# =============================================================================
+
+# See
+# https://github.com/yous/vanilli.sh/blob/master/vanilli.zsh
+
+setopt hist_expire_dups_first
+setopt hist_find_no_dups
+setopt hist_ignore_dups
+setopt hist_verify
+setopt inc_append_history
+[ -z "$HISTFILE" ] && HISTFILE=$HOME/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+
+# prompt config
+ZLE_RPROMPT_INDENT=0
+
+# =============================================================================
+# Key Bindings
+# =============================================================================
+
+# See
+# http://pubs.opengroup.org/onlinepubs/7908799/xcurses/terminfo.html#tag_002_001_003_003
+# for the table of terminfo, and see
+# http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
+# for standard widgets of zsh.
+
+bindkey "^?" backward-delete-char
+bindkey '^[OH' beginning-of-line
+bindkey '^[OF' end-of-line
+bindkey '^[[5~' up-line-or-history
+bindkey '^[[6~' down-line-or-history
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
+bindkey "^r" history-incremental-search-backward
+bindkey ' ' magic-space    # also do history expansion on space
+bindkey '^I' complete-word # complete on tab, leave expansion to _expand
+
+# end ZSH config
 
 # variables
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
