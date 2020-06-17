@@ -28,6 +28,8 @@ zinit light-mode for \
 
 # Zinit commands
 
+zinit light yous/vanilli.sh
+
 # shell bin files
 zinit wait"1" lucid from"gh-r" as"null" for \
      sbin"fzf"          junegunn/fzf-bin \
@@ -63,43 +65,8 @@ zinit light romkatv/powerlevel10k
 
 # ZSH config
 
-# =============================================================================
-# History
-# =============================================================================
-
-# See
-# https://github.com/yous/vanilli.sh/blob/master/vanilli.zsh
-
-setopt hist_expire_dups_first
-setopt hist_find_no_dups
-setopt hist_ignore_dups
-setopt hist_verify
-setopt inc_append_history
-[ -z "$HISTFILE" ] && HISTFILE=$HOME/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
-
 # prompt config
 ZLE_RPROMPT_INDENT=0
-
-# =============================================================================
-# Key Bindings
-# =============================================================================
-
-# See
-# http://pubs.opengroup.org/onlinepubs/7908799/xcurses/terminfo.html#tag_002_001_003_003
-# for the table of terminfo, and see
-# http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
-# for standard widgets of zsh.
-
-#bindkey "^?" backward-delete-char
-#bindkey '^[OH' beginning-of-line
-#bindkey '^[OF' end-of-line
-#bindkey '^[[5~' up-line-or-history
-#bindkey '^[[6~' down-line-or-history
-#bindkey "^r" history-incremental-search-backward
-#bindkey ' ' magic-space    # also do history expansion on space
-#bindkey '^I' complete-word # complete on tab, leave expansion to _expand
 
 # end ZSH config
 
