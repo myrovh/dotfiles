@@ -109,6 +109,16 @@ dotfiles:
   f_gtk_2:
     src: gtkrc-2.0
     dst: ~/.gtkrc-2.0
+  f_xprofile:
+    src: xprofile
+    dst: ~/.xprofile
+  f_envvars.conf:
+    src: config/environment.d/envvars.conf
+    dst: ~/.config/environment.d/envvars.conf
+  d_applications:
+    link: link_children
+    src: local/share/applications
+    dst: ~/.local/share/applications
 profiles:
   emacs:
     dotfiles:
@@ -124,6 +134,7 @@ profiles:
       - f_zshrc
   applications:
     dotfiles:
+      - d_applications
       - d_spacevim.d
       - d_autostart
       - f_alacritty
@@ -140,6 +151,7 @@ profiles:
       - f_gtk_2
       - f_swaynag
       - f_xresources
+      - f_envvars.conf
   gui_x11:
     dotfiles:
       - d_autostart
@@ -149,6 +161,7 @@ profiles:
       - f_gtk_2
       - f_xinitrc
       - f_xresources
+      - f_xprofile
   CTOGGHA:
     include:
       - shell
@@ -165,6 +178,7 @@ profiles:
     include:
       - applications
       - gui_wayland
+      - gui_x11
       - shell
   AZATHOTH:
     dotfiles:

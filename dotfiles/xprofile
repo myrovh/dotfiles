@@ -1,0 +1,2 @@
+# set qt to use gtk theme
+export QT_QPA_PLATFORMTHEME=gtk2

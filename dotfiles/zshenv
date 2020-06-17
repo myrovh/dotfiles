@@ -4,9 +4,6 @@
 export VISUAL=nvim
 export EDITOR=nvim
 
-# set qt to use gtk theme
-export QT_QPA_PLATFORMTHEME=gtk2
-
 # add local bin files to path
 PATH="$PATH:$HOME/bin"
 
@@ -31,10 +28,4 @@ PATH="$PATH:$HOME/go/bin"
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 gem_home=$(ruby -e 'print Gem.user_dir')
 export GEM_HOME=$gem_home
-# {%@@ endif @@%}
-
-# {%@@ if exists_in_path('gnome-keyring-daemon') @@%}
-# run gnome-keyring-daemon used by keepassXC to add ssh keys
-eval "$(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"
-export SSH_AUTH_SOCK
 # {%@@ endif @@%}
