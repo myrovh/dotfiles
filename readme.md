@@ -26,7 +26,7 @@ cd ~/build/yay-bin && makepkg -si
 yay -S dotdrop
 ```
 
-### Install on non Arch Linux
+### Install on Debian
 
 ```sh
 sudo apt update && sudo apt install python3-pip
@@ -74,7 +74,7 @@ Doom packages need to be setup manually.
 yay -S plata-theme qt5-styleplugins papirus-icon-theme bibata-cursor-theme gtk-engine-murrine roboto
 ```
 
-Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct theme. (should be automatically set by zshenv)
+Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct theme. (should be automatically set by  xprofile or environment.d)
 
 ### Fonts
 

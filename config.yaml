@@ -191,4 +191,5 @@ profiles:
     include:
       - applications
       - gui_wayland
+      - gui_x11
       - shell
