@@ -74,13 +74,6 @@ ZLE_RPROMPT_INDENT=0
 export KEYTIMEOUT=1
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-fi
-
 # aliases
 alias vim='nvim'
 alias ls='exa'

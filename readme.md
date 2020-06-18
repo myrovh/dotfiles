@@ -88,18 +88,19 @@ sudo ln -sf /etc/fonts/conf.avail/75-twemoji.conf /etc/fonts/conf.d/75-twemoji.c
 zshenv is setup to run gnome-keyring on system login. gnome-keyring is used by as the ssh agent so it needs to be installed and running to get ssh key insertion.
 
 ```sh
-yay -S keepassxc gnome-keyring libsecret
+yay -S keepassxc libsecret systemd-ssh-agent openssh
+systemctl --user enable ssh-agent.service
 ```
 
 ## Sway
 
 ```sh
-yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono nerd-fonts-iosevka wofi pamixer azote redshift-wlr-gamma-control-git jq mako polkit-gnome alacritty qt5-wayland light gnome-keyring
+yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono nerd-fonts-iosevka wofi pamixer azote redshift-wlr-gamma-control-git jq mako polkit-gnome alacritty qt5-wayland light
 ```
 
 ### Optional
 
-wdisplays is useful for laptops where you might want to plug in a one time external display. It works like arandr. wf-recorder and grim can be used for video and screenshots respectively. Slup allow you to define an area to shoot with the mouse.
+wdisplays is useful for laptops where you might want to plug in a one time external display. It works like arandr. wf-recorder and grim can be used for video and screenshots respectively. Slurp allow you to define an area to shoot with the mouse.
 
 ```sh
 yay -S wdisplays-git wf-recorder grim slurp

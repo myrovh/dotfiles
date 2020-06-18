@@ -119,6 +119,9 @@ dotfiles:
     link: link_children
     src: local/share/applications
     dst: ~/.local/share/applications
+  f_pam_environment:
+    src: pam_environment
+    dst: ~/.pam_environment
 profiles:
   emacs:
     dotfiles:
@@ -152,6 +155,7 @@ profiles:
       - f_swaynag
       - f_xresources
       - f_envvars.conf
+      - f_pam_environment
   gui_x11:
     dotfiles:
       - d_autostart
@@ -162,6 +166,7 @@ profiles:
       - f_xinitrc
       - f_xresources
       - f_xprofile
+      - f_pam_environment
   CTOGGHA:
     include:
       - shell
