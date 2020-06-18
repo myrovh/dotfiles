@@ -83,8 +83,10 @@ dotfiles:
     src: SpaceVim.d
     dst: ~/.SpaceVim.d
   f_p10k:
-    link: link
     src: p10k.zsh
+    dst: ~/.p10k.zsh
+  f_p10k_rainbow:
+    src: p10k-rainbow.zsh
     dst: ~/.p10k.zsh
   d_spacemacs.d:
     link: link
@@ -132,7 +134,6 @@ profiles:
     dotfiles:
       - d_bin
       - f_gitconfig
-      - f_p10k
       - f_zprofile
       - f_zshrc
   applications:
@@ -168,18 +169,33 @@ profiles:
       - f_xprofile
       - f_pam_environment
   CTOGGHA:
+    dotfiles:
+      - f_p10k
     include:
       - shell
   HASTUR:
+    dotfiles:
+      - f_p10k
     include:
       - shell
   MINECRAFT:
+    dotfiles:
+      - f_p10k
+    include:
+      - shell
+  HOLE:
+    dotfiles:
+      - f_p10k
     include:
       - shell
   EPISUB:
+    dotfiles:
+      - f_p10k
     include:
       - shell
   NYOGTHA:
+    dotfiles:
+      - f_p10k_rainbow
     include:
       - applications
       - gui_wayland
@@ -188,6 +204,7 @@ profiles:
   AZATHOTH:
     dotfiles:
       - f_pulseaudio
+      - f_p10k_rainbow
     include:
       - applications
       - gui_wayland

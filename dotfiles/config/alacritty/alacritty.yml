@@ -19,21 +19,21 @@
 font:
   # Normal (roman) font face
   normal:
-    family: Iosevka Term
+    family: Iosevka Nerd Font
     style: Regular
 
   # Bold font face
   bold:
-    family: Iosevka Term
+    family: Iosevka Nerd Font
     style: Bold
 
   # Italic font face
   italic:
-    family: Iosevka Term
+    family: Iosevka Nerd Font
     style: Italic
 
   # Point size
-  size: 13.0
+  size: 13.5
 
 # Visual Bell
 #
