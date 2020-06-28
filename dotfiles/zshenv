@@ -7,6 +7,11 @@ export EDITOR=nvim
 # add local bin files to path
 PATH="$PATH:$HOME/bin"
 
+# {%@@ if exists_in_path('pip') or exists_in_path('pip3') @@%}
+# bin path for pip
+PATH="$PATH:$HOME/.local/bin"
+# {%@@ endif @@%}
+
 # {%@@ if exists_in_path('node') @@%}
 # add bin files installed by npm to path
 export npm_config_prefix=~/.node_modules
