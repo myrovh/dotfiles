@@ -178,12 +178,7 @@ profiles:
       - f_p10k
     include:
       - shell
-  MINECRAFT:
-    dotfiles:
-      - f_p10k
-    include:
-      - shell
-  HOLE:
+  SHOGGOTH:
     dotfiles:
       - f_p10k
     include:
