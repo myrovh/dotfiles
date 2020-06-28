@@ -20,3 +20,12 @@ profiles:
   AZATHOTH:
     dotfiles:
       - f_issue
+  SHOGGOTH:
+    dotfiles:
+      - f_issue
+  VULTHOOM:
+    dotfiles:
+      - f_issue
+  HASTUR:
+    dotfiles:
+      - f_issue

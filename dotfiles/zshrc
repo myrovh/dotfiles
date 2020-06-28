@@ -91,6 +91,5 @@ alias wgnome='QT_QPA_PLATFORM=wayland XDG_SESSION_TYPE=wayland dbus-run-session 
 
 alias drop='dotdrop install'
 alias dropsystem='sudo dotdrop --cfg=/home/myrovh/.config/dotdrop/config-system.yaml install'
-alias dropserver='eval $(grep -v "^#" ~/.config/dotdrop/.env) dotdrop --cfg=~/.config/dotdrop/config-server.yaml install'
 
 [[ -s "/home/myrovh/.gvm/scripts/gvm" ]] && source "/home/myrovh/.gvm/scripts/gvm"
