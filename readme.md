@@ -14,6 +14,12 @@ Personal repository of dotfiles managed with
 
 ## Initial Setup
 
+Create user account (use wheel in Arch and sudo in Debian)
+
+```sh
+useradd -m -u 1000 -g 1000 -G wheel ${USERNAME}
+```
+
 ### Install on Arch Linux
 
 Make sure `base-devel` and `git` are installed.
