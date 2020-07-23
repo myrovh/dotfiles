@@ -20,7 +20,7 @@
     "pulseaudio",
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
-    "custom/redshift",
+    "custom/gammastep",
     {%@@ if profile == 'NYOGTHA' @@%}
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
@@ -120,9 +120,9 @@
     "on-scroll-up": "light -A 5",
     "on-scroll-down": "light -U 5"
   },
-  "custom/redshift": {
-    "exec": "~/.config/waybar/redshift.sh | jq --unbuffered --compact-output",
-    "on-click": "~/.config/redshift/toggle.sh",
+  "custom/gammastep": {
+    "exec": "~/.config/waybar/gammastep.sh | jq --unbuffered --compact-output",
+    "on-click": "~/.config/gammastep/toggle.sh",
     "return-type": "json",
     "interval": 60,
     "format": "{icon}",

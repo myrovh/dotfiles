@@ -46,9 +46,9 @@ dotfiles:
   f_zprofile:
     src: zshenv
     dst: ~/.zshenv
-  d_redshift:
-    dst: ~/.config/redshift
-    src: config/redshift
+  d_gammastep:
+    dst: ~/.config/gammastep
+    src: config/gammastep
   d_sway:
     src: config/sway
     dst: ~/.config/sway
@@ -147,7 +147,7 @@ profiles:
       - emacs
   gui_wayland:
     dotfiles:
-      - d_redshift
+      - d_gammastep
       - d_sway
       - d_waybar
       - d_wofi
