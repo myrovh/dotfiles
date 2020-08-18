@@ -8,5 +8,5 @@ if [ "$(pgrep -x gammastep)" ]; then
 
 	echo "{ \"text\": \"On\", \"tooltip\": \"$temp\", \"percentage\": 100 }"
 else
-	echo "{ \"text\": \"Off\", \"percentage\": 0 }"
+	echo "{ \"text\": \"Off\", \"percentage\": 1 }"
 fi

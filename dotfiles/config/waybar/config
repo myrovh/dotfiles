@@ -34,6 +34,9 @@
     "cpu",
     "custom/left-arrow-light",
     "custom/left-arrow-dark",
+    "memory",
+    "custom/left-arrow-light",
+    "custom/left-arrow-dark",
     "tray"
   ],
 
@@ -121,10 +124,11 @@
     "on-scroll-down": "light -U 5"
   },
   "custom/gammastep": {
-    "exec": "~/.config/waybar/gammastep.sh | jq --unbuffered --compact-output",
-    "on-click": "~/.config/gammastep/toggle.sh",
-    "return-type": "json",
+    "exec": "~/.config/waybar/gammastep.sh",
+    "exec-if": "exit 0",
     "interval": 60,
+    "return-type": "json",
+    "on-click": "~/.config/gammastep/toggle.sh",
     "format": "{icon}",
     "format-icons": ["", "ﯦ"]
   }
