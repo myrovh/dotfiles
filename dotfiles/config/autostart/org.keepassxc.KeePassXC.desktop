@@ -1,15 +1,8 @@
 [Desktop Entry]
 Name=KeePassXC
 GenericName=Password Manager
-GenericName[da]=Adgangskodehåndtering
-GenericName[de]=Passwortverwaltung
-GenericName[es]=Gestor de contraseñas
-GenericName[fr]=Gestionnaire de mot de passe
-GenericName[ru]=менеджер паролей
-Comment=Community-driven port of the Windows application “KeePass Password Safe”
-Comment[da]=Fællesskabsdrevet port af Windows-programmet “KeePass Password Safe”
-Exec=keepassxc %f
-TryExec=keepassxc
+Exec=/usr/bin/keepassxc
+TryExec=/usr/bin/keepassxc
 Icon=keepassxc
 StartupWMClass=keepassxc
 StartupNotify=true
@@ -18,3 +11,4 @@ Type=Application
 Version=1.0
 Categories=Utility;Security;Qt;
 MimeType=application/x-keepass2;
+X-GNOME-Autostart-enabled=true

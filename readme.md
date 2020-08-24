@@ -46,7 +46,7 @@ git clone https://github.com/myrovh/dotfiles.git ~/.config/dotdrop
 dotdrop install -p ${PROFILE}
 ```
 
-Once the initial setup is done and you at lease installed the `shell` profile you can relog into zsh and run `dropglobal` to setup system configs (`sudo` needs to be installed and configured).
+Once the initial setup is done and you at least installed the `shell` profile you can relog into zsh and run `dropglobal` to setup system configs (`sudo` needs to be installed and configured).
 
 ## Shell
 
