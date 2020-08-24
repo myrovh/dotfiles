@@ -188,6 +188,11 @@ profiles:
       - f_p10k
     include:
       - shell
+  THASAIDON:
+    dotfiles:
+      - f_p10k
+    include:
+      - shell
   EPISUB:
     dotfiles:
       - f_p10k
