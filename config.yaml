@@ -16,7 +16,7 @@ config:
   import_variables:
     - color.yaml
 variables:
-  server_config: "~/Documents/server-config"
+  server_config: "/home/myrovh/Documents/server-config"
 dotfiles:
   f_alacritty:
     dst: ~/.config/alacritty/alacritty.yml
