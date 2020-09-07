@@ -5,6 +5,7 @@ Personal repository of dotfiles managed with
 
 ## todo
 
+- switch to https://asdf-vm.com/#/ for management of runtimes
 - fix screen off and suspend timer on sway (probably need to swtich back to swaylock)
 - use variables to set screen and lock timeouts so that desktop and laptop can have different times
 - setup keybinds for screenshots and video recording wayland tools

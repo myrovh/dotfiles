@@ -12,6 +12,10 @@ PATH="$PATH:$HOME/bin"
 PATH="$PATH:$HOME/.local/bin"
 # {%@@ endif @@%}
 
+# bin parth for deno when manually installed
+export DENO_INSTALL="$HOME/.deno"
+PATH="$DENO_INSTALL/bin:$PATH"
+
 # {%@@ if exists_in_path('node') @@%}
 # add bin files installed by npm to path
 export npm_config_prefix=~/.node_modules
