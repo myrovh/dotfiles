@@ -1,6 +1,10 @@
 config:
   showdiff: true
 dotfiles:
+  d_pulseaudio:
+    link: link_children
+    src: etc/pulse
+    dst: /etc/pulse
   f_touchpad:
     src: etc/X11/touchpad.conf
     dst: /etc/X11/xorg.conf.d/30-touchpad.conf
@@ -19,6 +23,7 @@ profiles:
       - f_issue
   AZATHOTH:
     dotfiles:
+      - d_pulseaudio
       - f_issue
   SHOGGOTH:
     dotfiles:
