@@ -7,16 +7,17 @@ export EDITOR=nvim
 # add local bin files to path
 PATH="$PATH:$HOME/bin"
 
+# {%@@ if exists('$HOME/.asdf/asdf.sh') @@%}
+# source asdf
+. $HOME/.asdf/asdf.sh
+# {%@@ endif @@%}
+
 # {%@@ if exists_in_path('pip') or exists_in_path('pip3') @@%}
 # bin path for pip
 PATH="$PATH:$HOME/.local/bin"
 # {%@@ endif @@%}
 
-# bin parth for deno when manually installed
-export DENO_INSTALL="$HOME/.deno"
-PATH="$DENO_INSTALL/bin:$PATH"
-
-# {%@@ if exists_in_path('node') @@%}
+# {%@@ if exists_in_path('npm') @@%}
 # add bin files installed by npm to path
 export npm_config_prefix=~/.node_modules
 PATH="$HOME/.node_modules/bin:$PATH"
@@ -25,11 +26,6 @@ PATH="$HOME/.node_modules/bin:$PATH"
 # {%@@ if exists_in_path('yarn') @@%}
 # add bin files installed by yarn to path
 PATH="$HOME/.yarn/bin:$PATH"
-# {%@@ endif @@%}
-
-# {%@@ if exists_in_path('go') @@%}
-# set add bin files installed by go to path
-PATH="$PATH:$HOME/go/bin"
 # {%@@ endif @@%}
 
 # {%@@ if exists_in_path('ruby') @@%}

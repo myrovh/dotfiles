@@ -93,5 +93,3 @@ alias drop='dotdrop install'
 alias dropr='sudo dotdrop --cfg=/home/{{@@ username @@}}/.config/dotdrop/config-system.yaml install'
 alias dropsr='sudo -s eval $(grep -v "^#" {{@@ server_config @@}}/.env) dotdrop --cfg={{@@ server_config @@}}/config-system.yaml install'
 alias drops='eval $(grep -v "^#" {{@@ server_config @@}}/.env) dotdrop --cfg={{@@ server_config @@}}/config-server.yaml install'
-
-[[ -s "~/.gvm/scripts/gvm" ]] && source "~/.gvm/scripts/gvm"
