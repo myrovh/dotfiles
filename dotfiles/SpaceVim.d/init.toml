@@ -26,14 +26,28 @@
 
 # Enable autocomplete layer
 [[layers]]
-name = 'autocomplete'
-auto_completion_return_key_behavior = "complete"
-auto_completion_tab_key_behavior = "smart"
+  name = 'autocomplete'
+  auto_completion_return_key_behavior = "complete"
+  auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
-name = "colorscheme"
+  name = "fzf"
 
 [[layers]]
-name = 'shell'
-default_position = 'top'
-default_height = 30
+  name = "lang#rust"
+
+[[layers]]
+  name = "lsp"
+  filetypes = [
+    "rust"
+  ]
+  [layers.override_cmd]
+    rust = ["rls"]
+
+[[layers]]
+  name = "colorscheme"
+
+[[layers]]
+  name = 'shell'
+  default_position = 'top'
+  default_height = 30
