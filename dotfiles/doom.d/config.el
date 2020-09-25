@@ -31,6 +31,7 @@
 (setq org-directory "~/Documents/org/")
 (setq org-roam-directory "~/Documents/org/")
 (setq deft-directory "~/Documents/org/")
+(setq org-journal-file-format "%Y%m%d.org")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
