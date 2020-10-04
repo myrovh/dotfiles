@@ -74,10 +74,6 @@ dotfiles:
   d_polybar:
     src: config/polybar
     dst: ~/.config/polybar
-  d_autostart:
-    link: link_children
-    src: config/autostart
-    dst: ~/.config/autostart
   d_rofi:
     src: config/rofi
     dst: ~/.config/rofi
@@ -120,10 +116,6 @@ dotfiles:
   f_envvars.conf:
     src: config/environment.d/envvars.conf
     dst: ~/.config/environment.d/envvars.conf
-  d_applications:
-    link: link_children
-    src: local/share/applications
-    dst: ~/.local/share/applications
   f_pam_environment:
     src: pam_environment
     dst: ~/.pam_environment
@@ -141,9 +133,7 @@ profiles:
       - f_zshrc
   applications:
     dotfiles:
-      - d_applications
       - d_spacevim.d
-      - d_autostart
       - f_alacritty
       - f_kitty
     include:
@@ -162,7 +152,6 @@ profiles:
       - f_pam_environment
   gui_x11:
     dotfiles:
-      - d_autostart
       - d_i3
       - d_rofi
       - f_gtk_3
