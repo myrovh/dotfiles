@@ -14,23 +14,28 @@ dotfiles:
   f_logind:
     src: etc/systemd/logind.conf
     dst: /etc/systemd/logind.conf
+  f_docker:
+    src: etc/docker/daemon.json
+    dst: /etc/docker/daemon.json
 profiles:
-  CTOGGHA:
-    dotfiles:
-      - f_issue
-  NYOGTHA:
-    dotfiles:
-      - f_issue
   AZATHOTH:
     dotfiles:
       - d_pulseaudio
+      - f_issue
+      - f_docker
+  NYOGTHA:
+    dotfiles:
+      - f_issue
+      - f_docker
+  HASTUR:
+    dotfiles:
+      - f_issue
+  CTOGGHA:
+    dotfiles:
       - f_issue
   SHOGGOTH:
     dotfiles:
       - f_issue
   VULTHOOM:
-    dotfiles:
-      - f_issue
-  HASTUR:
     dotfiles:
       - f_issue
