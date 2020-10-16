@@ -41,6 +41,9 @@ zinit wait"1" lucid from"gh-r" as"null" for \
 zplugin ice as"program" pick"bin/git-dsf"
 zplugin light zdharma/zsh-diff-so-fancy
 
+zplugin ice as"program" from"gh-r" bpick"*linux-openssl-1.1*"
+zplugin light volta-cli/volta
+
 zplugin ice wait'1' lucid
 zplugin light laggardkernel/zsh-thefuck
 

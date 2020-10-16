@@ -12,6 +12,9 @@ PATH="$PATH:$HOME/bin"
 . $HOME/.asdf/asdf.sh
 # {%@@ endif @@%}
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 # {%@@ if exists_in_path('pip') or exists_in_path('pip3') @@%}
 # bin path for pip
 PATH="$PATH:$HOME/.local/bin"
