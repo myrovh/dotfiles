@@ -11,7 +11,7 @@ Personal repository of dotfiles managed with
 - setup keybinds for screenshots and video recording wayland tools
 - megasync needs sway rules set so its always in floating mode
 - set startup applications: keepassxc, insync, mega
-- migrate dnsimple to difference service that is supported by dyndns tools
+- rework sway config so it can be used a main desktop environment again (maybe look into copying reform's sway setup)
 
 ## Initial Setup
 
@@ -136,3 +136,17 @@ Alacritty uses Iosevka Nerd Font
 
 - [slimline](https://github.com/mgee/slimline)
 - [spaceship](https://github.com/denysdovhan/spaceship-prompt)
+
+
+# Software
+
+## Terminals
+- [foot](https://codeberg.org/dnkl/foot)
+
+## IDE
+
+- [emacs with pure gtk support (for wayland)](https://github.com/masm11/emacs#emacs-supporting-pure-gtk3)
+
+## Sway
+
+- https://codeberg.org/dnkl/yambar
