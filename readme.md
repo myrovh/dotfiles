@@ -17,8 +17,12 @@ Personal repository of dotfiles managed with
 
 Create user account (use wheel in Arch and sudo in Debian)
 
+- use 'sudo' on debian instead of wheel
+- if needed use `-u 1000 -g 1000` to set the user and group ids but 1000 should be the default for both
+
 ```sh
-useradd -m -u 1000 -g 1000 -G wheel ${USERNAME}
+useradd -m -G wheel ${USERNAME}
+chsh -s /bin/zsh ${USERNAME} #if zsh is installed
 ```
 
 ### Install on Arch Linux
