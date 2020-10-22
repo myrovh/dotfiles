@@ -87,16 +87,16 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
 
 # general use exa
-alias ls='exa'                                                          # ls
-alias l='exa -lbF --git'                                                # list, size, type, git
+alias ls='exa'                                                         # ls
+alias l='exa -lbF --git'                                               # list, size, type, git
 alias ll='exa -lbGF --git'                                             # long list
 alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
-alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
-alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
+alias la='exa -lbhHigSa --time-style=long-iso --git --color-scale'     # all list
+alias lx='exa -lbhHigSa@ --time-style=long-iso --git --color-scale'    # all + extended list
 
 # specialty views exa
-alias lS='exa -1'                                                              # one column, just names
-alias lst='exa --tree --level=2'  
+alias lS='exa -1'                                                      # one column, just names
+alias lst='exa --tree --level=2'                                       # tree
 
 alias drop='dotdrop install'
 alias dropr='sudo dotdrop --cfg=/home/{{@@ username @@}}/.config/dotdrop/config-system.yaml install'
