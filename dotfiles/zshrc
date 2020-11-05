@@ -36,16 +36,23 @@ zinit wait"1" lucid from"gh-r" as"null" for \
      sbin"**/fd"        @sharkdp/fd \
      sbin"**/bat"       @sharkdp/bat \
      sbin"**/pastel"    @sharkdp/pastel \
-     sbin"exa* -> exa"  ogham/exa
+     sbin"exa* -> exa"  ogham/exa \
+     sbin"**/delta"     dandavison/delta 
 
-zplugin ice as"program" pick"bin/git-dsf"
-zplugin light zdharma/zsh-diff-so-fancy
+zplugin ice as"null" from"gh-r" bpick"*linux_x86_64*" sbin"duf"
+zplugin light muesli/duf
 
-zplugin ice as"program" from"gh-r" bpick"*linux-openssl-1.1*"
-zplugin light volta-cli/volta
+zinit ice as"program" pick"yank" make
+zinit light mptre/yank
 
+# not working currently?
 zplugin ice wait'1' lucid
 zplugin light laggardkernel/zsh-thefuck
+
+zinit ice wait lucid
+zinit load 'wfxr/forgit'
+
+zinit pick"misc/quitcd/quitcd.bash_zsh" sbin make light-mode for jarun/nnn
 
 # zsh scripts
 zinit wait lucid for \

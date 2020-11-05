@@ -19,6 +19,10 @@ helper = store
 
 [core]
 autocrlf = input
+pager = delta
+
+[interactive]
+diffFilter = delta --color-only
 
 [filter "lfs"]
 clean = git-lfs clean -- %f
