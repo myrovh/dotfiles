@@ -1,7 +1,7 @@
 # {{@@ header() @@}}
 [user]
 name = myrovh
-email = myrovh@protonmail.com
+email = admin@myrovh.dev
 
 [color]
 diff = auto
