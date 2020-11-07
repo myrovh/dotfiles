@@ -106,7 +106,7 @@ systemctl --user enable ssh-agent.service
 ## Sway
 
 ```sh
-yay -S sway swaybg swayidle swaylock waybar pavucontrol nerd-fonts-roboto-mono nerd-fonts-iosevka wofi pamixer azote gammastep jq mako polkit-gnome alacritty qt5-wayland light
+yay -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb
 ```
 
 ### Optional

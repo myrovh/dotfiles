@@ -1,135 +1,121 @@
+// =============================================================================
+//
+// Waybar configuration (https://hg.sr.ht/~begs/dotfiles)
+//
+// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+//
+// =============================================================================
+
 {
-  "layer": "top",
-  "modules-left": ["sway/workspaces", "custom/right-arrow-dark", "sway/mode"],
-  "modules-center": [
-    "custom/left-arrow-dark",
-    "clock#day",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
-    "clock#time",
-    "custom/right-arrow-dark",
-    "custom/right-arrow-light",
-    "clock#date",
-    "custom/right-arrow-dark"
-  ],
-  "modules-right": [
-    "custom/left-arrow-dark",
-    "network",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
-    "pulseaudio",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
-    "custom/gammastep",
-    {%@@ if profile == 'NYOGTHA' @@%}
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
-    "backlight",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
-    "battery",
-    {%@@ endif @@%}
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
-    "cpu",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
-    "memory",
-    "custom/left-arrow-light",
-    "custom/left-arrow-dark",
-    "tray"
-  ],
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
 
-  "custom/blank": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/left-arrow-dark": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/left-arrow-light": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/right-arrow-dark": {
-    "format": "",
-    "tooltip": false
-  },
-  "custom/right-arrow-light": {
-    "format": "",
-    "tooltip": false
-  },
+    "layer": "top",
+    "position": "top",
+    "height": 21,
 
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "format": "{name}"
-  },
-  "clock#day": {
-    "format": "{:%a}",
-    "tooltip": false
-  },
-  "clock#time": {
-    "format": "{:%H:%M}",
-    "tooltip": false
-  },
-  "clock#date": {
-    "format": "{:%m-%d}",
-    "tooltip": false
-  },
-  "sway/mode": {
-    "format": "<span style=\"italic\">{}</span>"
-  },
-  "tray": {
-    "spacing": 10
-  },
-  "cpu": {
-    "format": "﬙ {usage:2}%",
-    "tooltip": false
-  },
-  "memory": {
-    "format": " {percentage:2}%"
-  },
-  "network": {
-    "format-wifi": "直 {essid}",
-    "format-ethernet": " {ifname} {ipaddr}/{cidr}",
-    "format-linked": " {ifname} (No IP)",
-    "format-disconnected": "Disconnected",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "tooltip-format-wifi": "Signal {signalStrength}%"
-  },
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon}",
-    "format-muted": "ﱝ",
-    "format-icons": {
-      "headphones": "",
-      "default": ["奄", "奔", "墳"]
+    "modules-left": [
+    	"sway/mode",
+        "sway/workspaces",
+        "sway/window"
+    ],
+
+    //"modules-center": [
+    //    "sway/window"
+    //],
+
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "battery",
+        "tray",
+        "clock#date",
+        "clock#time"
+    ],
+
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+
+    "battery": {
+        "interval": 1,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": " {capacity}%", // Icon: bolt
+        "format-discharging": "{icon} {capacity}%",
+        "format-icons": [
+            "", // Icon: battery-full
+            "", // Icon: battery-three-quarters
+            "", // Icon: battery-half
+            "", // Icon: battery-quarter
+            ""  // Icon: battery-empty
+        ],
+        "tooltip": false
     },
-    "scroll-step": 5,
-    "on-click": "pamixer -t",
-    "on-click-right": "pavucontrol"
-  },
-  "battery": {
-    "bat": "BAT0",
-    "format-charging": " {capacity}%",
-    "format": "{icon} {capacity}%",
-    "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
-  },
-  "backlight": {
-    "device": "amdgpu_bl0",
-    "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", ""],
-    "on-scroll-up": "light -A 5",
-    "on-scroll-down": "light -U 5"
-  },
-  "custom/gammastep": {
-    "exec": "~/.config/waybar/gammastep.sh",
-    "exec-if": "exit 0",
-    "interval": 60,
-    "return-type": "json",
-    "on-click": "~/.config/gammastep/toggle.sh",
-    "format": "{icon}",
-    "format-icons": ["", "ﯦ"]
-  }
+
+    "clock#time": {
+        "interval": 10,
+        "format": "{:%H:%M}",
+        "tooltip": false
+    },
+
+    "clock#date": {
+        "interval": 20,
+        "format": "{:%e %b %Y}", // Icon: calendar-alt
+        //"tooltip-format": "{:%e %B %Y}"
+        "tooltip": false
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": " {essid} ({signalStrength}%)", // Icon: wifi
+        //"format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-ethernet": " {ifname}",
+        "format-disconnected": "Disconnected",
+        //"tooltip-format": "{ifname}: {ipaddr}",
+        "tooltip": false
+        //"on-click": "cmst"
+    },
+
+    "sway/mode": {
+        "format": "⮂ {}", // Icon: expand-arrows-alt
+        "tooltip": false
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 30,
+	    "tooltip": false
+    },
+
+    "sway/workspaces": {
+        "all-outputs": false,
+        "disable-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "⚠",
+            "focused": "+"
+        }
+    },
+
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%直",
+        "format-muted": "ﱝ",
+        "format-icons": {
+            "headphones": "",
+            "headset": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "tray": {
+        "icon-size": 21
+        //"spacing": 10
+    },
 }

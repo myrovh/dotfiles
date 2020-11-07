@@ -19,21 +19,7 @@
 font:
   # Normal (roman) font face
   normal:
-    family: Iosevka Nerd Font
-    style: Regular
-
-  # Bold font face
-  bold:
-    family: Iosevka Nerd Font
-    style: Bold
-
-  # Italic font face
-  italic:
-    family: Iosevka Nerd Font
-    style: Italic
-
-  # Point size
-  size: 13.5
+    family: Cozette
 
 colors:
   # Default colors
