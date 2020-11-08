@@ -163,7 +163,7 @@
        :email
        ;;(mu4e +gmail)
        ;;notmuch
-       ;;(wanderlust +gmail)
+       wanderlust 
 
        :app
        ;;calendar
