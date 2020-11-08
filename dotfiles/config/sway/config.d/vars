@@ -34,13 +34,13 @@ set $idle swayidle -w \
 ### Powermenu
 set $powermenu 'case $(echo -e "shutdown\nsuspend\nreboot\nlock" | wofi -d -p "Powermenu" -k /dev/null) in \
     shutdown) \
-        doas -n shutdown -h now \
+        shutdown -h now \
         ;; \
     suspend) \
-        doas -n systemctl suspend \
+        systemctl suspend \
         ;; \
     reboot) \
-        doas -n reboot \
+        reboot \
         ;; \
     lock) \
         '$locker' \
