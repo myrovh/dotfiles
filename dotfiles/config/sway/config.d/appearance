@@ -21,9 +21,9 @@ titlebar_padding 10 1
 set $light #{{@@ color_fg @@}}
 set $dark #{{@@ color_bg @@}}
 set $focusedborder #{{@@ color_blue @@}}
-set $inactiveborder #{{@@ color_green_bright @@}}
-set $unfocusedborder #{{@@ color_white @@}}
-set $urgentborder #{{@@ color_red_bright @@}}
+set $inactiveborder #{{@@ color_white @@}}
+set $unfocusedborder #{{@@ color_black @@}}
+set $urgentborder #{{@@ color_red @@}}
 
 ### Colors (see man 5 sway)
 # border - border around titlebar
