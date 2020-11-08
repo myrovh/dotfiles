@@ -96,8 +96,6 @@ sudo ln -sf /etc/fonts/conf.avail/75-twemoji.conf /etc/fonts/conf.d/75-twemoji.c
 
 ## KeepassXC
 
-zshenv is setup to run gnome-keyring on system login. gnome-keyring is used by as the ssh agent so it needs to be installed and running to get ssh key insertion.
-
 ```sh
 yay -S keepassxc libsecret systemd-ssh-agent openssh
 systemctl --user enable ssh-agent.service
@@ -106,7 +104,7 @@ systemctl --user enable ssh-agent.service
 ## Sway
 
 ```sh
-yay -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb
+yay -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb playerctl imv wdisplays grim slurp
 ```
 
 ### Optional

@@ -1,0 +1,46 @@
+### Apperance:
+#
+# Gaps settings
+smart_gaps on
+gaps inner 10
+gaps outer 0
+
+# Border settings
+smart_borders on
+default_border pixel 2
+# Set to 'normal' to enable titlebar, to 'none' to disable borders or to 'pixel' to leave only borders w/o titlebar
+default_floating_border pixel 2
+
+# Titlebar font
+font Iosevka Bold 10
+
+# Titlebar settings
+titlebar_border_thickness 0
+titlebar_padding 10 1
+
+set $light #{{@@ color_fg @@}}
+set $dark #{{@@ color_bg @@}}
+set $focusedborder #{{@@ color_blue @@}}
+set $inactiveborder #{{@@ color_green_bright @@}}
+set $unfocusedborder #{{@@ color_white @@}}
+set $urgentborder #{{@@ color_red_bright @@}}
+
+### Colors (see man 5 sway)
+# border - border around titlebar
+# bg - titlebar background
+# text - text on titlebar
+# indicator - shown where new window will open
+# child_border - border around the window
+# class					border				bg					text	indicator			child_border
+client.focused          $focusedborder		$focusedborder		$dark	$focusedborder		$focusedborder
+client.focused_inactive $inactiveborder		$inactiveborder		$dark	$inactiveborder		$inactiveborder
+client.unfocused        $unfocusedborder	$unfocusedborder	$light	$unfocusedborder	$unfocusedborder
+client.urgent           $urgentborder		$urgentborder		$light	$urgentborder		$urgentborder
+
+#
+### GTK configuration
+#
+exec_always import-gsettings \
+    gtk-theme:gtk-theme-name \
+    icon-theme:gtk-icon-theme-name \
+    cursor-theme:gtk-cursor-theme-name

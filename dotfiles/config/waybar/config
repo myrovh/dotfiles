@@ -20,15 +20,15 @@
         "sway/workspaces",
         "sway/window"
     ],
-
-    //"modules-center": [
-    //    "sway/window"
-    //],
+    
 
     "modules-right": [
-        "pulseaudio",
         "network",
+        "pulseaudio",
+{%@@ if profile == 'NYOGTHA' @@%}
         "battery",
+        "backlight",
+{%@@ endif @@%}
         "tray",
         "clock#date",
         "clock#time"
@@ -37,6 +37,11 @@
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
+    
+    "backlight": {
+        "format": " {percent}%"
+    },
+    
 
     "battery": {
         "interval": 1,
@@ -71,13 +76,10 @@
 
     "network": {
         "interval": 5,
-        "format-wifi": " {essid} ({signalStrength}%)", // Icon: wifi
-        //"format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-wifi": " {essid} ({signalStrength}%)", // Icon: wifi
         "format-ethernet": " {ifname}",
         "format-disconnected": "Disconnected",
-        //"tooltip-format": "{ifname}: {ipaddr}",
         "tooltip": false
-        //"on-click": "cmst"
     },
 
     "sway/mode": {
@@ -96,8 +98,8 @@
         "disable-scroll": false,
         "format": "{name}",
         "format-icons": {
-            "urgent": "⚠",
-            "focused": "+"
+            "urgent": "",
+            "focused": ""
         }
     },
 
@@ -115,7 +117,7 @@
     },
 
     "tray": {
-        "icon-size": 21
+        "icon-size": 13
         //"spacing": 10
     },
 }

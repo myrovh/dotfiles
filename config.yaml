@@ -55,6 +55,9 @@ dotfiles:
   d_wofi:
     src: config/wofi
     dst: ~/.config/wofi
+  d_mako:
+    src: config/mako
+    dst: ~/.config/mako
   d_i3:
     src: config/i3
     dst: ~/.config/i3
@@ -140,6 +143,7 @@ profiles:
       - d_sway
       - d_waybar
       - d_wofi
+      - d_mako
       - f_gtk_3
       - f_gtk_2
       - f_swaynag

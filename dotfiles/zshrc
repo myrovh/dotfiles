@@ -92,6 +92,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # aliases
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
+alias colorpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[hex:s]\n" info:-'
 
 # general use exa
 alias ls='exa'                                                         # ls

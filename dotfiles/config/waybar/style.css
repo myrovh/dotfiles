@@ -39,18 +39,19 @@
 
 /* COLORS */
 
-@define-color light #ebdbb2;
-@define-color dark #282828;
-@define-color warning #fabd2f;
-@define-color critical #cc241d;
-@define-color mode #a89984;
-@define-color workspaces #458588;
-@define-color workspacesfocused #83a598;
-@define-color sound #d3869b;
-@define-color network #b16286;
-@define-color battery #fabd2f;
-@define-color date #282828;
-@define-color time #ebdbb2;
+@define-color light #{{@@ color_fg @@}};
+@define-color dark #{{@@ color_bg @@}};
+@define-color warning #{{@@ color_yellow_bright @@}};
+@define-color critical #{{@@ color_red_bright @@}};
+@define-color mode #{{@@ color_magenta @@}};
+@define-color workspaces #{{@@ color_black @@}};
+@define-color workspacesfocused #{{@@ color_blue @@}};
+@define-color network #00ffff;
+@define-color sound #0080ff;
+@define-color battery #0000ff;
+@define-color backlight #8000ff;
+@define-color date #{{@@ color_black @@}};
+@define-color time #{{@@ color_white @@}};
 
 /* Reset all styles */
 * {
@@ -75,6 +76,7 @@
 #mode,
 #network,
 #pulseaudio,
+#backlight,
 #tray {
   padding-left: 10px;
   padding-right: 10px;
@@ -123,7 +125,7 @@ background: @mode;
 #workspaces button {
 padding-left: 5px;
 padding-right: 5px;
-color: @dark;
+color: @light;
 background: @workspaces;
 }
 
@@ -131,24 +133,24 @@ background: @workspaces;
   background: @workspacesfocused;
 }
 
-/*#workspaces button.urgent {
-border-color: #c9545d;
-color: #c9545d;
-}*/
-
 #window {
-margin-right: 40px;
-margin-left: 40px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+#backlight {
+  background: @backlight;
+  color: @light;
 }
 
 #network {
   background: @network;
-  color: @light;
+  color: @dark;
 }
 
 #battery {
   background: @battery;
-  color: @dark;
+  color: @light;
 }
 
 #tray {

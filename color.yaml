@@ -2,21 +2,21 @@ variables:
   color_fg: f5f5f5
   color_bg: "080808"
   color_00: "080808"
-  color_08: "808080"
+  color_08: "555555"
   color_01: ff0000
-  color_09: ff0000
+  color_09: ffaa00
   color_02: 33ff00
-  color_10: 33ff00
+  color_10: 00ff77
   color_03: ff0099
-  color_11: ff0099
+  color_11: ff1100
   color_04: 0066ff
-  color_12: 0066ff
+  color_12: 4400ff
   color_05: cc00ff
-  color_13: cc00ff
+  color_13: ff0088
   color_06: 00ffff
-  color_14: 00ffff
-  color_07: d0d0d0
-  color_15: f5f5f5
+  color_14: 0055ff
+  color_07: f5f5f5
+  color_15: a9a9a9
   plata_dark: 1D1D1D
   color_black: "{{@@ color_00 @@}}"
   color_red: "{{@@ color_01 @@}}"

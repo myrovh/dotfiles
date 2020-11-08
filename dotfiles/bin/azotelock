@@ -1,0 +1,3 @@
+#!/bin/sh
+
+swaylock --font Iosevka -e -f -i "$(grep home ~/.azotebg | sed 's:[^/]*\(.*\)'\''.*$:\1:')"

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+start_color="#ff0000"
+rotate_inc=30
+current_rotation=0
+
+while 
+    : ${start=current_rotation}
+    pastel rotate $current_rotation $start_color | pastel format hex
+    current_rotation=$((current_rotation + rotate_inc))
+   [ "$current_rotation" -lt 360 ] 
+do :; done
+
