@@ -32,12 +32,15 @@ zinit light yous/vanilli.sh
 
 # shell bin files
 zinit wait"1" lucid from"gh-r" as"null" for \
-     sbin"fzf"          junegunn/fzf-bin \
-     sbin"**/fd"        @sharkdp/fd \
-     sbin"**/bat"       @sharkdp/bat \
-     sbin"**/pastel"    @sharkdp/pastel \
-     sbin"exa* -> exa"  ogham/exa \
-     sbin"**/delta"     dandavison/delta 
+    sbin"fzf"               junegunn/fzf-bin \
+    sbin"lazydocker"        jesseduffield/lazydocker \
+    sbin"**/fd"             @sharkdp/fd \
+    sbin"**/bat"            @sharkdp/bat \
+    sbin"**/pastel"         @sharkdp/pastel \
+    sbin"exa* -> exa"       ogham/exa \
+    sbin"**/delta"          dandavison/delta \
+    sbin"zoxide* -> zoxide" ajeetdsouza/zoxide \
+    sbin"tldr* -> tldr"     dbrgn/tealdeer
 
 zplugin ice as"null" from"gh-r" bpick"*linux_x86_64*" sbin"duf"
 zplugin light muesli/duf
@@ -45,12 +48,13 @@ zplugin light muesli/duf
 zinit ice as"program" pick"yank" make
 zinit light mptre/yank
 
-# not working currently?
 zplugin ice wait'1' lucid
 zplugin light laggardkernel/zsh-thefuck
 
 zinit ice wait lucid
 zinit load 'wfxr/forgit'
+
+zinit sbin make light-mode for dylanaraps/fff
 
 zinit pick"misc/quitcd/quitcd.bash_zsh" sbin make light-mode for jarun/nnn
 
@@ -90,8 +94,18 @@ ZLE_RPROMPT_INDENT=0
 export KEYTIMEOUT=1
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# zoxide aliases
+eval "$(zoxide init bash)"
+
+# automatic cd for fff use ff to run fff
+ff() {
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
+
 # aliases
 alias mirrors='sudo reflector --score 100 --fastest 25 --sort rate --save /etc/pacman.d/mirrorlist --verbose'
+alias nn='nnn'
 alias colorpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[hex:s]\n" info:-'
 
 # general use exa
