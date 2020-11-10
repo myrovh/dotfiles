@@ -12,6 +12,7 @@ actions:
     chemacs_install: test -e ~/.emacs || ~/.config/chemacs/install.sh
 config:
   showdiff: true
+  diff_command: delta {0} {1}
   workdir: ~/.config/dotdrop-links
   import_variables:
     - color.yaml
@@ -152,8 +153,6 @@ profiles:
       - f_pam_environment
   gui_x11:
     dotfiles:
-      - d_i3
-      - d_rofi
       - f_gtk_3
       - f_gtk_2
       - f_xinitrc
