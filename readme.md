@@ -80,10 +80,10 @@ Doom packages need to be setup manually.
 ## GTK + QT
 
 ```sh
-yay -S plata-theme qt5-styleplugins papirus-icon-theme bibata-cursor-theme gtk-engine-murrine roboto
+yay -S plata-theme qt5-styleplugins papirus-icon-theme bibata-cursor-theme gtk-engine-murrine ttf-roboto
 ```
 
-Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct theme. (should be automatically set by  xprofile or environment.d)
+Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct theme. (should be automatically set by xprofile or environment.d)
 
 ### Fonts
 
@@ -111,7 +111,7 @@ systemctl enable greetd
 wdisplays is useful for laptops where you might want to plug in a one time external display. It works like arandr. wf-recorder and grim can be used for video and screenshots respectively. Slurp allow you to define an area to shoot with the mouse.
 
 ```sh
-yay -S wdisplays-git wf-recorder grim slurp
+yay -S wf-recorder mupdf-gl zathura zathura-cb zathura-pdf-mupdf
 ```
 
 ## git
@@ -125,7 +125,6 @@ Git config is current user specific. Make sure ssh keys are being loaded via Kee
 - [slimline](https://github.com/mgee/slimline)
 - [spaceship](https://github.com/denysdovhan/spaceship-prompt)
 
-
 # Software
 
 ## aur
@@ -133,6 +132,7 @@ Git config is current user specific. Make sure ssh keys are being loaded via Kee
 - [pikaur](https://github.com/actionless/pikaur)
 
 ## Terminals
+
 - [foot](https://codeberg.org/dnkl/foot)
 
 ## IDE
