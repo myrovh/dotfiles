@@ -1,13 +1,21 @@
 # Execute swayidle
 exec $idle
+
 # Restore default brightness
 exec light -S $brightness
+
 # Set wallpaper
 exec ~/.azotebg # sets wallpaper (azote needs to be run manually once to generate this script)
-# keepass
-exec keepassxc
+
 # start backlight hue adjust
 exec wlsunset.sh
+
+# power notifications
+exec poweralertd
+
 # file sync
 exec 'insync start'
 exec megasync
+
+# keepass
+exec keepassxc

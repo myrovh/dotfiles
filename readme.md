@@ -102,7 +102,7 @@ systemctl --user enable ssh-agent.service
 ## Sway
 
 ```sh
-yay -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb playerctl imv wdisplays grim slurp greetd gtkgreet
+yay -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb playerctl imv wdisplays grim slurp greetd gtkgreet poweralertd
 systemctl enable greetd
 ```
 
