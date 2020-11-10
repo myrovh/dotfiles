@@ -9,7 +9,7 @@ Personal repository of dotfiles managed with
 - use variables to set screen and lock timeouts so that desktop and laptop can have different times
 - add suspend timer to swayidle so system will sleep after a period defined by a variable
 - setup keybinds for screenshots and video recording wayland tools
-- megasync needs sway rules set so its always in floating mode
+- megasync sway rules set so its always in floating mode
 
 ## Initial Setup
 
@@ -88,7 +88,7 @@ Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct 
 ### Fonts
 
 ```sh
-yay -S ttf-twemoji noto-fonts-cjk
+yay -S ttf-twemoji noto-fonts-cjk ttf-iosevka nerd-fonts-iosevka
 sudo ln -sf /etc/fonts/conf.avail/75-twemoji.conf /etc/fonts/conf.d/75-twemoji.conf`
 ```
 
@@ -102,7 +102,7 @@ systemctl --user enable ssh-agent.service
 ## Sway
 
 ```sh
-yay -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb playerctl imv wdisplays grim slurp greetd gtkgreet poweralertd
+pamac -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb playerctl imv wdisplays grim slurp greetd gtkgreet poweralertd lxqt-policykit
 systemctl enable greetd
 ```
 
@@ -114,22 +114,9 @@ wdisplays is useful for laptops where you might want to plug in a one time exter
 yay -S wdisplays-git wf-recorder grim slurp
 ```
 
-## i3-gaps
-
-### i3 Packages
-
-```sh
-yay -S i3-gaps polybar rofi xorg-xinit kitty kitty-terminfo nerd-fonts-roboto-mono picom feh
-yay -S --asdeps perl-json-xs perl-anyevent-i3
-```
-
 ## git
 
 Git config is current user specific. Make sure ssh keys are being loaded via KeePassXC or other ssh agent helper because all Bitbucket requests are processed as ssh not https.
-
-## Alacritty
-
-Alacritty uses Iosevka Nerd Font
 
 [Awesome zsh](https://github.com/unixorn/awesome-zsh-plugins)
 
@@ -140,6 +127,10 @@ Alacritty uses Iosevka Nerd Font
 
 
 # Software
+
+## aur
+
+- [pikaur](https://github.com/actionless/pikaur)
 
 ## Terminals
 - [foot](https://codeberg.org/dnkl/foot)

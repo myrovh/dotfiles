@@ -1,6 +1,9 @@
 # Execute swayidle
 exec $idle
 
+# polkit
+exec /usr/bin/lxqt-policykit-agent
+
 # Restore default brightness
 exec light -S $brightness
 
@@ -15,7 +18,7 @@ exec poweralertd
 
 # file sync
 exec 'insync start'
-exec megasync
+exec 'QT_QPA_PLATFORM=xcb megasync'
 
 # keepass
 exec keepassxc
