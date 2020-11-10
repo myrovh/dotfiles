@@ -39,12 +39,15 @@
     // -------------------------------------------------------------------------
     
     "backlight": {
-        "format": " {percent}%"
+        "format": " {percent}%",
+        "on-scroll-up": "light -A 5",
+        "on-scroll-down": "light -U 5"
     },
     
 
     "battery": {
-        "interval": 1,
+        "bat": "BAT0",
+        "interval": 60,
         "states": {
             "warning": 30,
             "critical": 15
@@ -113,7 +116,9 @@
             "headset": "",
             "default": ["", ""]
         },
-        "on-click": "pavucontrol"
+        "scroll-step": 5,
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol"
     },
 
     "tray": {
