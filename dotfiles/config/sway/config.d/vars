@@ -2,11 +2,13 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 set $term alacritty
 # Your preferred application launcher
@@ -14,8 +16,10 @@ set $term alacritty
 # on the original workspace that the command was run on.
 # default: set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi --allow-images --show drun
+
 # Set default brightness
 set $brightness 30
+
 # Screen locker
 set $locker 'azotelock'
 
