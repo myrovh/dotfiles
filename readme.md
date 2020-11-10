@@ -6,12 +6,10 @@ Personal repository of dotfiles managed with
 ## todo
 
 - switch to https://asdf-vm.com/#/ for management of runtimes
-- fix screen off and suspend timer on sway (probably need to swtich back to swaylock)
 - use variables to set screen and lock timeouts so that desktop and laptop can have different times
+- add suspend timer to swayidle so system will sleep after a period defined by a variable
 - setup keybinds for screenshots and video recording wayland tools
 - megasync needs sway rules set so its always in floating mode
-- set startup applications: keepassxc, insync, mega
-- rework sway config so it can be used a main desktop environment again (maybe look into copying reform's sway setup)
 
 ## Initial Setup
 
@@ -104,7 +102,8 @@ systemctl --user enable ssh-agent.service
 ## Sway
 
 ```sh
-yay -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb playerctl imv wdisplays grim slurp
+yay -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb playerctl imv wdisplays grim slurp greetd gtkgreet
+systemctl enable greetd
 ```
 
 ### Optional

@@ -1,6 +1,13 @@
 config:
   showdiff: true
 dotfiles:
+  d_usr_bin:
+    link: link_children
+    src: usr/local/bin
+    dst: /usr/local/bin
+  d_greetd:
+    src: etc/greetd
+    dst: /etc/greetd
   d_pulseaudio:
     link: link_children
     src: etc/pulse
@@ -20,11 +27,15 @@ dotfiles:
 profiles:
   AZATHOTH:
     dotfiles:
+      - d_usr_bin
+      - d_greetd
       - d_pulseaudio
       - f_issue
       - f_docker
   NYOGTHA:
     dotfiles:
+      - d_usr_bin
+      - d_greetd
       - f_issue
       - f_docker
   HASTUR:
