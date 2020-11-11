@@ -11,7 +11,7 @@ exec light -S $brightness
 exec ~/.azotebg # sets wallpaper (azote needs to be run manually once to generate this script)
 
 # start backlight hue adjust
-exec wlsunset.sh
+exec ~/bin/wlsunset.sh
 
 # power notifications
 exec poweralertd
