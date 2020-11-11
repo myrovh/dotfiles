@@ -1,0 +1,2 @@
+for_window [app_id="lxqt-policykit-agent"] floating enable
+for_window [title="Picture-in-Picture"] floating enable, sticky enable
