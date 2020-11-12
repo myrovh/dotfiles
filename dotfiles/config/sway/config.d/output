@@ -2,6 +2,6 @@
 #
 
 {%@@ if profile == 'AZATHOTH' @@%}
-output DP-2 position 0,900
+output DP-2 position 0,570
 output DP-3 position 2560,0 transform 270
 {%@@ endif @@%}
