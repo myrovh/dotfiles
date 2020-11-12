@@ -18,7 +18,7 @@ exec poweralertd
 
 # file sync
 exec 'insync start'
-exec 'QT_QPA_PLATFORM=xcb megasync'
+exec 'sleep 10; QT_QPA_PLATFORM=xcb megasync'
 
 # keepass
 exec keepassxc
