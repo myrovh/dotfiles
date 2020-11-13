@@ -87,7 +87,7 @@ Set `QT_QPA_PLATFORMTHEME=gtk2` to instruct qt5 applications to use the correct 
 ### Fonts
 
 ```sh
-yay -S ttf-twemoji noto-fonts-cjk ttf-iosevka nerd-fonts-iosevka
+yay -S ttf-twemoji noto-fonts-cjk ttf-iosevka nerd-fonts-iosevka ttf-iosevka-term
 sudo ln -sf /etc/fonts/conf.avail/75-twemoji.conf /etc/fonts/conf.d/75-twemoji.conf`
 ```
 
@@ -101,7 +101,7 @@ systemctl --user enable ssh-agent.service
 ## Sway
 
 ```sh
-pamac -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb playerctl imv wdisplays grim slurp greetd gtkgreet poweralertd lxqt-policykit
+pamac -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb playerctl imv wdisplays grim slurp greetd gtkgreet poweralertd lxqt-policykit 
 # systemctl enable greetd (broken right now, blocks swaylock)
 ```
 

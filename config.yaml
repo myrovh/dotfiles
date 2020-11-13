@@ -26,6 +26,9 @@ dotfiles:
   f_clight:
     dst: ~/.config/clight.conf
     src: config/clight.conf
+  f_foot:
+    dst: ~/.config/foot/foot.ini
+    src: config/foot/foot.ini
   f_swaynag:
     dst: ~/.config/swaynag/config
     src: config/swaynag.conf
@@ -151,6 +154,7 @@ profiles:
       - f_xresources
       - f_envvars.conf
       - f_pam_environment
+      - f_foot
   gui_x11:
     dotfiles:
       - f_gtk_3
