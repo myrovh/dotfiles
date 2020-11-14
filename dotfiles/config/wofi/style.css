@@ -10,7 +10,7 @@ window {
   font-size: 18px;
   border-radius: 0;
   border-width: 2px;
-  border-color: #{{@@ plata_dark @@}};
+  border-color: #{{@@ color_black_bright @@}};
   background: #{{@@ color_bg @@}};
   color: #{{@@ color_fg @@}};
   margin: 5px;
@@ -25,7 +25,7 @@ window {
 }
 
 #outer-box {
-  border: 2px solid #{{@@ plata_dark @@}};
+  border: 2px solid #{{@@ color_black_bright @@}};
 }
 
 #scroll {

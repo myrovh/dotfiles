@@ -20,7 +20,7 @@ titlebar_padding 10 1
 
 set $light #{{@@ color_fg @@}}
 set $dark #{{@@ color_bg @@}}
-set $focusedborder #{{@@ color_blue @@}}
+set $focusedborder #{{@@ color_cyan @@}}
 set $inactiveborder #{{@@ color_white @@}}
 set $unfocusedborder #{{@@ color_black @@}}
 set $urgentborder #{{@@ color_red @@}}

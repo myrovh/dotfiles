@@ -41,15 +41,15 @@
 
 @define-color light #{{@@ color_fg @@}};
 @define-color dark #{{@@ color_bg @@}};
-@define-color warning #{{@@ color_yellow_bright @@}};
-@define-color critical #{{@@ color_red_bright @@}};
+@define-color warning #{{@@ color_blue_bright @@}};
+@define-color critical #{{@@ color_red @@}};
 @define-color mode #{{@@ color_magenta @@}};
 @define-color workspaces #{{@@ color_black @@}};
 @define-color workspacesfocused #{{@@ color_blue @@}};
-@define-color network #00ffff;
-@define-color sound #0080ff;
-@define-color battery #0000ff;
-@define-color backlight #8000ff;
+@define-color network #{{@@ color_green @@}};
+@define-color sound #{{@@ color_magenta @@}};
+@define-color battery #{{@@ color_cyan_bright @@}};
+@define-color backlight #{{@@ color_yellow @@}};
 @define-color date #{{@@ color_black @@}};
 @define-color time #{{@@ color_white @@}};
 
@@ -131,6 +131,7 @@ background: @workspaces;
 
 #workspaces button.focused {
   background: @workspacesfocused;
+  color: @dark
 }
 
 #window {
@@ -140,7 +141,7 @@ background: @workspaces;
 
 #backlight {
   background: @backlight;
-  color: @light;
+  color: @dark;
 }
 
 #network {
@@ -150,7 +151,7 @@ background: @workspaces;
 
 #battery {
   background: @battery;
-  color: @light;
+  color: @dark;
 }
 
 #tray {
