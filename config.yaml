@@ -1,43 +1,23 @@
-actions:
-  pre:
-    spacemacs:
-      test -e ~/.config/spacemacs || git clone https://github.com/syl20bnr/spacemacs
-      ~/.config/spacemacs
-    doom: test -e ~/.doom || git clone https://github.com/hlissner/doom-emacs ~/.doom
-    chemacs:
-      test -e ~/.config/chemacs || git clone https://github.com/plexus/chemacs.git
-      ~/.config/chemacs
-  post:
-    emacsserver: systemctl --user enable --now emacs
-    chemacs_install: test -e ~/.emacs || ~/.config/chemacs/install.sh
 config:
   showdiff: true
-  diff_command: delta {0} {1}
   workdir: ~/.config/dotdrop-links
   import_variables:
     - color.yaml
+  import_configs:
+    - applications.yaml
 variables:
-  username: "myrovh"
-  server_config: "/home/{{@@ username @@}}/Documents/personal/server-config"
+  username: myrovh
+  server_config: /home/{{@@ username @@}}/Documents/personal/server-config
 dotfiles:
-  f_alacritty:
-    dst: ~/.config/alacritty/alacritty.yml
-    src: config/alacritty/alacritty.yml
-  f_clight:
-    dst: ~/.config/clight.conf
-    src: config/clight.conf
-  f_foot:
-    dst: ~/.config/foot/foot.ini
-    src: config/foot/foot.ini
+  f_ssh:
+    dst: ~/.ssh/config
+    src: ssh/config
   f_swaynag:
     dst: ~/.config/swaynag/config
     src: config/swaynag.conf
   f_gitconfig:
     dst: ~/.gitconfig
     src: gitconfig
-  f_kitty:
-    dst: ~/.config/kitty/kitty.conf
-    src: config/kitty/kitty.conf
   f_xinitrc:
     dst: ~/.xinitrc
     src: xinitrc
@@ -91,57 +71,22 @@ dotfiles:
   f_p10k_rainbow:
     src: p10k-rainbow.zsh
     dst: ~/.p10k.zsh
-  d_spacemacs.d:
-    link: link
-    src: spacemacs.d
-    dst: ~/.spacemacs.d
-    actions:
-      - spacemacs
-      - emacsserver
-  d_doom.d:
-    link: link
-    src: doom.d
-    dst: ~/.doom.d
-    actions:
-      - doom
-  f_emacs-profiles.el:
-    link: link
-    src: emacs-profiles.el
-    dst: ~/.emacs-profiles.el
-    actions:
-      - chemacs
-      - chemacs_install
   f_gtk_2:
     src: gtkrc-2.0
     dst: ~/.gtkrc-2.0
   f_xprofile:
     src: xprofile
     dst: ~/.xprofile
-  f_envvars.conf:
-    src: config/environment.d/envvars.conf
-    dst: ~/.config/environment.d/envvars.conf
   f_pam_environment:
     src: pam_environment
     dst: ~/.pam_environment
 profiles:
-  emacs:
-    dotfiles:
-      - d_spacemacs.d
-      - d_doom.d
-      - f_emacs-profiles.el
   shell:
     dotfiles:
       - d_bin
       - f_gitconfig
       - f_zprofile
       - f_zshrc
-  applications:
-    dotfiles:
-      - d_spacevim.d
-      - f_alacritty
-      - f_kitty
-    include:
-      - emacs
   gui_wayland:
     dotfiles:
       - d_sway
@@ -152,9 +97,7 @@ profiles:
       - f_gtk_2
       - f_swaynag
       - f_xresources
-      - f_envvars.conf
       - f_pam_environment
-      - f_foot
   gui_x11:
     dotfiles:
       - f_gtk_3
@@ -164,38 +107,23 @@ profiles:
       - f_xprofile
       - f_pam_environment
   CTOGGHA:
-    dotfiles:
-      - f_p10k
     include:
       - shell
   HASTUR:
-    dotfiles:
-      - f_p10k
-    include:
-      - shell
-  SHOGGOTH:
-    dotfiles:
-      - f_p10k
     include:
       - shell
   VULTHOOM:
-    dotfiles:
-      - f_p10k
     include:
       - shell
   THASAIDON:
-    dotfiles:
-      - f_p10k
     include:
       - shell
   EPISUB:
-    dotfiles:
-      - f_p10k
     include:
       - shell
   NYOGTHA:
     dotfiles:
-      - f_p10k_rainbow
+      - f_ssh
     include:
       - applications
       - gui_wayland
@@ -204,7 +132,7 @@ profiles:
   AZATHOTH:
     dotfiles:
       - f_pulseaudio
-      - f_p10k_rainbow
+      - f_ssh
     include:
       - applications
       - gui_wayland

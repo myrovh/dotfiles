@@ -1,0 +1,58 @@
+config:
+  showdiff: true
+actions:
+  pre:
+    spacemacs:
+      test -e ~/.config/spacemacs || git clone https://github.com/syl20bnr/spacemacs
+      ~/.config/spacemacs
+    doom: test -e ~/.doom || git clone https://github.com/hlissner/doom-emacs ~/.doom
+    chemacs:
+      test -e ~/.config/chemacs || git clone https://github.com/plexus/chemacs.git
+      ~/.config/chemacs
+  post:
+    emacsserver: systemctl --user enable --now emacs
+    chemacs_install: test -e ~/.emacs || ~/.config/chemacs/install.sh
+dotfiles:
+  f_alacritty:
+    dst: ~/.config/alacritty/alacritty.yml
+    src: config/alacritty/alacritty.yml
+  f_foot:
+    dst: ~/.config/foot/foot.ini
+    src: config/foot/foot.ini
+  f_kitty:
+    dst: ~/.config/kitty/kitty.conf
+    src: config/kitty/kitty.conf
+  d_spacemacs.d:
+    link: link
+    src: spacemacs.d
+    dst: ~/.spacemacs.d
+    actions:
+      - spacemacs
+      - emacsserver
+  d_doom.d:
+    link: link
+    src: doom.d
+    dst: ~/.doom.d
+    actions:
+      - doom
+  f_emacs-profiles.el:
+    link: link
+    src: emacs-profiles.el
+    dst: ~/.emacs-profiles.el
+    actions:
+      - chemacs
+      - chemacs_install
+profiles:
+  emacs:
+    dotfiles:
+      - d_spacemacs.d
+      - d_doom.d
+      - f_emacs-profiles.el
+  applications:
+    dotfiles:
+      - d_spacevim.d
+      - f_alacritty
+      - f_kitty
+      - f_foot
+    include:
+      - emacs
