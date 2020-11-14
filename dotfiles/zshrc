@@ -4,6 +4,13 @@
 # not running interactively then bail
 [[ $- != *i* ]] && return
 
+{%@@ if exists_in_path('sway-run') @@%}
+# If running from tty1 start sway
+if [ "$(tty)" = "/dev/tty1" ]; then
+	exec sway-run
+fi
+{%@@ endif @@%}
+
 # 
 # ███████╗██╗███╗   ██╗██╗████████╗
 # ╚══███╔╝██║████╗  ██║██║╚══██╔══╝
@@ -43,7 +50,7 @@ zinit light-mode for \
 
 zinit lucid for \
     as"command" from"gh-r" atinit'export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"' atload'eval "$(starship init zsh)"' bpick'*unknown-linux-gnu*' \
-    starship/starship \
+    starship/starship
 
 # 
 # ██████╗ ██╗███╗   ██╗ █████╗ ██████╗ ██╗   ██╗███████╗                                    
@@ -54,7 +61,7 @@ zinit lucid for \
 # ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝                                    
 #
 
-zinit wait"1" lucid from"gh-r" as"null" for \
+zinit wait"1a" lucid from"gh-r" as"null" for \
     sbin"fzf"               junegunn/fzf-bin \
     sbin"lazydocker"        jesseduffield/lazydocker \
     sbin"**/fd"             @sharkdp/fd \
@@ -73,7 +80,7 @@ zinit wait"1" lucid from"gh-r" as"null" for \
     sbin"**/vivid" atload'export LS_COLORS="$(vivid generate molokai)"' \
                             @sharkdp/vivid
 
-zinit wait"2" lucid as"null" for \
+zinit wait"1b" lucid as"null" for \
     sbin"yank" make         mptre/yank \
     sbin pick"misc/quitcd/quitcd.bash_zsh" make \
                             jarun/nnn
@@ -89,10 +96,14 @@ zinit wait"2" lucid as"null" for \
 # ╚══════╝╚══════╝╚═╝  ╚═╝    ╚═╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
 #                                                                                    
 
-zinit wait lucid for \
-        yous/vanilli.sh \
+zinit wait'0b' lucid for \
+    trigger-load'!fuck' atinit'zstyle ":prezto:module:thefuck" bindkey "no"' \
         laggardkernel/zsh-thefuck \
-        wfxr/forgit \
+    trigger-load'!ga;!gcf;!gclean;!gd;!glo;!grh;!gss' \
+        wfxr/forgit
+
+zinit wait'0a' lucid for \
+        yous/vanilli.sh \
         zdharma/history-search-multi-word \
     atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
         zdharma/fast-syntax-highlighting \
