@@ -41,27 +41,27 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: "0x{{@@ color_bg @@}}"
-    foreground: "0x{{@@ color_fg @@}}"
+    background: "#{{@@ color_bg @@}}"
+    foreground: "#{{@@ color_fg @@}}"
 
   # Normal colors
   normal:
-    black: "0x{{@@ color_00 @@}}"
-    red: "0x{{@@ color_01 @@}}"
-    green: "0x{{@@ color_02 @@}}"
-    yellow: "0x{{@@ color_03 @@}}"
-    blue: "0x{{@@ color_04 @@}}"
-    magenta: "0x{{@@ color_05 @@}}"
-    cyan: "0x{{@@ color_06 @@}}"
-    white: "0x{{@@ color_07 @@}}"
+    black: "#{{@@ color_black @@}}"
+    red: "#{{@@ color_red @@}}"
+    green: "#{{@@ color_green @@}}"
+    yellow: "#{{@@ color_yellow @@}}"
+    blue: "#{{@@ color_blue @@}}"
+    magenta: "#{{@@ color_magenta @@}}"
+    cyan: "#{{@@ color_cyan @@}}"
+    white: "#{{@@ color_white @@}}"
 
   # Bright colors
   bright:
-    black: "0x{{@@ color_08 @@}}"
-    red: "0x{{@@ color_09 @@}}"
-    green: "0x{{@@ color_10 @@}}"
-    yellow: "0x{{@@ color_11 @@}}"
-    blue: "0x{{@@ color_12 @@}}"
-    magenta: "0x{{@@ color_13 @@}}"
-    cyan: "0x{{@@ color_14 @@}}"
-    white: "0x{{@@ color_15 @@}}"
+    black: "#{{@@ color_black_bright @@}}"
+    red: "#{{@@ color_red_bright @@}}"
+    green: "#{{@@ color_green_bright @@}}"
+    yellow: "#{{@@ color_yellow_bright @@}}"
+    blue: "#{{@@ color_blue_bright @@}}"
+    magenta: "#{{@@ color_magenta_bright @@}}"
+    cyan: "#{{@@ color_cyan_bright @@}}"
+    white: "#{{@@ color_white_bright @@}}"

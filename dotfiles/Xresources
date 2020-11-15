@@ -5,34 +5,34 @@
 *.cursorColor:  #{{@@ color_fg @@}}
 
 ! black
-*.color0:       #{{@@ color_00 @@}}
-*.color8:       #{{@@ color_08 @@}}
+*.color0:       #{{@@ color_black @@}}
+*.color8:       #{{@@ color_black_bright @@}}
 
 ! red
-*.color1:       #{{@@ color_01 @@}}
-*.color9:       #{{@@ color_09 @@}}
+*.color1:       #{{@@ color_red @@}}
+*.color9:       #{{@@ color_red_bright @@}}
 
 ! green
-*.color2:       #{{@@ color_02 @@}}
-*.color10:      #{{@@ color_10 @@}}
+*.color2:       #{{@@ color_green @@}}
+*.color10:      #{{@@ color_green_bright @@}}
 
 ! yellow
-*.color3:       #{{@@ color_03 @@}}
-*.color11:      #{{@@ color_11 @@}}
+*.color3:       #{{@@ color_yellow @@}}
+*.color11:      #{{@@ color_yellow_bright @@}}
 
 ! blue
-*.color4:       #{{@@ color_04 @@}}
-*.color12:      #{{@@ color_12 @@}}
+*.color4:       #{{@@ color_blue @@}}
+*.color12:      #{{@@ color_blue_bright @@}}
 
 ! magenta
-*.color5:       #{{@@ color_05 @@}}
-*.color13:      #{{@@ color_13 @@}}
+*.color5:       #{{@@ color_magenta @@}}
+*.color13:      #{{@@ color_magenta_bright @@}}
 
 ! cyan
-*.color6:       #{{@@ color_06 @@}}
-*.color14:      #{{@@ color_14 @@}}
+*.color6:       #{{@@ color_cyan @@}}
+*.color14:      #{{@@ color_cyan_bright @@}}
 
 ! white
-*.color7:       #{{@@ color_07 @@}}
-*.color15:      #{{@@ color_15 @@}}
+*.color7:       #{{@@ color_white @@}}
+*.color15:      #{{@@ color_white_bright @@}}
 

@@ -1,0 +1,11 @@
+
+variables:
+  isotope_black: #000000
+  isotope_white: #d0d0d0
+  isotope_grey: #808080
+  isotope_red: #ff0000
+  isotope_green: #33ff00
+  isotope_yellow: #ff0099
+  isotope_blue: #0066ff
+  isotope_magenta: #cc00ff
+  isotope_cyan: #00ffff
