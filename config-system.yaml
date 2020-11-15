@@ -28,14 +28,12 @@ profiles:
   AZATHOTH:
     dotfiles:
       - d_usr_bin
-      - d_greetd
       - d_pulseaudio
       - f_issue
       - f_docker
   NYOGTHA:
     dotfiles:
       - d_usr_bin
-      - d_greetd
       - f_issue
       - f_docker
   HASTUR:
