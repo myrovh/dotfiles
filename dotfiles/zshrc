@@ -96,6 +96,8 @@ zinit wait"1b" lucid as"null" for \
 # ╚══════╝╚══════╝╚═╝  ╚═╝    ╚═╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
 #                                                                                    
 
+zinit light yous/vanilli.sh
+
 zinit wait'0b' lucid for \
     trigger-load'!fuck' atinit'zstyle ":prezto:module:thefuck" bindkey "no"' \
         laggardkernel/zsh-thefuck \
@@ -103,7 +105,6 @@ zinit wait'0b' lucid for \
         wfxr/forgit
 
 zinit wait'0a' lucid for \
-        yous/vanilli.sh \
         zdharma/history-search-multi-word \
     atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
         zdharma/fast-syntax-highlighting \
