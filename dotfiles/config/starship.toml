@@ -1,0 +1,72 @@
+[aws]
+disabled = true
+[cmake]
+disabled = true
+[conda]
+disabled = true
+[crystal]
+disabled = true
+[dart]
+disabled = true
+[directory]
+read_only = " "
+[docker]
+disabled = true
+[dotnet]
+disabled = true
+[elixir]
+disabled = true
+[elm]
+disabled = true
+[erlang]
+disabled = true
+[gcloud]
+disabled = true
+[git_commit]
+tag_disabled = false
+tag_symbol = " "
+[golang]
+symbol = "go:"
+[helm]
+disabled = true
+[java]
+disabled = true
+[julia]
+disabled = true
+[lua]
+disabled = true
+[nim]
+disabled = true
+[nix_shell]
+disabled = true
+[nodejs]
+symbol = "nj:"
+[ocaml]
+disabled = true
+[openstack]
+disabled = true
+[package]
+symbol = "pk:"
+[perl]
+disabled = true
+[php]
+disabled = true
+[purescript]
+disabled = true
+[python]
+symbol = "py:"
+[ruby]
+symbol = "rb:"
+[rust]
+symbol = "rs:"
+[singularity]
+disabled = true
+[status]
+disabled = false
+symbol = "✖ "
+[swift]
+disabled = true
+[terraform]
+disabled = true
+[zig]
+disabled = true

@@ -80,6 +80,9 @@ dotfiles:
   f_pam_environment:
     src: pam_environment
     dst: ~/.pam_environment
+  f_starship.toml:
+    src: config/starship.toml
+    dst: ~/.config/starship.toml
 profiles:
   shell:
     dotfiles:
@@ -87,6 +90,7 @@ profiles:
       - f_gitconfig
       - f_zprofile
       - f_zshrc
+      - f_starship.toml
   gui_wayland:
     dotfiles:
       - d_sway
