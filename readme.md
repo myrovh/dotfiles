@@ -101,7 +101,7 @@ systemctl --user enable ssh-agent.service
 ## Sway
 
 ```sh
-pamac -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb playerctl imv wdisplays grim slurp greetd gtkgreet poweralertd lxqt-policykit 
+pamac -S sway swayidle swaylock waybar pavucontrol pamixer azote wlsunset mako alacritty qt5-wayland light cozette-otb playerctl imv wdisplays grim slurp greetd gtkgreet poweralertd lxqt-policykit
 # systemctl enable greetd (broken right now, blocks swaylock)
 ```
 
@@ -121,10 +121,27 @@ Git config is current user specific. Make sure ssh keys are being loaded via Kee
 
 ### Alternative Prompts
 
-- [slimline](https://github.com/mgee/slimline)
-- [spaceship](https://github.com/denysdovhan/spaceship-prompt)
+- current [https://starship.rs/](https://starship.rs/) (rust)
+- [slimline](https://github.com/mgee/slimline) (zsh)
+- [geometry](https://github.com/geometry-zsh/geometry) (zsh)
+- [pista](https://github.com/nerdypepper/pista) (rust)
+- [fprompt](https://github.com/shosatojp/fprompt) (rust)
+- [promptress](https://github.com/j-tai/promptress) (rust)
+- [almel](https://github.com/ryooooooga/almel) (rust)
+- [silver](https://github.com/reujab/silver) (rust)
+- [Apollo](https://github.com/mjrafferty/apollo-zsh-theme) (zsh)
+- [astral](https://github.com/xwmx/astral) (zsh)
+- [powerlevel10k](https://github.com/romkatv/powerlevel10k) (zsh)
+- [purs](https://github.com/xcambar/purs) (rust)
 
 # Software
+
+## Version Manager
+
+- [nvm](https://github.com/nvm-sh/nvm) original node manager (n probably better)
+- [n](https://github.com/tj/n)
+- [g](https://github.com/stefanmaric/g) for go
+- [goup](https://github.com/owenthereal/goup) for go, not sure which of the two is better
 
 ## aur
 
