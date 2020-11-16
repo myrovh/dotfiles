@@ -37,7 +37,8 @@ autoload -Uz _zinit
 zinit light-mode for \
     zinit-zsh/z-a-patch-dl \
     zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-bin-gem-node
+    zinit-zsh/z-a-bin-gem-node \
+    zinit-zsh/z-a-rust
 
 # 
 # ██████╗ ██████╗  ██████╗ ███╗   ███╗██████╗ ████████╗                                                
@@ -71,6 +72,7 @@ zinit wait"1a" lucid from"gh-r" as"null" for \
     sbin"exa* -> exa"       ogham/exa \
     sbin"**/delta"          dandavison/delta \
     sbin"tldr* -> tldr"     dbrgn/tealdeer \
+    sbin"**/dust"           bootandy/dust \
     sbin"duf" bpick"*linux*.tar.gz" \
                             muesli/duf \
     sbin"navi" atload'eval "$(navi widget zsh)"' \
@@ -84,6 +86,10 @@ zinit wait"1b" lucid as"null" for \
     sbin"yank" make         mptre/yank \
     sbin pick"misc/quitcd/quitcd.bash_zsh" make \
                             jarun/nnn
+
+# {%@@ if exists_in_path('cargo') @@%} 
+zinit wait"2" lucid as"null" cargo"!procs;!tokei;!grex;!sd;!bandwhich" for zdharma/null
+# {%@@ endif @@%}
 
 # note to try install sharkdp/insect sometime
 
