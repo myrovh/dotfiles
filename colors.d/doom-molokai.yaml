@@ -1,0 +1,67 @@
+
+#(def-doom-theme doom-molokai
+#"A dark, vibrant theme inspired by Textmate's Monokai."
+
+#;; name        gui       256       16
+#((bg         '("#1c1e1f" nil       nil          ))
+#(bg-alt     '("#222323" nil       nil          ))
+#(base0      '("#1B2229" "black"   "black"      ))
+#(base1      '("#151617" "#101010" "brightblack"))
+#(base2      '("#1d1f20" "#191919" "brightblack"))
+#(base3      '("#2d2e2e" "#252525" "brightblack"))
+#(base4      '("#4e4e4e" "#454545" "brightblack"))
+#(base5      '("#555556" "#6b6b6b" "brightblack"))
+#(base6      '("#767679" "#7b7b7b" "brightblack"))
+#(base7      '("#cfc0c5" "#c1c1c1" "brightblack"))
+#(base8      '("#ffffff" "#ffffff" "brightwhite"))
+#(fg         '("#d6d6d4" "#dfdfdf" "brightwhite"))
+#(fg-alt     '("#556172" "#4d4d4d" "white"))
+#
+#(grey       '("#525254" "#515154" "brightblack"))
+#(red        '("#e74c3c" "#e74c3c" "red"))
+#(orange     '("#fd971f" "#fd971f" "brightred"))
+#(green      '("#b6e63e" "#b6e63e" "green"))
+#(teal       green)
+#(yellow     '("#e2c770" "#e2c770" "yellow"))
+#(blue       '("#268bd2" "#2686D6" "brightblue"))
+#(dark-blue  '("#727280" "#727280" "blue"))
+#(magenta    '("#fb2874" "#fb2874" "magenta"))
+#(violet     '("#9c91e4" "#9c91e4" "brightmagenta"))
+#(cyan       '("#66d9ef" "#66d9ef" "brightcyan"))
+#(dark-cyan  '("#8fa1b3" "#8FA1B3" "cyan"))
+
+variables:
+  theme_name: Monokai Doom
+  monokai_black: "#222323"
+  monokai_white: "#d6d6d4"
+  monokai_grey: "#525254"
+  monokai_red: "#e74c3c"
+  monokai_orange: "#fd971f"
+  monokai_green: "#b6e63e"
+  monokai_yellow: "#e2c770"
+  monokai_blue: "#268bd2"
+  monokai_dark_blue: "#727280"
+  monokai_magenta: "#fb2874"
+  monokai_violet: "#9c91e4"
+  monokai_cyan: "#66d9ef"
+  monokai_dark_cyan: "#8fa1b3"
+
+dynvariables:
+  color_fg: "echo '{{@@ monokai_white @@}}' | cut -c 2-"
+  color_bg: "echo '{{@@ monokai_black @@}}' | cut -c 2-"
+  color_black: "echo '{{@@ monokai_black @@}}' | cut -c 2-"
+  color_black_bright: "echo '{{@@ monokai_grey @@}}' | cut -c 2-"
+  color_red: "echo '{{@@ monokai_red @@}}' | cut -c 2-"
+  color_red_bright: "echo '{{@@ monokai_orange @@}}' | cut -c 2-"
+  color_green: "echo '{{@@ monokai_green @@}}' | cut -c 2-"
+  color_green_bright: "echo '{{@@ monokai_green @@}}' | cut -c 2-"
+  color_yellow: "echo '{{@@ monokai_yellow @@}}' | cut -c 2-"
+  color_yellow_bright: "echo '{{@@ monokai_yellow @@}}' | cut -c 2-"
+  color_blue: "echo '{{@@ monokai_blue @@}}' | cut -c 2-"
+  color_blue_bright: "echo '{{@@ monokai_blue @@}}' | cut -c 2-"
+  color_magenta: "echo '{{@@ monokai_magenta @@}}' | cut -c 2-"
+  color_magenta_bright: "echo '{{@@ monokai_magenta @@}}' | cut -c 2-"
+  color_cyan: "echo '{{@@ monokai_dark_blue @@}}' | cut -c 2-"
+  color_cyan_bright: "echo '{{@@ monokai_violet @@}}' | cut -c 2-"
+  color_white: "echo '{{@@ monokai_white @@}}' | cut -c 2-"
+  color_white_bright: "echo '{{@@ monokai_white @@}}' | cut -c 2-"

@@ -2,7 +2,7 @@ config:
   showdiff: true
   workdir: ~/.config/dotdrop-links
   import_variables:
-    - colors.d/monokai.yaml
+    - colors.d/monokai-pro.yaml
   import_configs:
     - applications.yaml
 variables:

@@ -24,9 +24,9 @@ variables:
 
 dynvariables:
   color_fg: "echo '{{@@ monokai_white @@}}' | cut -c 2-"
-  color_bg: "echo '{{@@ black @@}}' | cut -c 2-"
-  color_black: "echo '{{@@ black @@}}' | cut -c 2-"
-  color_black_bright: "echo '{{@@ grey @@}}' | cut -c 2-"
+  color_bg: "echo '{{@@ monokai_black @@}}' | cut -c 2-"
+  color_black: "echo '{{@@ monokai_black @@}}' | cut -c 2-"
+  color_black_bright: "echo '{{@@ monokai_grey @@}}' | cut -c 2-"
   color_red: "echo '{{@@ monokai_pink @@}}' | cut -c 2-"
   color_red_bright: "echo '{{@@ monokai_pink @@}}' | cut -c 2-"
   color_green: "echo '{{@@ monokai_green @@}}' | cut -c 2-"
