@@ -24,6 +24,9 @@ dotfiles:
   f_docker:
     src: etc/docker/daemon.json
     dst: /etc/docker/daemon.json
+  f_login:
+    src: etc/pam.d/login
+    dst: /etc/pam.d/login
 profiles:
   AZATHOTH:
     dotfiles:
@@ -31,11 +34,13 @@ profiles:
       - d_pulseaudio
       - f_issue
       - f_docker
+      - f_login
   NYOGTHA:
     dotfiles:
       - d_usr_bin
       - f_issue
       - f_docker
+      - f_login
   HASTUR:
     dotfiles:
       - f_issue
