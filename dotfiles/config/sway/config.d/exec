@@ -17,8 +17,8 @@ exec ~/bin/wlsunset.sh
 exec poweralertd
 
 # file sync
-exec 'insync start'
-exec 'sleep 10; QT_QPA_PLATFORM=xcb megasync'
+exec 'QT_QPA_PLATFORM=xcb insync start'
+exec 'sleep 5; QT_QPA_PLATFORM=xcb megasync'
 
 # keepass
 exec keepassxc
