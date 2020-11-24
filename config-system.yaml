@@ -47,7 +47,7 @@ profiles:
   CTOGGHA:
     dotfiles:
       - f_issue
-  SHOGGOTH:
+  THASAIDON:
     dotfiles:
       - f_issue
   VULTHOOM:
