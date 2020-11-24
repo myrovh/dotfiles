@@ -9,6 +9,7 @@ Personal repository of dotfiles managed with
 - use variables to set screen and lock timeouts so that desktop and laptop can have different times
 - add suspend timer to swayidle so system will sleep after a period defined by a variable
 - setup keybinds for screenshots and video recording wayland tools
+- learn tmux https://zserge.com/posts/tmux/
 
 ## Initial Setup
 
@@ -36,9 +37,17 @@ yay -S dotdrop
 
 ### Install on Debian
 
+second apt-get are make requirements `nnn` that is build by the zsh config.
+
+setup locales. If only accessing machine via ssh set default locale to None
+
 ```sh
 sudo apt update && sudo apt install python3-pip
 pip3 install --user dotdrop
+
+sudo apt-get install pkg-config libncursesw5-dev libreadline-dev
+
+TERM=xterm-256 sudo dpkg-reconfigure locales
 ```
 
 ### Clone and install repo
