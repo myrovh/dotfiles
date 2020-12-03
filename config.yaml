@@ -5,6 +5,10 @@ config:
     - colors.d/monokai-pro.yaml
   import_configs:
     - applications.yaml
+actions:
+  pre:
+    nvim: test -f ~/.local/share/nvim/site/autoload/plug.vim || curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    vim: test -f ~/.vim/autoload/plug.vim || curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 variables:
   username: myrovh
   server_config: /home/{{@@ username @@}}/Documents/personal/server-config
@@ -83,6 +87,12 @@ dotfiles:
   f_starship.toml:
     src: config/starship.toml
     dst: ~/.config/starship.toml
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+  f_vim:
+    src: config/nvim/init.vim
+    dst: ~/.vimrc
 profiles:
   shell:
     dotfiles:
@@ -91,6 +101,8 @@ profiles:
       - f_zprofile
       - f_zshrc
       - f_starship.toml
+      - f_vim
+      - d_nvim
   gui_wayland:
     dotfiles:
       - d_sway
