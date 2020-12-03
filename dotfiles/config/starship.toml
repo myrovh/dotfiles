@@ -25,6 +25,17 @@ disabled = true
 [git_commit]
 tag_disabled = false
 tag_symbol = " "
+[git_status]
+conflicted = "="
+ahead = "⇡ "
+behind = "⇣ "
+diverged = "⇕ "
+untracked = "?‍"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘ "
 [golang]
 symbol = "go:"
 [helm]
