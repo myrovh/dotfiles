@@ -18,7 +18,6 @@ else
 
   Plug 'junegunn/goyo.vim'
   Plug 'justinmk/vim-sneak'
-  Plug 'git@gitlab.com:HiPhish/info.vim.git'
 endif
 
 
