@@ -6,15 +6,21 @@ call plug#begin(stdpath('data') . '/plugged')
 call plug#begin('~/.vim/plugged')
 {%@@ endif @@%}
 
-Plug 'sainnhe/sonokai'
+if exists('g:vscode')
+  " VSCode extension
+else
+  Plug 'sheerun/vim-polyglot'
+  Plug 'airblade/vim-gitgutter'
 
-Plug 'sheerun/vim-polyglot'
+  Plug 'sainnhe/sonokai'
+  Plug 'vim-airline/vim-airline'
+  Plug 'ntpeters/vim-better-whitespace'
 
-Plug 'sainnhe/sonokai'
-Plug 'vim-airline/vim-airline'
+  Plug 'junegunn/goyo.vim'
+  Plug 'justinmk/vim-sneak'
+  Plug 'git@gitlab.com:HiPhish/info.vim.git'
+endif
 
-Plug 'junegunn/goyo.vim'
-Plug 'justinmk/vim-sneak'
 
 call plug#end()
 
@@ -24,10 +30,14 @@ endif
 
 set noshowmode
 
-let g:sonokai_style = 'shusia'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 1
-colorscheme sonokai
+if exists('g:vscode')
+  " VSCode extension
+else
+  let g:sonokai_style = 'shusia'
+  let g:sonokai_enable_italic = 1
+  let g:sonokai_disable_italic_comment = 1
+  colorscheme sonokai
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'sonokai'
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme = 'sonokai'
+endif
