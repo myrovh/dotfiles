@@ -47,6 +47,7 @@ profiles:
   CTOGGHA:
     dotfiles:
       - f_issue
+      - f_docker
   THASAIDON:
     dotfiles:
       - f_issue
